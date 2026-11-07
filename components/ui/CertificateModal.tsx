@@ -95,3 +95,4 @@ export default function CertificateModal({ cert, onClose }: CertificateModalProp
     </div>
   );
 }
+

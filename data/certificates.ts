@@ -114,3 +114,4 @@ export const certificates: Certificate[] = [
     category: "Dicoding",
   },
 ];
+

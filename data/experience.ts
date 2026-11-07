@@ -49,3 +49,4 @@ export const experiences: ExperienceItem[] = [
     skills: ["Software Engineering", "Database Systems", "Cloud Computing", "Computer Networks", "Data Structures"],
   },
 ];
+
