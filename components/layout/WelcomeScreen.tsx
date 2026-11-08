@@ -8,24 +8,36 @@ export default function WelcomeScreen({ onComplete }: { onComplete: () => void }
   const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
+    if (typeof window !== "undefined" && sessionStorage.getItem("portfolio_welcomed")) {
+      setIsFinished(true);
+      onComplete();
+      return;
+    }
+
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
           setTimeout(() => {
+            if (typeof window !== "undefined") {
+              sessionStorage.setItem("portfolio_welcomed", "true");
+            }
             setIsFinished(true);
             onComplete();
           }, 350);
           return 100;
         }
-        return prev + 4;
+        return prev + 5;
       });
-    }, 28);
+    }, 22);
 
     return () => clearInterval(timer);
   }, [onComplete]);
 
   const handleSkip = () => {
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("portfolio_welcomed", "true");
+    }
     setIsFinished(true);
     onComplete();
   };

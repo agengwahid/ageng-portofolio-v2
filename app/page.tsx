@@ -11,7 +11,7 @@ import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
-  const [welcomeComplete, setWelcomeComplete] = useState(false);
+  const [welcomeComplete, setWelcomeComplete] = useState(true);
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.search.includes("skip")) {

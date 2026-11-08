@@ -1,12 +1,20 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, Download, Sparkles } from "lucide-react";
 
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null);
+
+  // Ensure scroll position resets to top on every reload so dahan is always visible
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+    }
+  }, []);
 
   // Track scroll progress through the 225vh section (identical to Eka Wahyu)
   const { scrollYProgress } = useScroll({
@@ -15,10 +23,10 @@ export default function Hero() {
   });
 
   // LAYER 5: Dahan di Pinggir (Forest Canopy - hutan.webp)
-  // "kalau di scrol kebuka atau bergerak": scales outward 1x -> 3.2x and fades out smoothly (progress 0 to 0.25)
+  // "kalau di scrol kebuka atau bergerak": scales outward 1x -> 3.4x and fades out smoothly (progress 0 to 0.35)
   // This creates the exact "dahan kebuka" camera-dolly opening effect.
-  const canopyScale = useTransform(scrollYProgress, [0, 0.25], [1, 3.2]);
-  const canopyOpacity = useTransform(scrollYProgress, [0, 0.18, 0.25], [1, 0.65, 0]);
+  const canopyScale = useTransform(scrollYProgress, [0, 0.35], [1, 3.4]);
+  const canopyOpacity = useTransform(scrollYProgress, [0, 0.22, 0.36], [1, 0.85, 0]);
 
   // LAYER 3: Title & Hero Content (High z-index so it stays 100% visible and crisp)
   const titleOpacity = useTransform(scrollYProgress, [0, 0.72, 0.9], [1, 1, 0]);
@@ -89,7 +97,7 @@ export default function Hero() {
             y: titleY,
             transformOrigin: "center center",
           }}
-          className="absolute inset-x-0 top-[8%] sm:top-[9%] md:top-[10%] flex flex-col items-center justify-start z-[18] px-4 pointer-events-none"
+          className="absolute inset-x-0 top-[7%] sm:top-[8%] md:top-[9%] flex flex-col items-center justify-start z-[18] px-4 pointer-events-none"
         >
           <div className="w-full max-w-5xl mx-auto text-center flex flex-col items-center space-y-2">
             {/* Status Beacon */}
@@ -132,7 +140,7 @@ export default function Hero() {
           <div className="absolute inset-x-0 top-full h-[50vh] bg-[#030712] pointer-events-none" />
         </motion.div>
 
-        {/* LAYER 4b: Ageng's Real Transparent Cutout (Standing in center, between Title and Subtitle) */}
+        {/* LAYER 4b: Ageng's Real Transparent Cutout (Standing in center, unobstructed by text) */}
         <motion.div
           style={{
             y: ridgeY,
@@ -148,7 +156,7 @@ export default function Hero() {
             <img
               src="/images/ageng-cutout.png"
               alt="Muhammad Ageng Zayem Wahid - Cumlaude Cutout"
-              className="w-[185px] sm:w-[215px] md:w-[250px] lg:w-[280px] h-auto object-contain object-bottom"
+              className="w-[180px] sm:w-[210px] md:w-[240px] lg:w-[270px] h-auto object-contain object-bottom"
             />
           </div>
 
@@ -159,7 +167,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* LAYER 3b: Subtitle & Action Buttons (Hovering in foreground for 100% legibility & clickability) */}
+        {/* LAYER 3b: Subtitle & Action Buttons (Lowered down so it does not block Ageng's face or chest) */}
         <motion.div
           style={{
             opacity: titleOpacity,
@@ -167,21 +175,21 @@ export default function Hero() {
             y: titleY,
             transformOrigin: "center center",
           }}
-          className="absolute inset-x-0 top-[52%] sm:top-[50%] md:top-[48%] flex flex-col items-center justify-start z-[32] px-4 pointer-events-auto"
+          className="absolute inset-x-0 top-[66%] sm:top-[64%] md:top-[63%] flex flex-col items-center justify-start z-[32] px-4 pointer-events-auto"
         >
           <div className="w-full max-w-2xl mx-auto text-center flex flex-col items-center space-y-2">
-            {/* Subtitle & Bio Hook with subtle glass pill for ultra-sharp reading */}
-            <div className="px-5 py-2.5 rounded-2xl bg-slate-950/70 backdrop-blur-md border border-white/10 shadow-2xl space-y-1">
-              <p className="text-lg sm:text-2xl font-bold text-white tracking-wide drop-shadow-md">
+            {/* Clean Typography without bulky dark card, preserving full view of toga & sash */}
+            <div className="space-y-1 text-center">
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
                 Muhammad Ageng Zayem Wahid
               </p>
-              <p className="text-xs sm:text-sm text-zinc-300 font-mono leading-relaxed drop-shadow">
+              <p className="text-xs sm:text-sm text-zinc-200 font-mono leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] max-w-xl mx-auto">
                 Backend Engineer & Cloud Native Practitioner · Bangkit Academy 2024 Google Cloud Graduate · Sarjana Informatika UAD (IPK 3.91 / 4.00 · 3.5 Tahun)
               </p>
             </div>
 
             {/* Action Buttons (Matches Eka Wahyu #2c67ed styling) */}
-            <div className="pt-1.5 flex flex-wrap items-center justify-center gap-3.5 z-40">
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-3.5 z-40">
               <a
                 href="#Portofolio"
                 className="px-6 py-3 rounded-xl font-semibold bg-[#2c67ed] hover:bg-[#1d4ed8] text-white shadow-lg shadow-[#2c67ed]/35 hover:shadow-[#2c67ed]/55 transition-[transform,background-color] duration-200 hover:scale-[1.03] active:scale-95 flex items-center gap-2 text-sm cursor-pointer"
@@ -204,7 +212,7 @@ export default function Hero() {
         </motion.div>
 
         {/* LAYER 5: Forest Canopy / Dahan di Pinggir (hutan.webp) */}
-        {/* When user scrolls, canopy scales outward 1x -> 3.2x and fades away, opening up like branches parting */}
+        {/* When user scrolls, canopy scales outward 1x -> 3.4x and fades away, opening up like branches parting */}
         <motion.div
           style={{
             scale: canopyScale,
@@ -213,12 +221,10 @@ export default function Hero() {
           }}
           className="absolute inset-0 w-full h-full will-change-transform z-[38] pointer-events-none"
         >
-          <Image
+          <img
             src="/images/hutan.webp"
             alt="Dahan dan Ranting Hutan Frame"
-            fill
-            priority
-            className="w-full h-full object-cover object-bottom"
+            className="w-full h-full object-cover object-bottom pointer-events-none select-none"
           />
         </motion.div>
 
