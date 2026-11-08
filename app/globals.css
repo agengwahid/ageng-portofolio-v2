@@ -2,99 +2,75 @@
 
 @layer base {
   :root {
-    --bg-dark: #07090e;
-    --bg-card: rgba(13, 17, 26, 0.7);
-    --border-card: rgba(255, 255, 255, 0.08);
-    --accent-blue: #0284c7;
-    --accent-hover: #0369a1;
+    --bg-dark: #030712;
+    --bg-light: #fafafa;
+    --accent-blue: #2c67ed;
+    --accent-hover: #1d4ed8;
     --font-display: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   }
 
   html {
     scroll-behavior: smooth;
-    color-scheme: dark;
-    background-color: #07090e;
-    color: #f8fafc;
+    color-scheme: dark light;
+    background-color: #030712;
+    color: #f1f5f9;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   body {
-    background-color: #07090e;
+    background-color: #030712;
     overflow-x: hidden;
   }
 
-  /* Custom Precision Scrollbar */
+  /* Custom Sleek Scrollbar matching Eka Wahyu */
   ::-webkit-scrollbar {
-    width: 7px;
+    width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #07090e;
+    background: #030712;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1e2638;
+    background: #1f293d;
     border-radius: 9999px;
-    border: 2px solid #07090e;
+    border: 2px solid #030712;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #0284c7;
+    background: #2c67ed;
   }
 }
 
-/* Anti-Slop Shimmer Button Keyframes */
-@keyframes shimmer-slide {
-  to {
-    transform: translate(calc(100cqw - 100%), 0);
-  }
-}
-
-@keyframes spin-around {
-  0% {
-    transform: translateZ(0) rotate(0);
-  }
-  15%, 35% {
-    transform: translateZ(0) rotate(90deg);
-  }
-  65%, 85% {
-    transform: translateZ(0) rotate(270deg);
-  }
-  100% {
-    transform: translateZ(0) rotate(360deg);
-  }
-}
-
-.animate-shimmer-slide {
-  animation: shimmer-slide var(--speed) ease-in-out infinite alternate;
-}
-
-.animate-spin-around {
-  animation: spin-around calc(var(--speed) * 2) infinite linear;
-}
-
-/* Clean Technical Glass & Card Shadows */
+/* Glassmorphism & Soft Card Shadows matching Eka Wahyu exact specifications */
 .soft-card-shadow {
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(44, 103, 237, 0.06);
+}
+
+.soft-card-shadow:hover {
+  box-shadow: 0 18px 36px -10px rgba(0, 0, 0, 0.12), 0 8px 20px -3px rgba(44, 103, 237, 0.14);
 }
 
 .soft-tabbar-shadow {
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-.glass-card {
-  background: rgba(13, 18, 28, 0.65);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+/* Scrollbar hiding for carousel */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.glass-card:hover {
-  border-color: rgba(56, 189, 248, 0.4);
-  transform: translateY(-3px);
-  box-shadow: 0 16px 36px -10px rgba(2, 132, 199, 0.2);
+/* Eye Blink Animation */
+@keyframes eye-blink {
+  0%, 90%, 100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
 }
 
-/* Subtle Technical Dot Grid */
-.technical-grid {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-  background-size: 28px 28px;
+.animate-blink {
+  animation: eye-blink 3.2s infinite;
 }

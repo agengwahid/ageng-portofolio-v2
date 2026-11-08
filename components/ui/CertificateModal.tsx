@@ -6,17 +6,20 @@ import { Certificate } from "@/data/certificates";
 import { X, Award, Calendar } from "lucide-react";
 
 interface CertificateModalProps {
-  cert: Certificate | null;
+  certificate?: Certificate | null;
+  cert?: Certificate | null;
   onClose: () => void;
 }
 
-export default function CertificateModal({ cert, onClose }: CertificateModalProps) {
+export default function CertificateModal({ certificate, cert, onClose }: CertificateModalProps) {
+  const activeCert = certificate || cert;
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
 
-    if (cert) {
+    if (activeCert) {
       document.body.style.overflow = "hidden";
       window.addEventListener("keydown", handleKeyDown);
     }
@@ -25,9 +28,9 @@ export default function CertificateModal({ cert, onClose }: CertificateModalProp
       document.body.style.overflow = "unset";
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [cert, onClose]);
+  }, [activeCert, onClose]);
 
-  if (!cert) return null;
+  if (!activeCert) return null;
 
   return (
     <div
@@ -45,25 +48,25 @@ export default function CertificateModal({ cert, onClose }: CertificateModalProp
           type="button"
           onClick={onClose}
           aria-label="Close certificate preview"
-          className="absolute top-5 right-5 p-2 rounded-xl text-zinc-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition"
+          className="absolute top-5 right-5 p-2 rounded-xl text-zinc-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
 
         <div className="space-y-1.5 pr-10">
-          <div className="flex items-center gap-2 text-xs font-mono text-sky-400 font-semibold">
+          <div className="flex items-center gap-2 text-xs font-mono text-[#2c67ed] font-semibold">
             <Award className="w-4 h-4" />
-            <span>{cert.category}</span>
+            <span>{activeCert.category}</span>
           </div>
           <h3 id="cert-title" className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-            {cert.title}
+            {activeCert.title}
           </h3>
           <div className="flex items-center gap-3 text-xs text-zinc-400 font-mono">
-            <span>{cert.issuer}</span>
+            <span>{activeCert.issuer}</span>
             <span>·</span>
             <span className="flex items-center gap-1">
               <Calendar className="w-3.5 h-3.5" />
-              {cert.date}
+              {activeCert.date}
             </span>
           </div>
         </div>
@@ -71,8 +74,8 @@ export default function CertificateModal({ cert, onClose }: CertificateModalProp
         {/* Certificate Image Frame */}
         <div className="relative w-full h-[55vh] sm:h-[65vh] rounded-2xl overflow-hidden bg-zinc-950 border border-white/10">
           <Image
-            src={cert.image}
-            alt={cert.title}
+            src={activeCert.image}
+            alt={activeCert.title}
             fill
             className="object-contain p-2"
             sizes="(max-width: 1024px) 100vw, 900px"
@@ -81,12 +84,12 @@ export default function CertificateModal({ cert, onClose }: CertificateModalProp
 
         <div className="flex items-center justify-between pt-2">
           <div className="text-xs font-mono text-emerald-400">
-            ✓ Dokumen Kredensial Terverifikasi
+            ✓ Dokumen Kredensial Terverifikasi Resmi
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#0284c7] hover:bg-[#0369a1] shadow-md shadow-sky-950/60 transition cursor-pointer"
+            className="px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#2c67ed] hover:bg-[#1d4ed8] shadow-md shadow-[#2c67ed]/30 transition cursor-pointer"
           >
             Tutup Preview
           </button>
