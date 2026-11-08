@@ -20,7 +20,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#030712] text-zinc-100 flex flex-col selection:bg-[#2c67ed]/30 selection:text-white relative overflow-x-hidden font-sans">
+    <div className="min-h-screen bg-[#030712] text-zinc-100 flex flex-col selection:bg-[#2563eb]/30 selection:text-white relative overflow-x-hidden font-sans">
       {/* Intro Welcome Screen */}
       {!welcomeComplete && (
         <WelcomeScreen onComplete={() => setWelcomeComplete(true)} />

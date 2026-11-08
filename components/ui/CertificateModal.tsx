@@ -54,7 +54,7 @@ export default function CertificateModal({ certificate, cert, onClose }: Certifi
         </button>
 
         <div className="space-y-1.5 pr-10">
-          <div className="flex items-center gap-2 text-xs font-mono text-[#2c67ed] font-semibold">
+          <div className="flex items-center gap-2 text-xs font-mono text-[#2563eb] font-semibold">
             <Award className="w-4 h-4" />
             <span>{activeCert.category}</span>
           </div>
@@ -89,7 +89,7 @@ export default function CertificateModal({ certificate, cert, onClose }: Certifi
           <button
             type="button"
             onClick={onClose}
-            className="px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#2c67ed] hover:bg-[#1d4ed8] shadow-md shadow-[#2c67ed]/30 transition cursor-pointer"
+            className="px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#2563eb] hover:bg-[#1d4ed8] shadow-md shadow-[#2563eb]/30 transition cursor-pointer"
           >
             Tutup Preview
           </button>

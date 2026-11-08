@@ -75,7 +75,7 @@ export default function Portofolio() {
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Section Header */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#2c67ed] uppercase tracking-widest font-semibold">
+          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#2563eb] uppercase tracking-widest font-semibold">
             <span>//</span>
             <span>PORTFOLIO & KREDENSIAL</span>
           </div>
@@ -87,7 +87,7 @@ export default function Portofolio() {
           </p>
         </div>
 
-        {/* The Iconic Capsule Tab Bar (Matches Eka Wahyu exact layout & #2c67ed active indicator) */}
+        {/* The Iconic Capsule Tab Bar (Matches Eka Wahyu exact layout & #2563eb active indicator) */}
         <div className="flex justify-center">
           <div className="relative flex rounded-2xl w-full max-w-2xl mx-auto bg-white p-2 soft-tabbar-shadow border border-zinc-200/80">
             {tabs.map((tab) => {
@@ -104,7 +104,7 @@ export default function Portofolio() {
                   {isActive && (
                     <motion.div
                       layoutId="active-portfolio-tab"
-                      className="absolute inset-0 rounded-xl -z-10 bg-[#2c67ed] shadow-[0_6px_16px_rgba(44,103,237,0.32)]"
+                      className="absolute inset-0 rounded-xl -z-10 bg-[#2563eb] shadow-[0_6px_16px_rgba(37,99,235,0.32)]"
                       transition={{ type: "spring", stiffness: 320, damping: 32 }}
                     />
                   )}
@@ -141,7 +141,7 @@ export default function Portofolio() {
                     onClick={() => setProjectCategory(f.key)}
                     className={`px-4 py-2 rounded-xl text-xs font-mono transition-all duration-200 cursor-pointer ${
                       projectCategory === f.key
-                        ? "bg-[#2c67ed] text-white shadow-md shadow-[#2c67ed]/30 border border-[#2c67ed]"
+                        ? "bg-[#2563eb] text-white shadow-md shadow-[#2563eb]/30 border border-[#2563eb]"
                         : "bg-white text-zinc-600 hover:text-zinc-900 border border-zinc-200/80 shadow-xs"
                     }`}
                   >
@@ -157,7 +157,7 @@ export default function Portofolio() {
                   type="button"
                   onClick={() => scroll("left")}
                   aria-label="Previous Projects"
-                  className="hidden lg:flex absolute -left-5 xl:-left-7 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full items-center justify-center text-white bg-[#2c67ed] hover:bg-[#1d4ed8] shadow-lg shadow-[#2c67ed]/40 transition-[transform,background-color] duration-200 hover:scale-110 active:scale-95 cursor-pointer"
+                  className="hidden lg:flex absolute -left-5 xl:-left-7 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full items-center justify-center text-white bg-[#2563eb] hover:bg-[#1d4ed8] shadow-lg shadow-[#2563eb]/40 transition-[transform,background-color] duration-200 hover:scale-110 active:scale-95 cursor-pointer"
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
@@ -167,7 +167,7 @@ export default function Portofolio() {
                   type="button"
                   onClick={() => scroll("right")}
                   aria-label="Next Projects"
-                  className="hidden lg:flex absolute -right-5 xl:-right-7 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full items-center justify-center text-white bg-[#2c67ed] hover:bg-[#1d4ed8] shadow-lg shadow-[#2c67ed]/40 transition-[transform,background-color] duration-200 hover:scale-110 active:scale-95 cursor-pointer"
+                  className="hidden lg:flex absolute -right-5 xl:-right-7 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full items-center justify-center text-white bg-[#2563eb] hover:bg-[#1d4ed8] shadow-lg shadow-[#2563eb]/40 transition-[transform,background-color] duration-200 hover:scale-110 active:scale-95 cursor-pointer"
                 >
                   <ChevronRight className="w-6 h-6" />
                 </button>
@@ -195,7 +195,7 @@ export default function Portofolio() {
 
                           {/* Top Rank Badge */}
                           <div className="absolute top-3 left-3 z-10">
-                            <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider bg-[#2c67ed] text-white shadow-sm">
+                            <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider bg-[#2563eb] text-white shadow-sm">
                               {project.rankBadge}
                             </span>
                           </div>
@@ -215,11 +215,11 @@ export default function Portofolio() {
                         {/* Card Content */}
                         <div className="mt-4 space-y-3">
                           <div className="flex items-center justify-between text-xs font-semibold">
-                            <span className="text-[#2c67ed] font-mono">{project.role}</span>
+                            <span className="text-[#2563eb] font-mono">{project.role}</span>
                             <span className="text-zinc-500 font-mono">{project.period.split("·")[0]}</span>
                           </div>
 
-                          <h3 className="text-lg sm:text-xl font-bold text-zinc-900 group-hover:text-[#2c67ed] transition-colors leading-snug">
+                          <h3 className="text-lg sm:text-xl font-bold text-zinc-900 group-hover:text-[#2563eb] transition-colors leading-snug">
                             {project.title}
                           </h3>
 
@@ -231,7 +231,7 @@ export default function Portofolio() {
                           <div className="space-y-1.5 pt-2 border-t border-zinc-100">
                             {project.highlights.slice(0, 2).map((h, i) => (
                               <div key={i} className="flex items-start gap-2 text-xs text-zinc-600">
-                                <Check className="w-3.5 h-3.5 text-[#2c67ed] shrink-0 mt-0.5" />
+                                <Check className="w-3.5 h-3.5 text-[#2563eb] shrink-0 mt-0.5" />
                                 <span className="line-clamp-1">{h}</span>
                               </div>
                             ))}
@@ -261,7 +261,7 @@ export default function Portofolio() {
                         <button
                           type="button"
                           onClick={() => setSelectedProject(project)}
-                          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl font-semibold text-[#2c67ed] bg-blue-50 hover:bg-blue-100 transition-colors duration-200 text-xs sm:text-sm cursor-pointer"
+                          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl font-semibold text-[#2563eb] bg-blue-50 hover:bg-blue-100 transition-colors duration-200 text-xs sm:text-sm cursor-pointer"
                         >
                           <span>Lihat Detail</span>
                           <ChevronRight className="w-3.5 h-3.5" />
@@ -285,7 +285,7 @@ export default function Portofolio() {
                               target="_blank"
                               rel="noopener noreferrer"
                               aria-label={`Live demo for ${project.title}`}
-                              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-white bg-[#2c67ed] hover:bg-[#1d4ed8] shadow-sm transition-[transform,background-color] duration-200 hover:scale-[1.03] active:scale-95 text-xs sm:text-sm"
+                              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-white bg-[#2563eb] hover:bg-[#1d4ed8] shadow-sm transition-[transform,background-color] duration-200 hover:scale-[1.03] active:scale-95 text-xs sm:text-sm"
                             >
                               <span>Demo</span>
                               <ExternalLink className="w-3.5 h-3.5" />
@@ -324,7 +324,7 @@ export default function Portofolio() {
                     onClick={() => setCertCategory(cat.key)}
                     className={`px-4 py-2 rounded-xl text-xs font-mono transition-all duration-200 cursor-pointer ${
                       certCategory === cat.key
-                        ? "bg-[#2c67ed] text-white shadow-md shadow-[#2c67ed]/30 border border-[#2c67ed]"
+                        ? "bg-[#2563eb] text-white shadow-md shadow-[#2563eb]/30 border border-[#2563eb]"
                         : "bg-white text-zinc-600 hover:text-zinc-900 border border-zinc-200/80 shadow-xs"
                     }`}
                   >
@@ -363,14 +363,14 @@ export default function Portofolio() {
 
                       <div className="mt-4 space-y-2">
                         <div className="flex items-center justify-between text-xs font-mono text-zinc-500">
-                          <span className="text-[#2c67ed] font-semibold">{cert.issuer.split("·")[0]}</span>
+                          <span className="text-[#2563eb] font-semibold">{cert.issuer.split("·")[0]}</span>
                           <span className="flex items-center gap-1">
                             <Calendar className="w-3 h-3" />
                             {cert.date}
                           </span>
                         </div>
 
-                        <h3 className="text-base font-bold text-zinc-900 group-hover:text-[#2c67ed] transition-colors leading-snug">
+                        <h3 className="text-base font-bold text-zinc-900 group-hover:text-[#2563eb] transition-colors leading-snug">
                           {cert.title}
                         </h3>
                       </div>
@@ -383,7 +383,7 @@ export default function Portofolio() {
                       <button
                         type="button"
                         onClick={() => setSelectedCert(cert)}
-                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-[#2c67ed] bg-blue-50 hover:bg-blue-100 transition cursor-pointer"
+                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-[#2563eb] bg-blue-50 hover:bg-blue-100 transition cursor-pointer"
                       >
                         <span>Lihat Sertifikat</span>
                         <ChevronRight className="w-3 h-3" />
@@ -408,7 +408,7 @@ export default function Portofolio() {
               {/* Prestigious Awards & Academic Distinctions */}
               <div className="space-y-4">
                 <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 flex items-center gap-2">
-                  <Award className="w-5 h-5 text-[#2c67ed]" />
+                  <Award className="w-5 h-5 text-[#2563eb]" />
                   <span>Prestasi & Penghargaan Terverifikasi</span>
                 </h3>
 
@@ -425,10 +425,10 @@ export default function Portofolio() {
                   </div>
 
                   <div className="p-5 rounded-2xl bg-white soft-card-shadow border border-zinc-200/80 space-y-2.5">
-                    <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-[#2c67ed] flex items-center justify-center font-bold">
+                    <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-[#2563eb] flex items-center justify-center font-bold">
                       <Cloud className="w-5 h-5" />
                     </div>
-                    <div className="text-xs font-mono text-[#2c67ed] font-semibold">GOOGLE & KEMENDIKBUDRISTEK</div>
+                    <div className="text-xs font-mono text-[#2563eb] font-semibold">GOOGLE & KEMENDIKBUDRISTEK</div>
                     <h4 className="text-base font-bold text-zinc-900">Bangkit Academy 2024 Distinction</h4>
                     <p className="text-xs text-zinc-600 leading-relaxed font-sans">
                       Lulusan jalur Google Cloud Computing dengan predikat Top Graduate dan berhasil merilis capstone project DermaScan ke Google Cloud Run.
@@ -451,7 +451,7 @@ export default function Portofolio() {
               {/* Categorized Tech Stack */}
               <div className="space-y-6">
                 <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 flex items-center gap-2">
-                  <Code className="w-5 h-5 text-[#2c67ed]" />
+                  <Code className="w-5 h-5 text-[#2563eb]" />
                   <span>Teknologi & Infrastruktur yang Dikuasai</span>
                 </h3>
 
@@ -464,7 +464,7 @@ export default function Portofolio() {
                       <div className="flex items-center justify-between border-b border-zinc-100 pb-3">
                         <div>
                           <h4 className="text-base font-bold text-zinc-900 flex items-center gap-2">
-                            <Server className="w-4 h-4 text-[#2c67ed]" />
+                            <Server className="w-4 h-4 text-[#2563eb]" />
                             <span>{category.title}</span>
                           </h4>
                           <p className="text-xs text-zinc-500 mt-0.5 font-sans">
@@ -483,11 +483,11 @@ export default function Portofolio() {
                             <div key={sIdx} className="space-y-1.5">
                               <div className="flex items-center justify-between text-xs font-mono">
                                 <span className="font-bold text-zinc-800">{skill.name}</span>
-                                <span className="text-[#2c67ed] font-semibold">{skill.level} ({pct}%)</span>
+                                <span className="text-[#2563eb] font-semibold">{skill.level} ({pct}%)</span>
                               </div>
                               <div className="w-full h-2 rounded-full bg-zinc-100 overflow-hidden">
                                 <div
-                                  className="h-full bg-[#2c67ed] rounded-full transition-all duration-700"
+                                  className="h-full bg-[#2563eb] rounded-full transition-all duration-700"
                                   style={{ width: `${pct}%` }}
                                 />
                               </div>

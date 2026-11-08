@@ -54,7 +54,7 @@ export default function WelcomeScreen({ onComplete }: { onComplete: () => void }
           onClick={handleSkip}
         >
           {/* Ambient Blue Glow Center */}
-          <div className="absolute w-[360px] sm:w-[500px] h-[360px] sm:h-[500px] rounded-full bg-gradient-to-tr from-[#2c67ed]/25 via-blue-700/15 to-transparent blur-[120px] pointer-events-none" />
+          <div className="absolute w-[360px] sm:w-[500px] h-[360px] sm:h-[500px] rounded-full bg-gradient-to-tr from-[#2563eb]/25 via-blue-700/15 to-transparent blur-[120px] pointer-events-none" />
 
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -64,17 +64,17 @@ export default function WelcomeScreen({ onComplete }: { onComplete: () => void }
           >
             {/* Minimal Monogram / Avatar Pulse */}
             <div className="relative">
-              <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shadow-[0_0_30px_rgba(44,103,237,0.3)]">
+              <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.3)]">
                 <span className="text-xl font-black text-white tracking-widest font-mono">
                   AW
                 </span>
               </div>
-              <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-[#2c67ed] border-2 border-[#030712] animate-pulse" />
+              <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-[#2563eb] border-2 border-[#030712] animate-pulse" />
             </div>
 
             {/* Typography */}
             <div className="space-y-1.5">
-              <p className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#2c67ed] font-semibold">
+              <p className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#2563eb] font-semibold">
                 Welcome to My Portfolio
               </p>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
@@ -89,7 +89,7 @@ export default function WelcomeScreen({ onComplete }: { onComplete: () => void }
             <div className="w-full space-y-2 pt-2">
               <div className="w-full h-[3px] bg-white/10 rounded-full overflow-hidden relative">
                 <div
-                  className="h-full bg-[#2c67ed] shadow-[0_0_15px_rgba(44,103,237,0.8)] transition-all duration-75 ease-out rounded-full"
+                  className="h-full bg-[#2563eb] shadow-[0_0_15px_rgba(37,99,235,0.8)] transition-all duration-75 ease-out rounded-full"
                   style={{ width: `${progress}%` }}
                 />
               </div>

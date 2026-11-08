@@ -43,7 +43,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Section Header */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#2c67ed] uppercase tracking-widest font-semibold">
+          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#2563eb] uppercase tracking-widest font-semibold">
             <span>//</span>
             <span>HUBUNGI SAYA</span>
           </div>
@@ -62,7 +62,7 @@ export default function Contact() {
             {/* Quick Profile Snapshot Card */}
             <div className="bg-white rounded-3xl p-6 sm:p-7 soft-card-shadow border border-zinc-200/80 space-y-5">
               <div className="flex items-center gap-4">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-[#2c67ed]/50 shadow-md">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-[#2563eb]/50 shadow-md">
                   <Image
                     src="/images/ageng-graduation.jpg"
                     alt="Muhammad Ageng Zayem Wahid"
@@ -75,7 +75,7 @@ export default function Contact() {
                   <h3 className="text-base font-bold text-zinc-900">
                     Muhammad Ageng Zayem Wahid
                   </h3>
-                  <p className="text-xs text-[#2c67ed] font-mono font-semibold">
+                  <p className="text-xs text-[#2563eb] font-mono font-semibold">
                     Backend & Cloud Native Practitioner
                   </p>
                   <p className="text-xs text-zinc-500 font-mono mt-0.5">
@@ -100,7 +100,7 @@ export default function Contact() {
                 </span>
                 <div className="p-3.5 rounded-2xl bg-blue-50/80 border border-blue-200/70 flex items-center justify-between gap-3">
                   <div className="flex items-center gap-2.5 truncate">
-                    <Mail className="w-4 h-4 text-[#2c67ed] shrink-0" />
+                    <Mail className="w-4 h-4 text-[#2563eb] shrink-0" />
                     <span className="text-xs sm:text-sm font-mono text-zinc-900 font-bold truncate">
                       agngwahid123@gmail.com
                     </span>
@@ -108,7 +108,7 @@ export default function Contact() {
                   <button
                     type="button"
                     onClick={copyEmail}
-                    className="p-2 rounded-xl bg-white hover:bg-zinc-100 border border-blue-200 text-[#2c67ed] transition shadow-xs cursor-pointer shrink-0"
+                    className="p-2 rounded-xl bg-white hover:bg-zinc-100 border border-blue-200 text-[#2563eb] transition shadow-xs cursor-pointer shrink-0"
                     aria-label="Salin alamat email"
                   >
                     {copied ? (
@@ -127,7 +127,7 @@ export default function Contact() {
 
               {/* Location */}
               <div className="flex items-center gap-2.5 text-xs font-mono text-zinc-600 pt-2 border-t border-zinc-100">
-                <MapPin className="w-4 h-4 text-[#2c67ed]" />
+                <MapPin className="w-4 h-4 text-[#2563eb]" />
                 <span>Yogyakarta / Sleman, Indonesia · UTC+7</span>
               </div>
             </div>
@@ -142,14 +142,14 @@ export default function Contact() {
                 href="https://linkedin.com/in/agengwahid"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-4 rounded-2xl bg-white soft-card-shadow border border-zinc-200/80 hover:border-[#2c67ed]/60 transition group cursor-pointer"
+                className="flex items-center justify-between p-4 rounded-2xl bg-white soft-card-shadow border border-zinc-200/80 hover:border-[#2563eb]/60 transition group cursor-pointer"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-blue-50 text-[#2c67ed] group-hover:scale-105 transition-transform">
+                  <div className="p-2.5 rounded-xl bg-blue-50 text-[#2563eb] group-hover:scale-105 transition-transform">
                     <LinkedinIcon className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-zinc-900 group-hover:text-[#2c67ed] transition-colors leading-snug">
+                    <h4 className="text-sm font-bold text-zinc-900 group-hover:text-[#2563eb] transition-colors leading-snug">
                       LinkedIn
                     </h4>
                     <p className="text-xs text-zinc-500 font-mono">
@@ -157,21 +157,21 @@ export default function Contact() {
                     </p>
                   </div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-zinc-400 group-hover:text-[#2c67ed] transition-colors" />
+                <ExternalLink className="w-4 h-4 text-zinc-400 group-hover:text-[#2563eb] transition-colors" />
               </a>
 
               <a
                 href="https://github.com/agengwahid"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-4 rounded-2xl bg-white soft-card-shadow border border-zinc-200/80 hover:border-[#2c67ed]/60 transition group cursor-pointer"
+                className="flex items-center justify-between p-4 rounded-2xl bg-white soft-card-shadow border border-zinc-200/80 hover:border-[#2563eb]/60 transition group cursor-pointer"
               >
                 <div className="flex items-center gap-3">
                   <div className="p-2.5 rounded-xl bg-zinc-100 text-zinc-900 group-hover:scale-105 transition-transform">
                     <GithubIcon className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-zinc-900 group-hover:text-[#2c67ed] transition-colors leading-snug">
+                    <h4 className="text-sm font-bold text-zinc-900 group-hover:text-[#2563eb] transition-colors leading-snug">
                       GitHub
                     </h4>
                     <p className="text-xs text-zinc-500 font-mono">
@@ -179,21 +179,21 @@ export default function Contact() {
                     </p>
                   </div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-zinc-400 group-hover:text-[#2c67ed] transition-colors" />
+                <ExternalLink className="w-4 h-4 text-zinc-400 group-hover:text-[#2563eb] transition-colors" />
               </a>
 
               <a
                 href="https://instagram.com/agengwahid"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-4 rounded-2xl bg-white soft-card-shadow border border-zinc-200/80 hover:border-[#2c67ed]/60 transition group cursor-pointer"
+                className="flex items-center justify-between p-4 rounded-2xl bg-white soft-card-shadow border border-zinc-200/80 hover:border-[#2563eb]/60 transition group cursor-pointer"
               >
                 <div className="flex items-center gap-3">
                   <div className="p-2.5 rounded-xl bg-pink-50 text-pink-600 group-hover:scale-105 transition-transform">
                     <InstagramIcon className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-zinc-900 group-hover:text-[#2c67ed] transition-colors leading-snug">
+                    <h4 className="text-sm font-bold text-zinc-900 group-hover:text-[#2563eb] transition-colors leading-snug">
                       Instagram
                     </h4>
                     <p className="text-xs text-zinc-500 font-mono">
@@ -201,7 +201,7 @@ export default function Contact() {
                     </p>
                   </div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-zinc-400 group-hover:text-[#2c67ed] transition-colors" />
+                <ExternalLink className="w-4 h-4 text-zinc-400 group-hover:text-[#2563eb] transition-colors" />
               </a>
             </div>
           </div>
@@ -211,7 +211,7 @@ export default function Contact() {
             <div className="flex flex-col bg-white rounded-3xl p-6 py-8 sm:p-10 soft-card-shadow border border-zinc-200/80 space-y-6">
               <div className="pb-4 border-b border-zinc-100">
                 <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 flex items-center gap-2">
-                  <MessageSquare className="w-5 h-5 text-[#2c67ed]" />
+                  <MessageSquare className="w-5 h-5 text-[#2563eb]" />
                   <span>Kirim Pesan Langsung</span>
                 </h3>
                 <p className="text-xs text-zinc-500 font-sans mt-1">
@@ -237,7 +237,7 @@ export default function Contact() {
                     placeholder="Contoh: Budi Santoso"
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                    className="w-full p-3.5 rounded-xl bg-zinc-100/80 border border-transparent text-zinc-900 placeholder-zinc-400 focus:outline-none focus:bg-white focus:border-[#2c67ed] focus:ring-2 focus:ring-[#2c67ed]/20 transition-colors duration-200 text-sm"
+                    className="w-full p-3.5 rounded-xl bg-zinc-100/80 border border-transparent text-zinc-900 placeholder-zinc-400 focus:outline-none focus:bg-white focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 transition-colors duration-200 text-sm"
                   />
                 </div>
 
@@ -251,7 +251,7 @@ export default function Contact() {
                     placeholder="nama@perusahaan.com"
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                    className="w-full p-3.5 rounded-xl bg-zinc-100/80 border border-transparent text-zinc-900 placeholder-zinc-400 focus:outline-none focus:bg-white focus:border-[#2c67ed] focus:ring-2 focus:ring-[#2c67ed]/20 transition-colors duration-200 text-sm"
+                    className="w-full p-3.5 rounded-xl bg-zinc-100/80 border border-transparent text-zinc-900 placeholder-zinc-400 focus:outline-none focus:bg-white focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 transition-colors duration-200 text-sm"
                   />
                 </div>
 
@@ -264,7 +264,7 @@ export default function Contact() {
                     placeholder="Tawaran Posisi Backend Engineer / Kolaborasi Proyek"
                     value={formState.subject}
                     onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                    className="w-full p-3.5 rounded-xl bg-zinc-100/80 border border-transparent text-zinc-900 placeholder-zinc-400 focus:outline-none focus:bg-white focus:border-[#2c67ed] focus:ring-2 focus:ring-[#2c67ed]/20 transition-colors duration-200 text-sm"
+                    className="w-full p-3.5 rounded-xl bg-zinc-100/80 border border-transparent text-zinc-900 placeholder-zinc-400 focus:outline-none focus:bg-white focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 transition-colors duration-200 text-sm"
                   />
                 </div>
 
@@ -278,14 +278,14 @@ export default function Contact() {
                     placeholder="Ceritakan tentang proyek, posisi, atau pertanyaan Anda..."
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                    className="w-full p-4 rounded-xl bg-zinc-100/80 border border-transparent text-zinc-900 placeholder-zinc-400 focus:outline-none focus:bg-white focus:border-[#2c67ed] focus:ring-2 focus:ring-[#2c67ed]/20 transition-colors duration-200 resize-none min-h-[120px] text-sm"
+                    className="w-full p-4 rounded-xl bg-zinc-100/80 border border-transparent text-zinc-900 placeholder-zinc-400 focus:outline-none focus:bg-white focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 transition-colors duration-200 resize-none min-h-[120px] text-sm"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full h-12 bg-[#2c67ed] hover:bg-[#1d4ed8] rounded-xl font-semibold text-white shadow-md shadow-[#2c67ed]/30 transition-[transform,background-color] duration-200 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 disabled:hover:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer text-sm"
+                  className="w-full h-12 bg-[#2563eb] hover:bg-[#1d4ed8] rounded-xl font-semibold text-white shadow-md shadow-[#2563eb]/30 transition-[transform,background-color] duration-200 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 disabled:hover:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer text-sm"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center gap-2">

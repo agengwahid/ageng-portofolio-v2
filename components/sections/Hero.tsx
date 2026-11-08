@@ -54,21 +54,19 @@ export default function Hero() {
       {/* Sticky Viewport (h-screen sticky top-0) */}
       <div className="parallax__visuals sticky top-0 w-full h-screen overflow-hidden select-none">
         
-        {/* LAYER 1: Deep Sky & Stars Background */}
+        {/* LAYER 1: Deep Sky & Moon (Clean sky without duplicate mountain) */}
         <motion.div
           style={{ y: skyY, transformOrigin: "center bottom" }}
           className="absolute inset-0 w-full h-full will-change-transform z-[0]"
         >
-          <Image
-            src="/img10.svg"
-            alt="Sky and Stars"
-            fill
-            priority
-            className="object-cover object-[center_20%]"
+          <img
+            src="/images/sky.webp"
+            alt="Deep Night Sky and Moon"
+            className="w-full h-full object-cover object-[center_15%] select-none pointer-events-none"
           />
         </motion.div>
 
-        {/* LAYER 2: Distant Snowy Mountain Peaks */}
+        {/* LAYER 2: Distant Snowy Mountain Peaks (Single authentic mountain, zero ghosting) */}
         <motion.div
           style={{
             y: mountainY,
@@ -77,17 +75,12 @@ export default function Hero() {
           }}
           className="absolute inset-x-0 bottom-[14%] sm:bottom-[12%] h-[60%] sm:h-[70%] will-change-transform z-[10] pointer-events-none"
         >
-          <Image
+          <img
             src="/img20.svg"
-            alt="Mountain Peaks"
-            fill
-            priority
-            className="object-cover object-[center_50%]"
+            alt="Snowy Mountain Peaks"
+            className="w-full h-full object-cover object-[center_50%] select-none pointer-events-none"
           />
         </motion.div>
-
-        {/* Ambient Blue Accent Glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[550px] md:w-[850px] h-[380px] bg-gradient-to-b from-[#2c67ed]/20 via-blue-600/10 to-transparent rounded-full blur-[120px] pointer-events-none z-[15]" />
 
         {/* LAYER 3a: Giant 3D Display Title (Positioned BEHIND Ageng for cinematic spatial depth) */}
         <motion.div
@@ -101,7 +94,7 @@ export default function Hero() {
         >
           <div className="w-full max-w-5xl mx-auto text-center flex flex-col items-center space-y-2">
             {/* Status Beacon */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950/75 backdrop-blur-md border border-white/20 text-xs font-mono text-zinc-200 shadow-xl shadow-black/40 mb-1">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/15 text-xs font-mono text-zinc-200 shadow-xl shadow-black/40 mb-1">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -140,7 +133,7 @@ export default function Hero() {
           <div className="absolute inset-x-0 top-full h-[50vh] bg-[#030712] pointer-events-none" />
         </motion.div>
 
-        {/* LAYER 4b: Ageng's Real Transparent Cutout (Standing in center, unobstructed by text) */}
+        {/* LAYER 4b: Ageng's Real Transparent Cutout (Using user's uploaded official graduation photo) */}
         <motion.div
           style={{
             y: ridgeY,
@@ -149,14 +142,11 @@ export default function Hero() {
           }}
           className="absolute bottom-0 left-1/2 -translate-x-1/2 z-[25] pointer-events-none flex flex-col items-center"
         >
-          {/* Subtle Backlight Glow for Clean Integration into Mountain Landscape */}
-          <div className="absolute inset-x-6 top-16 bottom-8 bg-[#2c67ed]/25 rounded-full blur-2xl -z-10" />
-
           <div className="relative drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)]">
             <img
-              src="/images/ageng-cutout.png"
-              alt="Muhammad Ageng Zayem Wahid - Cumlaude Cutout"
-              className="w-[180px] sm:w-[210px] md:w-[240px] lg:w-[270px] h-auto object-contain object-bottom"
+              src="/images/ageng-hero.png"
+              alt="Muhammad Ageng Zayem Wahid - Wisuda Cutout"
+              className="w-[170px] sm:w-[200px] md:w-[230px] lg:w-[260px] h-auto object-contain object-bottom"
             />
           </div>
 
@@ -167,7 +157,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* LAYER 3b: Subtitle & Action Buttons (Lowered down so it does not block Ageng's face or chest) */}
+        {/* LAYER 3b: Subtitle & Action Buttons (Lowered down to avoid blocking face & sash, clean anti-slop styling) */}
         <motion.div
           style={{
             opacity: titleOpacity,
@@ -188,11 +178,11 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Action Buttons (Matches Eka Wahyu #2c67ed styling) */}
+            {/* Action Buttons (Clean authentic developer blue, no purple slop) */}
             <div className="pt-2 flex flex-wrap items-center justify-center gap-3.5 z-40">
               <a
                 href="#Portofolio"
-                className="px-6 py-3 rounded-xl font-semibold bg-[#2c67ed] hover:bg-[#1d4ed8] text-white shadow-lg shadow-[#2c67ed]/35 hover:shadow-[#2c67ed]/55 transition-[transform,background-color] duration-200 hover:scale-[1.03] active:scale-95 flex items-center gap-2 text-sm cursor-pointer"
+                className="px-6 py-3 rounded-xl font-semibold bg-[#2563eb] hover:bg-[#1d4ed8] text-white shadow-lg shadow-[#2563eb]/30 hover:shadow-[#2563eb]/50 transition-[transform,background-color] duration-200 hover:scale-[1.03] active:scale-95 flex items-center gap-2 text-sm cursor-pointer"
               >
                 <span>Jelajahi Portofolio</span>
                 <ArrowDown className="w-4 h-4 animate-bounce" />
@@ -204,7 +194,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="px-6 py-3 rounded-xl font-semibold bg-white/10 hover:bg-white/15 border border-white/20 text-white backdrop-blur-md transition-[transform,background-color] duration-200 hover:scale-[1.03] active:scale-95 flex items-center gap-2 text-sm cursor-pointer"
               >
-                <Download className="w-4 h-4 text-[#2c67ed]" />
+                <Download className="w-4 h-4 text-[#38bdf8]" />
                 <span>Unduh Resume (PDF)</span>
               </a>
             </div>

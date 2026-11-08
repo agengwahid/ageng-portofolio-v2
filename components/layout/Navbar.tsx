@@ -77,11 +77,11 @@ export default function Navbar() {
                       : "text-white/80 hover:text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]"
                   }`}
                 >
-                  {/* Active Sliding Pill (Matches Eka Wahyu exact spring stiffness & #2c67ed color) */}
+                  {/* Active Sliding Pill (Matches Eka Wahyu exact spring stiffness & #2563eb color) */}
                   {isActive && (
                     <motion.div
                       layoutId="active-nav-pill"
-                      className="absolute inset-0 rounded-full -z-10 bg-[#2c67ed] shadow-[0_6px_16px_rgba(44,103,237,0.32)]"
+                      className="absolute inset-0 rounded-full -z-10 bg-[#2563eb] shadow-[0_6px_16px_rgba(37,99,235,0.32)]"
                       transition={{ type: "spring", stiffness: 320, damping: 32 }}
                     />
                   )}
@@ -166,7 +166,7 @@ export default function Navbar() {
             href="/cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full text-white/90 hover:text-white bg-white/10 hover:bg-[#2c67ed] border border-white/15 transition-all duration-200"
+            className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full text-white/90 hover:text-white bg-white/10 hover:bg-[#2563eb] border border-white/15 transition-all duration-200"
           >
             <span>CV</span>
             <Download className="w-3.5 h-3.5" />
@@ -194,7 +194,7 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-[#030712]/95 backdrop-blur-xl md:hidden pt-24 px-6 flex flex-col justify-between pb-8"
           >
             <div className="flex flex-col gap-2">
-              <p className="text-[11px] font-mono uppercase tracking-wider text-[#2c67ed] font-semibold px-2 mb-2">
+              <p className="text-[11px] font-mono uppercase tracking-wider text-[#2563eb] font-semibold px-2 mb-2">
                 Navigasi
               </p>
               {NAV_ITEMS.map((item) => {
@@ -209,7 +209,7 @@ export default function Navbar() {
                     }}
                     className={`px-4 py-3 rounded-xl text-base font-medium flex items-center justify-between border transition ${
                       isActive
-                        ? "text-white bg-[#2c67ed] border-[#2c67ed] shadow-lg shadow-[#2c67ed]/30"
+                        ? "text-white bg-[#2563eb] border-[#2563eb] shadow-lg shadow-[#2563eb]/30"
                         : "text-zinc-300 hover:text-white bg-white/5 border-white/10"
                     }`}
                   >
@@ -226,7 +226,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-white bg-[#2c67ed] hover:bg-[#1d4ed8] shadow-lg shadow-[#2c67ed]/30 transition"
+                className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-white bg-[#2563eb] hover:bg-[#1d4ed8] shadow-lg shadow-[#2563eb]/30 transition"
               >
                 <Download className="w-4 h-4" />
                 <span>Unduh CV / Resume (PDF)</span>

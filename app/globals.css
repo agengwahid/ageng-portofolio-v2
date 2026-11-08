@@ -4,7 +4,7 @@
   :root {
     --bg-dark: #030712;
     --bg-light: #fafafa;
-    --accent-blue: #2c67ed;
+    --accent-blue: #2563eb;
     --accent-hover: #1d4ed8;
     --font-display: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   }
@@ -22,7 +22,7 @@
     overflow-x: hidden;
   }
 
-  /* Custom Sleek Scrollbar matching Eka Wahyu */
+  /* Custom Sleek Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -30,22 +30,22 @@
     background: #030712;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1f293d;
+    background: #1e293b;
     border-radius: 9999px;
     border: 2px solid #030712;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #2c67ed;
+    background: #2563eb;
   }
 }
 
-/* Glassmorphism & Soft Card Shadows matching Eka Wahyu exact specifications */
+/* Glassmorphism & Soft Card Shadows */
 .soft-card-shadow {
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(44, 103, 237, 0.06);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(37, 99, 235, 0.06);
 }
 
 .soft-card-shadow:hover {
-  box-shadow: 0 18px 36px -10px rgba(0, 0, 0, 0.12), 0 8px 20px -3px rgba(44, 103, 237, 0.14);
+  box-shadow: 0 18px 36px -10px rgba(0, 0, 0, 0.12), 0 8px 20px -3px rgba(37, 99, 235, 0.12);
 }
 
 .soft-tabbar-shadow {

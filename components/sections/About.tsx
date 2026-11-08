@@ -16,7 +16,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Section Header (Matches Eka Wahyu exact typography scale) */}
         <div className="space-y-4">
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#2c67ed] uppercase tracking-widest font-semibold">
+          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#2563eb] uppercase tracking-widest font-semibold">
             <span>//</span>
             <span>TENTANG SAYA</span>
           </div>
@@ -57,7 +57,7 @@ export default function About() {
                 </div>
 
                 {/* Floating Badge 3: Bangkit Top Graduate */}
-                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-full bg-[#2c67ed]/90 backdrop-blur-md border border-white/20 text-white font-mono text-[11px] font-bold shadow-lg flex items-center gap-1">
+                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-full bg-[#2563eb]/90 backdrop-blur-md border border-white/20 text-white font-mono text-[11px] font-bold shadow-lg flex items-center gap-1">
                   <span>Bangkit 2024</span>
                 </div>
               </div>
@@ -66,7 +66,7 @@ export default function About() {
               <div className="mt-5 space-y-3 px-1">
                 <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
                   <span className="text-white font-bold">Muhammad Ageng Zayem Wahid</span>
-                  <span className="text-[#2c67ed]">S.Kom</span>
+                  <span className="text-[#2563eb]">S.Kom</span>
                 </div>
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-sans">
                   Lulusan Sarjana Informatika Universitas Ahmad Dahlan dengan predikat Cumlaude. Mengkhususkan diri pada rekayasa backend, perancangan RESTful API berskala, deployment container microservices, dan orkestrasi cloud Google Cloud Platform.
@@ -78,7 +78,7 @@ export default function About() {
                   href="/cv.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full px-6 py-3 rounded-xl font-semibold bg-[#2c67ed] hover:bg-[#1d4ed8] transition-[transform,background-color] duration-200 hover:scale-[1.02] active:scale-98 flex items-center justify-center gap-2 text-white text-sm shadow-md shadow-[#2c67ed]/30 cursor-pointer"
+                  className="w-full px-6 py-3 rounded-xl font-semibold bg-[#2563eb] hover:bg-[#1d4ed8] transition-[transform,background-color] duration-200 hover:scale-[1.02] active:scale-98 flex items-center justify-center gap-2 text-white text-sm shadow-md shadow-[#2563eb]/30 cursor-pointer"
                 >
                   <Download className="w-4 h-4" />
                   <span>Unduh Resume Lengkap (PDF)</span>
@@ -103,7 +103,7 @@ export default function About() {
           <div className="lg:col-span-7 space-y-8">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2.5">
-                <Terminal className="w-5 h-5 text-[#2c67ed]" />
+                <Terminal className="w-5 h-5 text-[#2563eb]" />
                 <span>Pengalaman & Jejak Rekam</span>
               </h3>
               <span className="text-xs font-mono text-zinc-400">2021 – Sekarang</span>
@@ -150,19 +150,19 @@ export default function About() {
                             {exp.period}
                           </span>
                         </div>
-                        <p className="text-xs font-mono text-[#2c67ed] font-medium">
+                        <p className="text-xs font-mono text-[#2563eb] font-medium">
                           {exp.organization}
                         </p>
                       </div>
                     </div>
 
                     {/* Timeline Card Body */}
-                    <div className="ml-13.5 p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-[#2c67ed]/50 transition-colors duration-200 space-y-3">
+                    <div className="ml-13.5 p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-[#2563eb]/50 transition-colors duration-200 space-y-3">
                       {/* Bullet Highlights */}
                       <div className="space-y-1.5 pt-1">
                         {exp.description.map((item, dIdx) => (
                           <div key={dIdx} className="flex items-start gap-2 text-xs sm:text-sm text-zinc-300 leading-relaxed font-sans">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-[#2c67ed] shrink-0 mt-1" />
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#2563eb] shrink-0 mt-1" />
                             <span>{item}</span>
                           </div>
                         ))}

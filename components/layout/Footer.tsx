@@ -59,7 +59,7 @@ export default function Footer() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-zinc-300 hover:text-white transition shadow-sm cursor-pointer"
         >
           <span>Kembali ke Atas</span>
-          <ArrowUp className="w-3.5 h-3.5 text-[#2c67ed]" />
+          <ArrowUp className="w-3.5 h-3.5 text-[#2563eb]" />
         </button>
       </div>
     </footer>
