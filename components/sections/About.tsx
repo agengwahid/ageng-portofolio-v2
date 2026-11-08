@@ -1,146 +1,200 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { experiences } from "@/data/experience";
-import { Server, Cloud, Code2, Cpu, CheckCircle } from "lucide-react";
+import { Cloud, GraduationCap, Users, Server, ShieldCheck, Download, ExternalLink, Cpu } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800/60">
-      {/* Section Header */}
-      <div className="mb-14">
-        <div className="inline-flex items-center gap-2 font-mono text-xs text-cyan-400 uppercase tracking-widest mb-2">
-          <span>01</span>
-          <span>{"//"}</span>
-          <span>PROFIL & LATAR BELAKANG TEKNIS</span>
-        </div>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-          Tentang Saya & Rekayasa Sistem
-        </h2>
-        <p className="mt-2 text-slate-400 text-sm sm:text-base max-w-2xl">
-          Fokus pada arsitektur perangkat lunak yang andal, scalable, dan efisien dalam konsumsi sumber daya komputasi.
-        </p>
-      </div>
+    <section
+      id="About"
+      className="relative z-10 w-full bg-[#030712] text-white px-4 sm:px-6 lg:px-12 py-20 md:py-28"
+    >
+      {/* Top Ambient Glow */}
+      <div className="absolute top-0 right-1/4 w-[450px] h-[300px] bg-gradient-to-b from-[#2c67ed]/15 to-transparent rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-        {/* Left Column: Photo & Core Principles */}
-        <div className="lg:col-span-5 space-y-6">
-          <div className="relative rounded-2xl glass-card p-4 sm:p-5 border border-slate-800/90 overflow-hidden group">
-            <div className="relative aspect-4/5 w-full rounded-xl overflow-hidden border border-slate-700/60 shadow-2xl">
-              <Image
-                src="/images/profile.jpg"
-                alt="Muhammad Ageng Zayem Wahid"
-                fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#05070e] via-transparent to-transparent opacity-80" />
-              
-              <div className="absolute bottom-4 left-4 right-4 p-3 rounded-lg bg-slate-900/80 backdrop-blur-md border border-slate-800">
-                <div className="text-sm font-semibold text-white">Muhammad Ageng Zayem Wahid, S.Kom.</div>
-                <div className="text-xs text-cyan-300 font-mono">Backend & Cloud Engineer · UAD Alumnus</div>
-              </div>
-            </div>
-
-            <div className="mt-4 grid grid-cols-2 gap-2 text-center text-xs font-mono">
-              <div className="p-2.5 rounded-lg bg-slate-900/60 border border-slate-800">
-                <span className="text-slate-400 block text-[10px]">LULUS KULIAH</span>
-                <span className="text-white font-bold">3.5 Tahun</span>
-              </div>
-              <div className="p-2.5 rounded-lg bg-slate-900/60 border border-slate-800">
-                <span className="text-slate-400 block text-[10px]">INDEKS PRESTASI</span>
-                <span className="text-cyan-400 font-bold">3.91 / 4.00</span>
-              </div>
-            </div>
+      <div className="max-w-7xl mx-auto space-y-16">
+        {/* Section Heading */}
+        <div className="space-y-3">
+          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#2c67ed] uppercase tracking-widest font-semibold">
+            <span>//</span>
+            <span>TENTANG SAYA & PERJALANAN TEKNIS</span>
           </div>
-
-          {/* Engineering Pillars */}
-          <div className="p-5 rounded-2xl glass-card border border-slate-800/80 space-y-3">
-            <h3 className="text-sm font-mono uppercase tracking-wider text-cyan-400 font-semibold flex items-center gap-2">
-              <Cpu className="w-4 h-4" />
-              Pilar Rekayasa Perangkat Lunak
-            </h3>
-            <ul className="space-y-2 text-xs text-slate-300">
-              <li className="flex items-start gap-2">
-                <CheckCircle className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                <span><strong>API Resilience:</strong> Desain RESTful API dengan struktur payload teruji, rate-limiting, dan penanganan error fail-safe.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                <span><strong>Normalized Schemas:</strong> Normalisasi database relasional MySQL & PostgreSQL demi integritas data dan sub-second index query.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                <span><strong>Cloud-Native Deployment:</strong> Containerization Docker dan deployment auto-scaled di Google Cloud Run.</span>
-              </li>
-            </ul>
-          </div>
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
+            Dedikasi pada Arsitektur{" "}
+            <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent">
+              Backend & Cloud Systems
+            </span>
+          </h2>
+          <p className="text-zinc-400 text-sm sm:text-base max-w-3xl leading-relaxed">
+            Menjembatani logika bisnis dengan infrastruktur komputasi awan yang terukur, aman, dan efisien.
+          </p>
         </div>
 
-        {/* Right Column: Bio Narrative & Experience Timeline */}
-        <div className="lg:col-span-7 space-y-8">
-          {/* Bio Paragraphs */}
-          <div className="p-6 rounded-2xl glass-card border border-slate-800/80 space-y-4 text-slate-300 text-sm leading-relaxed">
-            <h3 className="text-lg font-bold text-white flex items-center gap-2">
-              <Server className="w-5 h-5 text-cyan-400" />
-              Dedikasi pada Keandalan Sistem & Arsitektur Cloud
-            </h3>
-            <p>
-              Saya merupakan Sarjana Informatika dari Universitas Ahmad Dahlan yang menyelesaikan studi fast-track dalam waktu 3.5 tahun dengan predikat kelulusan IPK 3.91. Ketertarikan mendalam saya pada infrastruktur backend dan cloud computing mengantarkan saya terpilih dalam cohort <strong>Bangkit Academy 2024 Google Cloud Track</strong>.
-            </p>
-            <p>
-              Selama menempuh pendidikan, saya dipercaya menjadi <strong>Asisten Dosen Laboratorium Komputer</strong> selama dua tahun untuk mendampingi ratusan mahasiswa pada mata kuliah Pemrograman Dasar (C++), Logika Informatika, dan Sistem Operasi (Linux). Pengalaman ini menajamkan kemampuan komunikasi teknis, problem solving algoritmis, dan budaya review kode yang presisi.
-            </p>
-            <p>
-              Di dunia industri nyata, saya telah merancang dan mengimplementasikan sistem informasi enterprise, seperti sistem manajemen hauling dan logistik pertambangan (SJP), portal akademik SMK Negeri 1 Lebong, serta sistem backend inference Machine Learning pada Google Cloud Platform.
-            </p>
-          </div>
+        {/* 2-Column Bento Grid Layout */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          {/* Left Column: Profile Card & Academic Highlights */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="relative rounded-3xl bg-white/5 border border-white/10 p-5 sm:p-6 backdrop-blur-md soft-card-shadow overflow-hidden group">
+              <div className="relative aspect-4/5 w-full rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 mb-5">
+                <Image
+                  src="/images/profile.jpg"
+                  alt="Muhammad Ageng Zayem Wahid"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80" />
 
-          {/* Timeline of Experience */}
-          <div className="space-y-4">
-            <h3 className="text-base font-bold text-white flex items-center gap-2">
-              <Cloud className="w-5 h-5 text-cyan-400" />
-              Rekam Jejak & Pengalaman
-            </h3>
-
-            <div className="space-y-4">
-              {experiences.map((item, index) => (
-                <div
-                  key={index}
-                  className="p-5 rounded-xl glass-card border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
-                >
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                    <span className="text-xs font-mono text-cyan-400 font-semibold">
-                      {item.period}
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300 border border-slate-700">
-                      {item.type}
-                    </span>
+                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-slate-950/80 backdrop-blur-md border border-white/10">
+                  <div className="text-base font-bold text-white">
+                    Muhammad Ageng Zayem Wahid, S.Kom.
                   </div>
-
-                  <h4 className="text-base font-bold text-white">{item.role}</h4>
-                  <div className="text-xs text-slate-400 font-medium mb-3">
-                    {item.organization} · {item.location}
-                  </div>
-
-                  <ul className="space-y-1.5 text-xs text-slate-300 list-disc list-inside">
-                    {item.description.map((desc, dIdx) => (
-                      <li key={dIdx} className="leading-relaxed">
-                        {desc}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-3 flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/80">
-                    {item.skills.map((skill, sIdx) => (
-                      <span
-                        key={sIdx}
-                        className="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-900 text-cyan-300 border border-slate-800"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                  <div className="text-xs text-[#2c67ed] font-mono mt-0.5">
+                    Backend Engineer & Cloud Practitioner
                   </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Quick Academic & Cohort Stats */}
+              <div className="grid grid-cols-2 gap-2.5 text-center font-mono">
+                <div className="p-3 rounded-xl bg-white/5 border border-white/10">
+                  <span className="text-zinc-400 block text-[10px] uppercase tracking-wider">
+                    LULUS KULIAH
+                  </span>
+                  <span className="text-white font-bold text-sm">3.5 Tahun (Fast-Track)</span>
+                </div>
+                <div className="p-3 rounded-xl bg-white/5 border border-white/10">
+                  <span className="text-zinc-400 block text-[10px] uppercase tracking-wider">
+                    IPK AKHIR
+                  </span>
+                  <span className="text-[#2c67ed] font-bold text-sm">3.91 / 4.00 (Cumlaude)</span>
+                </div>
+              </div>
+
+              {/* Action Button */}
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 w-full px-6 py-3 rounded-xl font-semibold bg-[#2c67ed] hover:bg-[#1d4ed8] transition-[transform,background-color] duration-200 hover:scale-[1.02] flex items-center justify-center gap-2 text-white text-sm shadow-lg shadow-[#2c67ed]/30"
+              >
+                <Download className="w-4 h-4" />
+                <span>Unduh CV / Resume Lengkap</span>
+              </a>
+            </div>
+
+            {/* Core Engineering Pillars */}
+            <div className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md space-y-3">
+              <h3 className="text-xs font-mono uppercase tracking-wider text-[#2c67ed] font-bold flex items-center gap-2">
+                <Cpu className="w-4 h-4" />
+                Prinsip Rekayasa Perangkat Lunak
+              </h3>
+              <ul className="space-y-2.5 text-xs text-zinc-300">
+                <li className="flex items-start gap-2.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2c67ed] mt-1.5 shrink-0" />
+                  <span><strong>High-Throughput REST APIs:</strong> Skalabilitas endpoint backend Node.js & Laravel dengan penanganan error terstandar.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2c67ed] mt-1.5 shrink-0" />
+                  <span><strong>Relational Integrity:</strong> Skema database MySQL & PostgreSQL ternormalisasi untuk efisiensi index query sub-detik.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2c67ed] mt-1.5 shrink-0" />
+                  <span><strong>Cloud Containerization:</strong> Kontainerisasi Docker dan otomatisasi deployment di Google Cloud Run.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Right Column: Narrative & Experience Timeline */}
+          <div className="lg:col-span-7 space-y-8">
+            {/* Bio Narrative Card */}
+            <div className="p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md space-y-4 text-zinc-300 text-sm leading-relaxed">
+              <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                <Server className="w-5 h-5 text-[#2c67ed]" />
+                Latar Belakang & Spesialisasi
+              </h3>
+              <p>
+                Saya adalah Sarjana Informatika dari Universitas Ahmad Dahlan yang menyelesaikan studi dalam tempo 3.5 tahun dengan predikat kelulusan <strong>IPK 3.91</strong>. Berfokus pada perancangan arsitektur perangkat lunak sisi server yang tangguh dan scalable.
+              </p>
+              <p>
+                Dalam program <strong>Bangkit Academy 2024 Google Cloud Cohort</strong>, saya memimpin pengembangan arsitektur cloud backend untuk proyek <em>DermaScan</em>, menghubungkan pipeline inferensi Computer Vision dengan microservices Google Cloud Run dan Cloud Storage.
+              </p>
+              <p>
+                Selain itu, selama dua tahun saya dipercaya menjadi <strong>Asisten Dosen Laboratorium Komputer</strong>, memfasilitasi praktikum ratusan mahasiswa untuk mata kuliah Algoritma & Pemrograman Dasar (C++), Logika Informatika, dan Sistem Operasi (Linux).
+              </p>
+            </div>
+
+            {/* Experience & Education Timeline */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                <Cloud className="w-5 h-5 text-[#2c67ed]" />
+                Pengalaman & Pendidikan
+              </h3>
+
+              <div className="relative pl-6 space-y-6 before:absolute before:left-[17px] before:top-3 before:bottom-3 before:w-[2px] before:bg-white/15">
+                {experiences.map((item, idx) => {
+                  const getIconColor = (type: string) => {
+                    if (type === "Training") return "bg-blue-500/15 border-blue-500/30 text-blue-400";
+                    if (type === "Work & TA") return "bg-purple-500/15 border-purple-500/30 text-purple-400";
+                    return "bg-amber-500/15 border-amber-500/30 text-amber-400";
+                  };
+
+                  const getIconComponent = (type: string) => {
+                    if (type === "Training") return Cloud;
+                    if (type === "Work & TA") return Users;
+                    return GraduationCap;
+                  };
+
+                  const IconComp = getIconComponent(item.type);
+
+                  return (
+                    <div
+                      key={idx}
+                      className="relative p-5 sm:p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#2c67ed]/50 transition-colors duration-200"
+                    >
+                      {/* Timeline Icon Node */}
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className={`w-10 h-10 rounded-xl border p-1 flex items-center justify-center shrink-0 ${getIconColor(item.type)}`}>
+                          <IconComp className="w-5 h-5" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-base font-bold text-white truncate">
+                            {item.role}
+                          </h4>
+                          <p className="text-xs text-zinc-400 truncate">
+                            {item.organization} · {item.location}
+                          </p>
+                        </div>
+                        <span className="shrink-0 text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-zinc-300">
+                          {item.period}
+                        </span>
+                      </div>
+
+                      <ul className="space-y-1.5 text-xs text-zinc-300 list-disc list-inside">
+                        {item.description.map((desc, dIdx) => (
+                          <li key={dIdx} className="leading-relaxed">
+                            {desc}
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="mt-3.5 flex flex-wrap gap-1.5 pt-2 border-t border-white/10">
+                        {item.skills.map((skill, sIdx) => (
+                          <span
+                            key={sIdx}
+                            className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-white/5 border border-white/10 text-zinc-300"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
@@ -148,4 +202,3 @@ export default function About() {
     </section>
   );
 }
-

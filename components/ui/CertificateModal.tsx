@@ -38,27 +38,27 @@ export default function CertificateModal({ cert, onClose }: CertificateModalProp
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-2xl glass-panel border border-slate-700/80 p-5 sm:p-7 shadow-2xl space-y-5"
+        className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#090d1a] border border-white/10 p-5 sm:p-7 shadow-2xl space-y-5"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           type="button"
           onClick={onClose}
           aria-label="Close certificate preview"
-          className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700 border border-slate-700 transition"
+          className="absolute top-5 right-5 p-2 rounded-xl text-zinc-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition"
         >
           <X className="w-5 h-5" />
         </button>
 
         <div className="space-y-1.5 pr-10">
-          <div className="flex items-center gap-2 text-xs font-mono text-cyan-400">
+          <div className="flex items-center gap-2 text-xs font-mono text-[#2c67ed] font-semibold">
             <Award className="w-4 h-4" />
             <span>{cert.category}</span>
           </div>
           <h3 id="cert-title" className="text-xl sm:text-2xl font-bold text-white tracking-tight">
             {cert.title}
           </h3>
-          <div className="flex items-center gap-3 text-xs text-slate-400 font-mono">
+          <div className="flex items-center gap-3 text-xs text-zinc-400 font-mono">
             <span>{cert.issuer}</span>
             <span>·</span>
             <span className="flex items-center gap-1">
@@ -69,7 +69,7 @@ export default function CertificateModal({ cert, onClose }: CertificateModalProp
         </div>
 
         {/* Certificate Image Frame */}
-        <div className="relative w-full h-[55vh] sm:h-[65vh] rounded-xl overflow-hidden bg-slate-950 border border-slate-800">
+        <div className="relative w-full h-[55vh] sm:h-[65vh] rounded-2xl overflow-hidden bg-zinc-950 border border-white/10">
           <Image
             src={cert.image}
             alt={cert.title}
@@ -86,7 +86,7 @@ export default function CertificateModal({ cert, onClose }: CertificateModalProp
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 rounded-xl text-xs font-medium text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition"
+            className="px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#2c67ed] hover:bg-[#1d4ed8] shadow-md shadow-[#2c67ed]/30 transition"
           >
             Tutup Preview
           </button>
@@ -95,4 +95,3 @@ export default function CertificateModal({ cert, onClose }: CertificateModalProp
     </div>
   );
 }
-

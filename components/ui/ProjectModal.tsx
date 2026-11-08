@@ -35,11 +35,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl glass-panel border border-slate-700/80 p-6 sm:p-8 shadow-2xl space-y-6"
+        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#090d1a] border border-white/10 p-6 sm:p-8 shadow-2xl space-y-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -47,7 +47,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           type="button"
           onClick={onClose}
           aria-label="Close project modal"
-          className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700 border border-slate-700 transition"
+          className="absolute top-5 right-5 p-2 rounded-xl text-zinc-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition"
         >
           <X className="w-5 h-5" />
         </button>
@@ -55,10 +55,10 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         {/* Modal Header */}
         <div className="space-y-2 pr-10">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold uppercase tracking-wider bg-cyan-950 text-cyan-300 border border-cyan-500/40">
+            <span className="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold uppercase tracking-wider bg-[#2c67ed]/20 text-[#2c67ed] border border-[#2c67ed]/30">
               {project.rankBadge}
             </span>
-            <span className="text-xs font-mono text-slate-400">
+            <span className="text-xs font-mono text-zinc-400">
               {project.period}
             </span>
           </div>
@@ -66,11 +66,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <h3 id="modal-title" className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
             {project.title}
           </h3>
-          <p className="text-xs font-mono text-cyan-400">{project.role}</p>
+          <p className="text-xs font-mono text-[#2c67ed] font-semibold">{project.role}</p>
         </div>
 
         {/* Image Preview Container */}
-        <div className="relative w-full h-56 sm:h-72 rounded-xl overflow-hidden bg-slate-900 border border-slate-800">
+        <div className="relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden bg-zinc-950 border border-white/10">
           <Image
             src={project.image}
             alt={project.title}
@@ -81,26 +81,26 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         </div>
 
         {/* Full Overview */}
-        <div className="space-y-3">
-          <h4 className="text-sm font-mono uppercase tracking-wider text-cyan-400 font-semibold">
+        <div className="space-y-2.5">
+          <h4 className="text-xs font-mono uppercase tracking-wider text-[#2c67ed] font-bold">
             Deskripsi & Arsitektur Sistem
           </h4>
-          <p className="text-sm text-slate-300 leading-relaxed">
+          <p className="text-sm text-zinc-300 leading-relaxed">
             {project.fullOverview}
           </p>
         </div>
 
         {/* Metrics if available */}
         {project.metrics && project.metrics.length > 0 && (
-          <div className="space-y-3">
-            <h4 className="text-sm font-mono uppercase tracking-wider text-cyan-400 font-semibold flex items-center gap-1.5">
+          <div className="space-y-2.5">
+            <h4 className="text-xs font-mono uppercase tracking-wider text-[#2c67ed] font-bold flex items-center gap-1.5">
               <BarChart2 className="w-4 h-4" />
               Metrik Performa & Hasil
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {project.metrics.map((m, idx) => (
-                <div key={idx} className="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                  <div className="text-[11px] text-slate-400 font-mono">{m.label}</div>
+                <div key={idx} className="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                  <div className="text-[11px] text-zinc-400 font-mono">{m.label}</div>
                   <div className="text-base sm:text-lg font-bold text-white mt-0.5">{m.value}</div>
                 </div>
               ))}
@@ -109,14 +109,14 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         )}
 
         {/* Key Architectural Highlights */}
-        <div className="space-y-3">
-          <h4 className="text-sm font-mono uppercase tracking-wider text-cyan-400 font-semibold">
+        <div className="space-y-2.5">
+          <h4 className="text-xs font-mono uppercase tracking-wider text-[#2c67ed] font-bold">
             Pencapaian Teknis Utama
           </h4>
-          <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
+          <ul className="space-y-2 text-xs sm:text-sm text-zinc-300">
             {project.highlights.map((h, idx) => (
               <li key={idx} className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-[#2c67ed] shrink-0 mt-0.5" />
                 <span>{h}</span>
               </li>
             ))}
@@ -124,15 +124,15 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         </div>
 
         {/* Tech Stack Pills */}
-        <div className="space-y-3">
-          <h4 className="text-sm font-mono uppercase tracking-wider text-cyan-400 font-semibold">
+        <div className="space-y-2.5">
+          <h4 className="text-xs font-mono uppercase tracking-wider text-[#2c67ed] font-bold">
             Teknologi yang Digunakan
           </h4>
           <div className="flex flex-wrap gap-2">
             {project.tech.map((t, idx) => (
               <span
                 key={idx}
-                className="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-900 text-cyan-300 border border-slate-800"
+                className="px-2.5 py-1 rounded-lg text-xs font-mono bg-white/5 text-zinc-200 border border-white/10"
               >
                 {t}
               </span>
@@ -141,14 +141,14 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         </div>
 
         {/* Modal Footer Links */}
-        <div className="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3">
+        <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-white/10 hover:bg-white/15 border border-white/15 transition"
               >
                 <GithubIcon className="w-4 h-4" />
                 <span>Source Code</span>
@@ -159,7 +159,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-cyan-600 hover:bg-cyan-500 transition shadow-md shadow-cyan-950/40"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#2c67ed] hover:bg-[#1d4ed8] transition shadow-md shadow-[#2c67ed]/30"
               >
                 <ExternalLink className="w-4 h-4" />
                 <span>Live Demo</span>
@@ -170,7 +170,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 rounded-xl text-xs font-medium text-slate-400 hover:text-white transition"
+            className="px-4 py-2 rounded-xl text-xs font-medium text-zinc-400 hover:text-white transition"
           >
             Tutup
           </button>
