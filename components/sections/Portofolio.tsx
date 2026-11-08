@@ -104,11 +104,11 @@ export default function Portofolio() {
                   {isActive && (
                     <motion.div
                       layoutId="active-portfolio-tab"
-                      className="absolute inset-0 rounded-xl -z-10 bg-[#2563eb] shadow-[0_6px_16px_rgba(37,99,235,0.32)]"
+                      className="absolute inset-0 rounded-xl bg-[#2563eb] shadow-[0_6px_16px_rgba(37,99,235,0.32)] z-0"
                       transition={{ type: "spring", stiffness: 320, damping: 32 }}
                     />
                   )}
-                  <span>{tab.label}</span>
+                  <span className="relative z-10">{tab.label}</span>
                 </button>
               );
             })}

@@ -12,7 +12,9 @@ export default function Hero() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.history.scrollRestoration = "manual";
-      window.scrollTo(0, 0);
+      if (!window.location.hash || window.location.hash === "#Home") {
+        window.scrollTo(0, 0);
+      }
     }
   }, []);
 
@@ -23,10 +25,13 @@ export default function Hero() {
   });
 
   // LAYER 5: Dahan di Pinggir (Forest Canopy - hutan.webp)
-  // "kalau di scrol kebuka atau bergerak": scales outward 1x -> 3.4x and fades out smoothly (progress 0 to 0.35)
-  // This creates the exact "dahan kebuka" camera-dolly opening effect.
-  const canopyScale = useTransform(scrollYProgress, [0, 0.35], [1, 3.4]);
-  const canopyOpacity = useTransform(scrollYProgress, [0, 0.22, 0.36], [1, 0.85, 0]);
+  // "kalau di scrol kebuka atau bergerak seperti tanahnya":
+  // Branches open outward (scale 1x -> 2.3x) framing the screen continuously throughout Home,
+  // moving in tandem with parallax, and only fading out at the transition into About (0.75 -> 0.95).
+  // This guarantees the branches NEVER vanish prematurely on reload or scroll!
+  const canopyScale = useTransform(scrollYProgress, [0, 0.75], [1, 2.3]);
+  const canopyY = useTransform(scrollYProgress, [0, 0.75], ["0%", "-14%"]);
+  const canopyOpacity = useTransform(scrollYProgress, [0, 0.75, 0.95], [1, 1, 0]);
 
   // LAYER 3: Title & Hero Content (High z-index so it stays 100% visible and crisp)
   const titleOpacity = useTransform(scrollYProgress, [0, 0.72, 0.9], [1, 1, 0]);
@@ -202,18 +207,21 @@ export default function Hero() {
         </motion.div>
 
         {/* LAYER 5: Forest Canopy / Dahan di Pinggir (hutan.webp) */}
-        {/* When user scrolls, canopy scales outward 1x -> 3.4x and fades away, opening up like branches parting */}
+        {/* Opens outward like parting branches framing the view, persistent across Home */}
         <motion.div
           style={{
             scale: canopyScale,
+            y: canopyY,
             opacity: canopyOpacity,
-            transformOrigin: "center 45%",
+            transformOrigin: "center 40%",
           }}
           className="absolute inset-0 w-full h-full will-change-transform z-[38] pointer-events-none"
         >
           <img
             src="/images/hutan.webp"
             alt="Dahan dan Ranting Hutan Frame"
+            loading="eager"
+            decoding="sync"
             className="w-full h-full object-cover object-bottom pointer-events-none select-none"
           />
         </motion.div>

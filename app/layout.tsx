@@ -61,6 +61,11 @@ export default function RootLayout({
       lang="id"
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
+      <head>
+        <link rel="preload" href="/images/hutan.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/images/sky.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/images/ageng-hero.png" as="image" type="image/png" />
+      </head>
       <body className="min-h-full flex flex-col font-sans bg-[#05070e] text-slate-100">
         {children}
       </body>
