@@ -38,7 +38,7 @@ export default function CertificateModal({ cert, onClose }: CertificateModalProp
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#090d1a] border border-white/10 p-5 sm:p-7 shadow-2xl space-y-5"
+        className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#090d16] border border-white/10 p-5 sm:p-7 shadow-2xl space-y-5"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -51,7 +51,7 @@ export default function CertificateModal({ cert, onClose }: CertificateModalProp
         </button>
 
         <div className="space-y-1.5 pr-10">
-          <div className="flex items-center gap-2 text-xs font-mono text-[#2c67ed] font-semibold">
+          <div className="flex items-center gap-2 text-xs font-mono text-sky-400 font-semibold">
             <Award className="w-4 h-4" />
             <span>{cert.category}</span>
           </div>
@@ -86,7 +86,7 @@ export default function CertificateModal({ cert, onClose }: CertificateModalProp
           <button
             type="button"
             onClick={onClose}
-            className="px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#2c67ed] hover:bg-[#1d4ed8] shadow-md shadow-[#2c67ed]/30 transition"
+            className="px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#0284c7] hover:bg-[#0369a1] shadow-md shadow-sky-950/60 transition cursor-pointer"
           >
             Tutup Preview
           </button>

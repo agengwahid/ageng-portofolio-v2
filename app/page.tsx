@@ -14,13 +14,13 @@ export default function Home() {
   const [welcomeComplete, setWelcomeComplete] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#030712] text-zinc-100 flex flex-col selection:bg-[#2c67ed]/40 selection:text-white relative overflow-x-hidden font-sans">
-      {/* Intro Welcome Screen (Matches Eka Wahyu) */}
+    <div className="min-h-screen bg-[#07090e] text-zinc-100 flex flex-col selection:bg-sky-500/30 selection:text-white relative overflow-x-hidden font-sans">
+      {/* Intro Welcome Screen */}
       {!welcomeComplete && (
         <WelcomeScreen onComplete={() => setWelcomeComplete(true)} />
       )}
 
-      {/* GPU Accelerated Ambient Topography Glow */}
+      {/* GPU Accelerated Ambient Dot Grid Background */}
       <AmbientBackground />
 
       {/* Floating Capsule Navbar with Active Pill & Animated Mascot */}

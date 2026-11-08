@@ -2,62 +2,85 @@
 
 @layer base {
   :root {
-    --bg-dark: #030712;
-    --bg-card: rgba(15, 23, 42, 0.65);
-    --border-card: rgba(255, 255, 255, 0.1);
-    --accent-blue: #2c67ed;
-    --accent-hover: #1d4ed8;
+    --bg-dark: #07090e;
+    --bg-card: rgba(13, 17, 26, 0.7);
+    --border-card: rgba(255, 255, 255, 0.08);
+    --accent-blue: #0284c7;
+    --accent-hover: #0369a1;
     --font-display: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   }
 
   html {
     scroll-behavior: smooth;
     color-scheme: dark;
-    background-color: #030712;
-    color: #f1f5f9;
+    background-color: #07090e;
+    color: #f8fafc;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   body {
-    background-color: #030712;
+    background-color: #07090e;
     overflow-x: hidden;
   }
 
-  /* Custom Sleek Scrollbar matching Eka Wahyu */
+  /* Custom Precision Scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 7px;
   }
   ::-webkit-scrollbar-track {
-    background: #030712;
+    background: #07090e;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1f293d;
+    background: #1e2638;
     border-radius: 9999px;
-    border: 2px solid #030712;
+    border: 2px solid #07090e;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #2c67ed;
+    background: #0284c7;
   }
 }
 
-/* Glassmorphism & Soft Card Shadows matching Eka Wahyu */
+/* Anti-Slop Shimmer Button Keyframes */
+@keyframes shimmer-slide {
+  to {
+    transform: translate(calc(100cqw - 100%), 0);
+  }
+}
+
+@keyframes spin-around {
+  0% {
+    transform: translateZ(0) rotate(0);
+  }
+  15%, 35% {
+    transform: translateZ(0) rotate(90deg);
+  }
+  65%, 85% {
+    transform: translateZ(0) rotate(270deg);
+  }
+  100% {
+    transform: translateZ(0) rotate(360deg);
+  }
+}
+
+.animate-shimmer-slide {
+  animation: shimmer-slide var(--speed) ease-in-out infinite alternate;
+}
+
+.animate-spin-around {
+  animation: spin-around calc(var(--speed) * 2) infinite linear;
+}
+
+/* Clean Technical Glass & Card Shadows */
 .soft-card-shadow {
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(44, 103, 237, 0.15);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(255, 255, 255, 0.05);
 }
 
 .soft-tabbar-shadow {
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-}
-
-.glass-panel {
-  background: rgba(11, 15, 26, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .glass-card {
-  background: rgba(15, 23, 42, 0.65);
+  background: rgba(13, 18, 28, 0.65);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -65,32 +88,13 @@
 }
 
 .glass-card:hover {
-  border-color: rgba(44, 103, 237, 0.5);
+  border-color: rgba(56, 189, 248, 0.4);
   transform: translateY(-3px);
-  box-shadow: 0 16px 36px -10px rgba(44, 103, 237, 0.22);
+  box-shadow: 0 16px 36px -10px rgba(2, 132, 199, 0.2);
 }
 
-/* Topographic Contour Background */
-.topography-bg {
-  background-image: 
-    radial-gradient(ellipse at 50% 0%, rgba(44, 103, 237, 0.18) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 50%, rgba(30, 64, 175, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 20% 80%, rgba(44, 103, 237, 0.1) 0%, transparent 50%);
-}
-
-/* Subtle Animated Ambient Glow */
-@keyframes ambientDrift {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.3;
-  }
-  50% {
-    transform: translate(25px, -20px) scale(1.12);
-    opacity: 0.5;
-  }
-}
-
-.animate-ambient-glow {
-  animation: ambientDrift 16s ease-in-out infinite alternate;
-  will-change: transform, opacity;
+/* Subtle Technical Dot Grid */
+.technical-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
 }

@@ -2,136 +2,171 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowDown, Download, CheckCircle2, Terminal } from "lucide-react";
+import BlurFade from "@/components/magicui/blur-fade";
+import { ShimmerButton } from "@/components/magicui/shimmer-button";
+import { ArrowDown, Download, CheckCircle2, GraduationCap, Cloud, MapPin, Award } from "lucide-react";
 
 export default function Hero() {
   return (
     <section
       id="Home"
-      className="relative w-full min-h-[110vh] lg:min-h-[120vh] bg-[#030712] overflow-hidden flex flex-col justify-between pt-24 sm:pt-28"
+      className="relative w-full min-h-[92vh] lg:min-h-screen bg-[#07090e] overflow-hidden flex items-center justify-center pt-28 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-12"
     >
-      {/* LAYER 1: Deep Sky & Stars Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      {/* Precision Starry & Mountain SVG Backdrop (Framed cleanly without blocking text) */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
         <Image
           src="/img10.svg"
-          alt="Sky and Stars"
+          alt="Night Sky Background"
           fill
           priority
-          className="object-cover object-[center_20%]"
+          className="object-cover object-top"
         />
       </div>
 
-      {/* LAYER 2: Distant Mountains */}
-      <div className="absolute inset-x-0 bottom-[18%] sm:bottom-[15%] h-[55%] sm:h-[65%] z-10 pointer-events-none opacity-85">
-        <Image
-          src="/img20.svg"
-          alt="Mountain Peaks"
-          fill
-          priority
-          className="object-cover object-[center_50%]"
-        />
+      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#07090e] via-[#07090e]/80 to-transparent pointer-events-none z-10" />
+
+      {/* Main 2-Column Responsive Layout */}
+      <div className="relative z-20 max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        {/* Left Column: Personal Narrative, Headline & CTAs */}
+        <div className="lg:col-span-7 flex flex-col items-start space-y-6 text-left">
+          {/* Status Badge */}
+          <BlurFade delay={0.05}>
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 text-xs font-mono shadow-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="tracking-wide">OPEN TO BACKEND & CLOUD ROLES</span>
+            </div>
+          </BlurFade>
+
+          {/* Headline (Crisp, High-Precision Typography) */}
+          <BlurFade delay={0.12}>
+            <div className="space-y-2">
+              <p className="text-xs sm:text-sm font-mono text-sky-400 uppercase tracking-widest font-semibold">
+                Software Engineer · Cloud Native Practitioner
+              </p>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white tracking-tight leading-[1.08]">
+                Architecting{" "}
+                <span className="bg-gradient-to-r from-sky-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent">
+                  Resilient Backends
+                </span>{" "}
+                & Scalable Cloud Systems.
+              </h1>
+            </div>
+          </BlurFade>
+
+          {/* Description */}
+          <BlurFade delay={0.2}>
+            <p className="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-2xl font-sans">
+              Halo, saya <span className="text-white font-semibold">Muhammad Ageng Zayem Wahid, S.Kom.</span> — 
+              Sarjana Informatika Universitas Ahmad Dahlan (<span className="text-sky-300 font-medium">IPK 3.91 / 4.00 · Fast-Track 3.5 Tahun Cumlaude</span>) 
+              dan Alumnus <span className="text-sky-300 font-medium">Bangkit Academy 2024 Google Cloud Cohort</span>. 
+              Berfokus pada perancangan REST API berkinerja tinggi, database relasional ternormalisasi, dan deployment kontainer Docker pada Google Cloud Platform.
+            </p>
+          </BlurFade>
+
+          {/* Action Buttons (Magic UI ShimmerButton + Glass Button) */}
+          <BlurFade delay={0.28}>
+            <div className="flex flex-wrap items-center gap-3.5 pt-2">
+              <a href="#Portofolio">
+                <ShimmerButton
+                  shimmerColor="#38bdf8"
+                  background="rgba(2, 132, 199, 0.9)"
+                  className="shadow-lg shadow-sky-950/50 text-sm py-3 px-6"
+                >
+                  <span className="flex items-center gap-2">
+                    <span>Jelajahi Portofolio</span>
+                    <ArrowDown className="w-4 h-4" />
+                  </span>
+                </ShimmerButton>
+              </a>
+
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-[14px] text-sm font-semibold text-zinc-200 bg-white/5 hover:bg-white/10 hover:text-white border border-white/10 hover:border-white/20 transition-all duration-200 cursor-pointer min-h-[46px]"
+              >
+                <Download className="w-4 h-4 text-sky-400" />
+                <span>Unduh Resume (PDF)</span>
+              </a>
+            </div>
+          </BlurFade>
+
+          {/* Quick Verified Credentials Row */}
+          <BlurFade delay={0.35}>
+            <div className="pt-2 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-mono text-zinc-400">
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>Bangkit 2024 Google Cloud</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>IPK 3.91 / 4.00 Cumlaude</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>2 Tahun Asisten Lab IF</span>
+              </div>
+            </div>
+          </BlurFade>
+        </div>
+
+        {/* Right Column: Ageng's Real Graduation Portrait in Architectural Card Frame */}
+        <div className="lg:col-span-5 relative flex justify-center">
+          <BlurFade delay={0.18}>
+            <div className="relative w-full max-w-sm sm:max-w-md rounded-3xl bg-white/[0.03] border border-white/10 p-3 sm:p-4 backdrop-blur-xl soft-card-shadow group">
+              {/* Image Container with Real Graduation Photo */}
+              <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden bg-zinc-950 border border-white/10">
+                <Image
+                  src="/images/ageng-graduation.jpg"
+                  alt="Muhammad Ageng Zayem Wahid, S.Kom. - Wisuda Cumlaude"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 420px"
+                  className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
+                />
+
+                {/* Subtle Bottom Vignette */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#07090e] via-transparent to-transparent opacity-80" />
+
+                {/* Floating Badge 1: Academic Honor */}
+                <div className="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-white/15 text-xs font-mono text-white shadow-lg">
+                  <GraduationCap className="w-3.5 h-3.5 text-amber-400" />
+                  <span className="font-bold">IPK 3.91 · Cumlaude</span>
+                </div>
+
+                {/* Floating Badge 2: Google Cloud */}
+                <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-white/15 text-[11px] font-mono text-sky-300 shadow-lg">
+                  <Cloud className="w-3.5 h-3.5 text-sky-400" />
+                  <span>Bangkit 2024</span>
+                </div>
+
+                {/* Bottom Profile Caption */}
+                <div className="absolute bottom-3 left-3 right-3 p-3.5 rounded-2xl bg-slate-950/90 backdrop-blur-md border border-white/10 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      Ready for Impact
+                    </span>
+                    <span className="text-[11px] font-mono text-zinc-400 flex items-center gap-1">
+                      <MapPin className="w-3 h-3 text-sky-400" />
+                      Yogyakarta, ID
+                    </span>
+                  </div>
+                  <p className="text-sm font-bold text-white tracking-tight">
+                    Muhammad Ageng Zayem Wahid, S.Kom.
+                  </p>
+                  <p className="text-xs text-zinc-400 font-mono">
+                    Backend Architecture & Cloud Deployments
+                  </p>
+                </div>
+              </div>
+            </div>
+          </BlurFade>
+        </div>
       </div>
-
-      {/* Ambient Glow Accent */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[550px] md:w-[750px] h-[350px] bg-gradient-to-b from-[#2c67ed]/25 via-blue-600/10 to-transparent rounded-full blur-[110px] pointer-events-none z-10" />
-
-      {/* LAYER 3: Central Cinematic Typography */}
-      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center justify-center flex-1 my-auto pt-10 sm:pt-16 pb-20">
-        {/* Status Beacon */}
-        <motion.div
-          initial={{ opacity: 0, y: -15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono text-zinc-200 mb-6 shadow-lg shadow-black/20"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span className="tracking-wide">OPEN TO BACKEND & CLOUD OPPORTUNITIES</span>
-        </motion.div>
-
-        {/* Display Title (Identical bold layout to Eka Wahyu) */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-          className="space-y-1 sm:space-y-2 select-none"
-        >
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tight text-white uppercase leading-[1.05] drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)]">
-            <span className="block">WELCOME TO MY</span>
-            <span className="block bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
-              PORTOFOLIO
-            </span>
-          </h1>
-        </motion.div>
-
-        {/* Subtitle & Bio Hook */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="mt-6 max-w-2xl space-y-2"
-        >
-          <p className="text-base sm:text-xl font-bold text-white tracking-wide">
-            Muhammad Ageng Zayem Wahid
-          </p>
-          <p className="text-xs sm:text-sm text-zinc-300 font-mono leading-relaxed">
-            Backend Engineer & Cloud Native Practitioner · Bangkit Academy 2024 Google Cloud Graduate · Sarjana Informatika UAD (IPK 3.91 / 4.00 · 3.5 Tahun)
-          </p>
-        </motion.div>
-
-        {/* Action Buttons (Matches Eka Wahyu #2c67ed styling & hover effect) */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-3.5"
-        >
-          <a
-            href="#Portofolio"
-            className="px-6 py-3 rounded-xl font-semibold bg-[#2c67ed] hover:bg-[#1d4ed8] text-white shadow-lg shadow-[#2c67ed]/30 hover:shadow-[#2c67ed]/50 transition-[transform,background-color] duration-200 hover:scale-[1.03] active:scale-95 flex items-center gap-2 text-sm"
-          >
-            <span>Jelajahi Portofolio</span>
-            <ArrowDown className="w-4 h-4 animate-bounce" />
-          </a>
-
-          <a
-            href="/cv.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 rounded-xl font-semibold bg-white/10 hover:bg-white/15 border border-white/20 text-white backdrop-blur-md transition-[transform,background-color] duration-200 hover:scale-[1.03] active:scale-95 flex items-center gap-2 text-sm"
-          >
-            <Download className="w-4 h-4 text-[#2c67ed]" />
-            <span>Unduh Resume (PDF)</span>
-          </a>
-        </motion.div>
-      </div>
-
-      {/* LAYER 4: Ground Silhouette Ridge */}
-      <div className="absolute inset-x-0 bottom-0 h-[38%] sm:h-[46%] z-30 pointer-events-none opacity-90">
-        <Image
-          src="/img30.svg"
-          alt="Ground Ridge Silhouette"
-          fill
-          priority
-          className="object-cover object-[center_35%]"
-        />
-      </div>
-
-      {/* LAYER 5: Forest Canopy Frame */}
-      <div className="absolute inset-0 z-40 pointer-events-none">
-        <Image
-          src="/hutan.svg"
-          alt="Forest Canopy Frame"
-          fill
-          priority
-          className="w-full h-full object-cover object-bottom"
-        />
-      </div>
-
-      {/* LAYER 6: Bottom Fade to #030712 */}
-      <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#030712] via-[#030712]/90 to-transparent pointer-events-none z-50" />
     </section>
   );
 }
