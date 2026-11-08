@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import WelcomeScreen from "@/components/layout/WelcomeScreen";
 import Navbar from "@/components/layout/Navbar";
 import AmbientBackground from "@/components/layout/AmbientBackground";
@@ -12,6 +12,12 @@ import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   const [welcomeComplete, setWelcomeComplete] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.search.includes("skip")) {
+      setWelcomeComplete(true);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#030712] text-zinc-100 flex flex-col selection:bg-[#2c67ed]/30 selection:text-white relative overflow-x-hidden font-sans">
