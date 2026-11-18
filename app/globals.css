@@ -19,7 +19,7 @@
 
   body {
     background-color: #030712;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   /* Custom Sleek Scrollbar */
