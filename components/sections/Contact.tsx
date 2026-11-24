@@ -4,8 +4,10 @@ import { useState } from "react";
 import Image from "next/image";
 import { Mail, MapPin, Send, Copy, Check, ExternalLink, MessageSquare } from "lucide-react";
 import { LinkedinIcon, GithubIcon, InstagramIcon } from "@/components/ui/BrandIcons";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export default function Contact() {
+  const { lang } = useLanguage();
   const [copied, setCopied] = useState(false);
   const [formState, setFormState] = useState({
     name: "",
@@ -48,13 +50,15 @@ export default function Contact() {
         {/* Section Header */}
         <div className="text-center space-y-3">
           <p className="text-sm font-medium text-zinc-500">
-            Hubungi Saya
+            {lang === "en" ? "Get in Touch" : "Hubungi Saya"}
           </p>
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-950">
-            Kolaborasi &amp; Kesempatan Kerja
+            {lang === "en" ? "Collaboration & Opportunities" : "Kolaborasi & Kesempatan Kerja"}
           </h2>
           <p className="text-zinc-600 text-sm sm:text-base max-w-2xl mx-auto">
-            Terbuka untuk peluang karir Full-Time Backend / Cloud Engineer, proyek rekayasa sistem, atau diskusi teknis.
+            {lang === "en"
+              ? "Open to full-time Backend / Cloud Engineer roles, system engineering collaborations, or technical discussions."
+              : "Terbuka untuk peluang karir Full-Time Backend / Cloud Engineer, proyek rekayasa sistem, atau diskusi teknis."}
           </p>
         </div>
 
@@ -90,13 +94,17 @@ export default function Contact() {
               {/* Quiet Availability Line */}
               <div className="p-3 rounded-xl bg-zinc-50 border border-zinc-200/80 flex items-center gap-2.5 text-xs text-zinc-700 font-medium">
                 <span className="h-2 w-2 rounded-full bg-emerald-600 shrink-0" />
-                <span>Tersedia untuk peluang Full-Time &amp; Remote</span>
+                <span>
+                  {lang === "en"
+                    ? "Available for Full-Time & Remote Opportunities"
+                    : "Tersedia untuk peluang Full-Time & Remote"}
+                </span>
               </div>
 
               {/* Email Copy Card */}
               <div className="space-y-2">
                 <span className="text-xs font-medium text-zinc-500">
-                  Email Langsung
+                  {lang === "en" ? "Direct Email" : "Email Langsung"}
                 </span>
                 <div className="p-3.5 rounded-xl bg-zinc-100/80 border border-zinc-200/80 flex items-center justify-between gap-3">
                   <div className="flex items-center gap-2.5 truncate">
@@ -120,7 +128,7 @@ export default function Contact() {
                 </div>
                 {copied && (
                   <p className="text-xs text-zinc-600 text-right pr-1">
-                    Alamat email disalin.
+                    {lang === "en" ? "Email address copied." : "Alamat email disalin."}
                   </p>
                 )}
               </div>
@@ -135,7 +143,7 @@ export default function Contact() {
             {/* Social Network Cards */}
             <div className="space-y-3">
               <span className="text-xs font-medium text-zinc-500 pl-1 block">
-                Kanal Profesional
+                {lang === "en" ? "Professional Channels" : "Kanal Profesional"}
               </span>
 
               <a
@@ -212,29 +220,35 @@ export default function Contact() {
               <div className="pb-4 border-b border-zinc-100">
                 <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 flex items-center gap-2.5">
                   <MessageSquare className="w-5 h-5 text-zinc-700" />
-                  <span>Kirim Pesan Langsung</span>
+                  <span>{lang === "en" ? "Send a Direct Message" : "Kirim Pesan Langsung"}</span>
                 </h3>
                 <p className="text-sm text-zinc-500 mt-1">
-                  Pesan Anda akan langsung diteruskan ke alamat email saya untuk ditindaklanjuti.
+                  {lang === "en"
+                    ? "Your message will be routed directly to my email inbox for follow-up."
+                    : "Pesan Anda akan langsung diteruskan ke alamat email saya untuk ditindaklanjuti."}
                 </p>
               </div>
 
               {submitSuccess && (
                 <div className="p-4 rounded-xl bg-zinc-100 border border-zinc-300 text-zinc-900 text-sm flex items-center gap-2">
                   <Check className="w-5 h-5 text-zinc-900 shrink-0" />
-                  <span>Terima kasih! Pesan Anda telah tercatat. Saya akan segera menghubungi Anda kembali.</span>
+                  <span>
+                    {lang === "en"
+                      ? "Thank you! Your message has been sent. I will get back to you shortly."
+                      : "Terima kasih! Pesan Anda telah tercatat. Saya akan segera menghubungi Anda kembali."}
+                  </span>
                 </div>
               )}
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-1.5">
                   <label className="text-xs font-medium text-zinc-700">
-                    Nama Lengkap *
+                    {lang === "en" ? "Full Name *" : "Nama Lengkap *"}
                   </label>
                   <input
                     type="text"
                     required
-                    placeholder="Contoh: Budi Santoso"
+                    placeholder={lang === "en" ? "e.g. Alex Rivera" : "Contoh: Budi Santoso"}
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                     className="w-full p-3.5 rounded-xl bg-zinc-100/80 border border-zinc-200/80 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:bg-white focus:border-zinc-900 focus:ring-2 focus:ring-zinc-900/10 transition-colors duration-200 text-sm"
@@ -243,12 +257,12 @@ export default function Contact() {
 
                 <div className="space-y-1.5">
                   <label className="text-xs font-medium text-zinc-700">
-                    Alamat Email *
+                    {lang === "en" ? "Email Address *" : "Alamat Email *"}
                   </label>
                   <input
                     type="email"
                     required
-                    placeholder="nama@perusahaan.com"
+                    placeholder={lang === "en" ? "name@company.com" : "nama@perusahaan.com"}
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     className="w-full p-3.5 rounded-xl bg-zinc-100/80 border border-zinc-200/80 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:bg-white focus:border-zinc-900 focus:ring-2 focus:ring-zinc-900/10 transition-colors duration-200 text-sm"
@@ -257,11 +271,11 @@ export default function Contact() {
 
                 <div className="space-y-1.5">
                   <label className="text-xs font-medium text-zinc-700">
-                    Subjek / Perihal
+                    {lang === "en" ? "Subject / Topic" : "Subjek / Perihal"}
                   </label>
                   <input
                     type="text"
-                    placeholder="Tawaran Posisi Backend Engineer / Kolaborasi Proyek"
+                    placeholder={lang === "en" ? "Backend Engineer Role / Project Collaboration" : "Tawaran Posisi Backend Engineer / Kolaborasi Proyek"}
                     value={formState.subject}
                     onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
                     className="w-full p-3.5 rounded-xl bg-zinc-100/80 border border-zinc-200/80 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:bg-white focus:border-zinc-900 focus:ring-2 focus:ring-zinc-900/10 transition-colors duration-200 text-sm"
@@ -270,12 +284,12 @@ export default function Contact() {
 
                 <div className="space-y-1.5">
                   <label className="text-xs font-medium text-zinc-700">
-                    Pesan Detail *
+                    {lang === "en" ? "Message Details *" : "Pesan Detail *"}
                   </label>
                   <textarea
                     required
                     rows={4}
-                    placeholder="Ceritakan tentang proyek, posisi, atau pertanyaan Anda..."
+                    placeholder={lang === "en" ? "Tell me about your project, role, or inquiry..." : "Ceritakan tentang proyek, posisi, atau pertanyaan Anda..."}
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                     className="w-full p-4 rounded-xl bg-zinc-100/80 border border-zinc-200/80 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:bg-white focus:border-zinc-900 focus:ring-2 focus:ring-zinc-900/10 transition-colors duration-200 resize-none min-h-[120px] text-sm"
@@ -290,11 +304,11 @@ export default function Contact() {
                   {isSubmitting ? (
                     <div className="flex items-center gap-2">
                       <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      <span>Mengirim Pesan...</span>
+                      <span>{lang === "en" ? "Sending Message..." : "Mengirim Pesan..."}</span>
                     </div>
                   ) : (
                     <>
-                      <span>Kirim Pesan</span>
+                      <span>{lang === "en" ? "Send Message" : "Kirim Pesan"}</span>
                       <Send className="w-4 h-4" />
                     </>
                   )}

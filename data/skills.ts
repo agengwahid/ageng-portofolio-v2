@@ -1,13 +1,17 @@
 export interface SkillCategory {
   title: string;
+  titleEn?: string;
   description: string;
+  descriptionEn?: string;
   skills: string[];
 }
 
 export const skillCategories: SkillCategory[] = [
   {
     title: "Server Administration, DevOps & Cloud",
+    titleEn: "Server Administration, DevOps & Cloud",
     description: "Administrasi server Linux, container Docker, web server Nginx, Git workflow, dan Google Cloud Platform.",
+    descriptionEn: "Linux server administration, Docker containers, Nginx reverse proxy, Git workflows, and Google Cloud Platform.",
     skills: [
       "Linux Server Administration",
       "Docker",
@@ -21,7 +25,9 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     title: "Backend Engineering & CMS",
+    titleEn: "Backend Engineering & CMS",
     description: "Pengembangan aplikasi server-side, perancangan RESTful API, autentikasi, caching, serta custom theme CMS.",
+    descriptionEn: "Server-side application engineering, RESTful APIs, authentication, Redis caching, and custom CMS theming.",
     skills: [
       "PHP & Laravel",
       "WordPress (Custom Theme)",
@@ -35,7 +41,9 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     title: "Databases & Data Management",
+    titleEn: "Databases & Data Management",
     description: "Perancangan skema basis data relasional maupun NoSQL dan pengelolaan query aplikasi.",
+    descriptionEn: "Relational & NoSQL schema design, query optimization, migrations, and key-value stores.",
     skills: [
       "PostgreSQL",
       "MySQL",
@@ -48,7 +56,9 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     title: "Languages & Web Frontend",
+    titleEn: "Languages & Web Frontend",
     description: "Bahasa pemrograman dan teknologi web untuk membangun antarmuka aplikasi.",
+    descriptionEn: "Core languages and modern frontend ecosystems for responsive web interfaces.",
     skills: [
       "PHP",
       "JavaScript",

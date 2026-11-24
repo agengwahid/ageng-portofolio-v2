@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import { Certificate } from "@/data/certificates";
 import { X, Award, Calendar } from "lucide-react";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 interface CertificateModalProps {
   certificate?: Certificate | null;
@@ -13,6 +14,7 @@ interface CertificateModalProps {
 }
 
 export default function CertificateModal({ certificate, cert, onClose }: CertificateModalProps) {
+  const { lang } = useLanguage();
   const activeCert = certificate || cert;
   const isOpen = Boolean(activeCert);
 
@@ -95,14 +97,14 @@ export default function CertificateModal({ certificate, cert, onClose }: Certifi
 
           <div className="flex items-center justify-between pt-2">
             <div className="text-xs text-zinc-400">
-              Dokumen kredensial terverifikasi resmi
+              {lang === "en" ? "Verified official credential document" : "Dokumen kredensial terverifikasi resmi"}
             </div>
             <button
               type="button"
               onClick={onClose}
               className="px-5 py-2.5 rounded-xl text-xs font-semibold text-zinc-950 bg-stone-100 hover:bg-white transition cursor-pointer"
             >
-              Tutup Preview
+              {lang === "en" ? "Close Preview" : "Tutup Preview"}
             </button>
           </div>
         </div>

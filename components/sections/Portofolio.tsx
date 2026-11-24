@@ -9,6 +9,7 @@ import { skillCategories } from "@/data/skills";
 import ProjectModal from "@/components/ui/ProjectModal";
 import CertificateModal from "@/components/ui/CertificateModal";
 import { GithubIcon } from "@/components/ui/BrandIcons";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 import {
   ExternalLink,
   ChevronRight,
@@ -24,6 +25,7 @@ import {
 } from "lucide-react";
 
 export default function Portofolio() {
+  const { lang } = useLanguage();
   const [activeTab, setActiveTab] = useState<"projects" | "certificates" | "skills">("projects");
   const [projectCategory, setProjectCategory] = useState<string>("all");
   const [certCategory, setCertCategory] = useState<string>("all");
@@ -76,13 +78,15 @@ export default function Portofolio() {
         {/* Section Header */}
         <div className="text-center space-y-3">
           <p className="text-sm font-medium text-zinc-500">
-            Portofolio &amp; Kredensial
+            {lang === "en" ? "Portfolio & Credentials" : "Portofolio & Kredensial"}
           </p>
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-950">
-            Proyek &amp; Sertifikasi
+            {lang === "en" ? "Projects & Certifications" : "Proyek & Sertifikasi"}
           </h2>
           <p className="text-zinc-600 text-sm sm:text-base max-w-2xl mx-auto">
-            Kumpulan proyek kolaborasi tim maupun proyek mandiri, daftar sertifikasi kompetensi, serta teknologi yang digunakan.
+            {lang === "en"
+              ? "A curated collection of team collaborations and independent engineering projects, professional certifications, and core technologies."
+              : "Kumpulan proyek kolaborasi tim maupun proyek mandiri, daftar sertifikasi kompetensi, serta teknologi yang digunakan."}
           </p>
         </div>
 
@@ -129,12 +133,12 @@ export default function Portofolio() {
               {/* Category Filter Pills (Clean text labels without emojis) */}
               <div className="flex flex-wrap items-center justify-center gap-2">
                 {[
-                  { key: "all", label: "Semua Proyek" },
-                  { key: "team", label: "Proyek Tim" },
-                  { key: "solo", label: "Proyek Mandiri" },
+                  { key: "all", label: lang === "en" ? "All Projects" : "Semua Proyek" },
+                  { key: "team", label: lang === "en" ? "Team Projects" : "Proyek Tim" },
+                  { key: "solo", label: lang === "en" ? "Solo Projects" : "Proyek Mandiri" },
                   { key: "backend", label: "Backend & Cloud" },
                   { key: "fullstack", label: "Full-Stack Web" },
-                  { key: "tools", label: "Tools & Utilitas" },
+                  { key: "tools", label: lang === "en" ? "Tools & Utilities" : "Tools & Utilitas" },
                 ].map((f) => (
                   <button
                     key={f.key}
@@ -198,7 +202,7 @@ export default function Portofolio() {
                           {/* Top Left Category Label */}
                           <div className="absolute top-3 left-3 z-10">
                             <span className="px-2.5 py-1 rounded-md text-[11px] font-medium bg-zinc-900/90 text-stone-100 border border-white/10">
-                              {project.rankBadge}
+                              {lang === "en" ? (project.rankBadgeEn ?? project.rankBadge) : project.rankBadge}
                             </span>
                           </div>
 
@@ -211,7 +215,9 @@ export default function Portofolio() {
                                   : "bg-stone-100 text-zinc-950"
                               }`}
                             >
-                              {project.projectType === "team" ? "Tim" : "Mandiri"}
+                              {project.projectType === "team"
+                                ? lang === "en" ? "Team" : "Tim"
+                                : lang === "en" ? "Solo" : "Mandiri"}
                             </span>
                           </div>
 
@@ -223,7 +229,7 @@ export default function Portofolio() {
                           >
                             <span className="flex items-center gap-2 px-4 py-2 rounded-xl text-white font-semibold text-xs bg-zinc-900/90 border border-white/20 shadow-md">
                               <Maximize2 className="w-3.5 h-3.5" />
-                              <span>Lihat Detail</span>
+                              <span>{lang === "en" ? "View Details" : "Lihat Detail"}</span>
                             </span>
                           </button>
                         </div>
@@ -231,8 +237,8 @@ export default function Portofolio() {
                         {/* Card Content */}
                         <div className="mt-4 space-y-3">
                           <div className="flex items-center justify-between text-xs font-medium">
-                            <span className="text-zinc-800">{project.role}</span>
-                            <span className="text-zinc-500 tabular-nums">{project.period.split("·")[0]}</span>
+                            <span className="text-zinc-800">{lang === "en" ? (project.roleEn ?? project.role) : project.role}</span>
+                            <span className="text-zinc-500 tabular-nums">{(lang === "en" ? (project.periodEn ?? project.period) : project.period).split("·")[0]}</span>
                           </div>
 
                           <h3 className="text-lg sm:text-xl font-bold text-zinc-950 leading-snug">
@@ -240,12 +246,12 @@ export default function Portofolio() {
                           </h3>
 
                           <p className="text-sm text-zinc-600 line-clamp-3 leading-relaxed">
-                            {project.description}
+                            {lang === "en" ? (project.descriptionEn ?? project.description) : project.description}
                           </p>
 
                           {/* Highlights */}
                           <div className="space-y-1.5 pt-2 border-t border-zinc-100">
-                            {project.highlights.slice(0, 2).map((h, i) => (
+                            {(lang === "en" ? (project.highlightsEn ?? project.highlights) : project.highlights).slice(0, 2).map((h, i) => (
                               <div key={i} className="flex items-start gap-2 text-xs text-zinc-600">
                                 <Check className="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5" />
                                 <span className="line-clamp-1">{h}</span>
@@ -279,7 +285,7 @@ export default function Portofolio() {
                           onClick={() => setSelectedProject(project)}
                           className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl font-semibold text-zinc-900 bg-zinc-100 hover:bg-zinc-200 transition-colors duration-200 text-xs sm:text-sm cursor-pointer"
                         >
-                          <span>Lihat Detail</span>
+                          <span>{lang === "en" ? "View Details" : "Lihat Detail"}</span>
                           <ChevronRight className="w-3.5 h-3.5" />
                         </button>
 
@@ -329,10 +335,10 @@ export default function Portofolio() {
               {/* Certificate Filter Pills */}
               <div className="flex flex-wrap items-center justify-center gap-2">
                 {[
-                  { key: "all", label: "Semua Kredensial" },
+                  { key: "all", label: lang === "en" ? "All Credentials" : "Semua Kredensial" },
                   { key: "Google & Bangkit", label: "Google Cloud & Bangkit" },
                   { key: "Dicoding", label: "Dicoding Professional" },
-                  { key: "Akademik & Organisasi", label: "Akademik & Organisasi" },
+                  { key: "Akademik & Organisasi", label: lang === "en" ? "Academic & Organization" : "Akademik & Organisasi" },
                 ].map((cat) => (
                   <button
                     key={cat.key}
@@ -371,7 +377,7 @@ export default function Portofolio() {
                         <div className="absolute inset-0 bg-black/45 opacity-0 group-hover/cert:opacity-100 transition-opacity duration-200 flex items-center justify-center">
                           <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-white font-semibold text-xs bg-zinc-900/90">
                             <Maximize2 className="w-3.5 h-3.5" />
-                            <span>Perbesar</span>
+                            <span>{lang === "en" ? "Zoom" : "Perbesar"}</span>
                           </span>
                         </div>
                       </div>
@@ -400,7 +406,7 @@ export default function Portofolio() {
                         onClick={() => setSelectedCert(cert)}
                         className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold text-zinc-900 bg-zinc-100 hover:bg-zinc-200 transition cursor-pointer"
                       >
-                        <span>Lihat Sertifikat</span>
+                        <span>{lang === "en" ? "View Certificate" : "Lihat Sertifikat"}</span>
                         <ChevronRight className="w-3 h-3" />
                       </button>
                     </div>
@@ -424,7 +430,7 @@ export default function Portofolio() {
               <div className="space-y-5">
                 <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 flex items-center gap-2.5">
                   <Award className="w-5 h-5 text-zinc-700" />
-                  <span>Prestasi &amp; Penghargaan Akademik</span>
+                  <span>{lang === "en" ? "Achievements & Academic Honors" : "Prestasi & Penghargaan Akademik"}</span>
                 </h3>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -432,10 +438,16 @@ export default function Portofolio() {
                     <div className="w-10 h-10 rounded-xl bg-zinc-100 border border-zinc-200 text-zinc-900 flex items-center justify-center">
                       <GraduationCap className="w-5 h-5" />
                     </div>
-                    <div className="text-xs font-medium text-zinc-500">Akademik · 2022 – 2026</div>
-                    <h4 className="text-base font-bold text-zinc-950">Sarjana Informatika (S.Kom)</h4>
+                    <div className="text-xs font-medium text-zinc-500">
+                      {lang === "en" ? "Academic · 2022 – 2026" : "Akademik · 2022 – 2026"}
+                    </div>
+                    <h4 className="text-base font-bold text-zinc-950">
+                      {lang === "en" ? "Bachelor of Informatics (S.Kom)" : "Sarjana Informatika (S.Kom)"}
+                    </h4>
                     <p className="text-sm text-zinc-600 leading-relaxed">
-                      Lulus dalam waktu 3,5 tahun dari Universitas Ahmad Dahlan dengan Indeks Prestasi Kumulatif 3,91 dari skala 4,00.
+                      {lang === "en"
+                        ? "Graduated in 3.5 years from Universitas Ahmad Dahlan with a 3.91 / 4.00 cumulative GPA."
+                        : "Lulus dalam waktu 3,5 tahun dari Universitas Ahmad Dahlan dengan Indeks Prestasi Kumulatif 3,91 dari skala 4,00."}
                     </p>
                   </div>
 
@@ -446,7 +458,9 @@ export default function Portofolio() {
                     <div className="text-xs font-medium text-zinc-500">MSIB Kemendikbudristek · 2024</div>
                     <h4 className="text-base font-bold text-zinc-950">Bangkit Academy Cloud Computing</h4>
                     <p className="text-sm text-zinc-600 leading-relaxed">
-                      Lulus program studi independen Bangkit Academy jalur Cloud Computing dengan proyek capstone DermaScan menggunakan Node.js dan GCP.
+                      {lang === "en"
+                        ? "Completed Bangkit Academy Cloud Computing cohort, building the DermaScan capstone backend on Node.js and GCP."
+                        : "Lulus program studi independen Bangkit Academy jalur Cloud Computing dengan proyek capstone DermaScan menggunakan Node.js dan GCP."}
                     </p>
                   </div>
 
@@ -454,10 +468,16 @@ export default function Portofolio() {
                     <div className="w-10 h-10 rounded-xl bg-zinc-100 border border-zinc-200 text-zinc-900 flex items-center justify-center">
                       <Server className="w-5 h-5" />
                     </div>
-                    <div className="text-xs font-medium text-zinc-500">Laboratorium &amp; Organisasi · 2023 – 2025</div>
-                    <h4 className="text-base font-bold text-zinc-950">Asisten Praktikum &amp; HMIF UAD</h4>
+                    <div className="text-xs font-medium text-zinc-500">
+                      {lang === "en" ? "Laboratory & Organization · 2023 – 2025" : "Laboratorium & Organisasi · 2023 – 2025"}
+                    </div>
+                    <h4 className="text-base font-bold text-zinc-950">
+                      {lang === "en" ? "Practicum Assistant & HMIF UAD" : "Asisten Praktikum & HMIF UAD"}
+                    </h4>
                     <p className="text-sm text-zinc-600 leading-relaxed">
-                      Asisten praktikum mata kuliah Dasar Pemrograman, Algoritma Pemrograman, Logika Informatika, dan Sistem Operasi serta Staf Departemen Iptek HMIF (2023–2024).
+                      {lang === "en"
+                        ? "Lab practicum assistant for Programming Fundamentals, Algorithms, Informatics Logic, and Operating Systems, plus HMIF Science & Tech staff (2023–2024)."
+                        : "Asisten praktikum mata kuliah Dasar Pemrograman, Algoritma Pemrograman, Logika Informatika, dan Sistem Operasi serta Staf Departemen Iptek HMIF (2023–2024)."}
                     </p>
                   </div>
                 </div>
@@ -467,7 +487,7 @@ export default function Portofolio() {
               <div className="space-y-6">
                 <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 flex items-center gap-2.5">
                   <Code className="w-5 h-5 text-zinc-700" />
-                  <span>Teknologi &amp; Infrastruktur yang Dikuasai</span>
+                  <span>{lang === "en" ? "Technologies & Infrastructure" : "Teknologi & Infrastruktur yang Dikuasai"}</span>
                 </h3>
 
                 <div className="grid md:grid-cols-2 gap-6">
@@ -480,10 +500,10 @@ export default function Portofolio() {
                         <div>
                           <h4 className="text-base font-bold text-zinc-950 flex items-center gap-2">
                             <Server className="w-4 h-4 text-zinc-700 shrink-0" />
-                            <span>{category.title}</span>
+                            <span>{lang === "en" ? category.titleEn : category.title}</span>
                           </h4>
                           <p className="text-xs text-zinc-500 mt-1 leading-relaxed">
-                            {category.description}
+                            {lang === "en" ? category.descriptionEn : category.description}
                           </p>
                         </div>
                         <span className="text-xs text-zinc-400 shrink-0 tabular-nums">

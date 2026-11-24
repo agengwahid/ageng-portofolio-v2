@@ -2,8 +2,10 @@
 
 import { ArrowUp } from "lucide-react";
 import { GithubIcon, LinkedinIcon, InstagramIcon } from "@/components/ui/BrandIcons";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export default function Footer() {
+  const { lang } = useLanguage();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -17,7 +19,9 @@ export default function Footer() {
             Muhammad Ageng Zayem Wahid, S.Kom
           </p>
           <p className="text-zinc-500">
-            © 2026 Ageng Wahid. Sistem dan portofolio rekayasa perangkat lunak.
+            {lang === "en"
+              ? "© 2026 Ageng Wahid. Software engineering portfolio & archive."
+              : "© 2026 Ageng Wahid. Sistem dan portofolio rekayasa perangkat lunak."}
           </p>
         </div>
 
@@ -58,7 +62,7 @@ export default function Footer() {
           onClick={scrollToTop}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/12 text-zinc-200 hover:text-white transition cursor-pointer"
         >
-          <span>Kembali ke Atas</span>
+          <span>{lang === "en" ? "Back to Top" : "Kembali ke Atas"}</span>
           <ArrowUp className="w-3.5 h-3.5 text-stone-200" />
         </button>
       </div>

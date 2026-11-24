@@ -3,8 +3,11 @@
 import Image from "next/image";
 import { Download, GraduationCap, Briefcase, CheckCircle2 } from "lucide-react";
 import { experiences } from "@/data/experience";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export default function About() {
+  const { lang } = useLanguage();
+
   return (
     <section
       id="About"
@@ -19,10 +22,12 @@ export default function About() {
         {/* Section Header */}
         <div className="space-y-3 border-b border-white/10 pb-8">
           <p className="text-sm font-medium text-zinc-400">
-            Tentang &amp; Rekam Jejak
+            {lang === "en" ? "About & Background" : "Tentang & Rekam Jejak"}
           </p>
           <h2 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-bold tracking-tight text-stone-100 max-w-4xl leading-[1.12]">
-            Rekayasa Backend, Aplikasi Web, &amp; Administrasi Infrastruktur Cloud
+            {lang === "en"
+              ? "Backend Engineering, Web Applications, & Cloud Infrastructure"
+              : "Rekayasa Backend, Aplikasi Web, & Administrasi Infrastruktur Cloud"}
           </h2>
         </div>
 
@@ -47,7 +52,7 @@ export default function About() {
                 <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
                   <span className="px-3 py-1 rounded-full bg-[#0a0c0f]/85 backdrop-blur-sm border border-white/15 text-stone-100 text-xs font-medium flex items-center gap-1.5">
                     <GraduationCap className="w-3.5 h-3.5 text-stone-300" />
-                    <span>IPK 3.91 / 4.00 · 3.5 Tahun</span>
+                    <span>{lang === "en" ? "GPA 3.91 / 4.00 · 3.5 Years" : "IPK 3.91 / 4.00 · 3.5 Tahun"}</span>
                   </span>
                   <span className="px-3 py-1 rounded-full bg-stone-100 text-zinc-950 text-xs font-semibold">
                     Bangkit 2024
@@ -62,7 +67,9 @@ export default function About() {
                   <span className="text-zinc-400 font-medium">S.Kom</span>
                 </div>
                 <p className="text-sm text-zinc-300 leading-relaxed">
-                  Lulusan S1 Informatika Universitas Ahmad Dahlan (2022–2026) yang menyelesaikan studi dalam 3,5 tahun dengan IPK 3,91/4,00. Berfokus pada pengembangan backend, RESTful API, Google Cloud Platform, Docker, serta administrasi server Linux.
+                  {lang === "en"
+                    ? "Bachelor of Informatics graduate from Ahmad Dahlan University (2022–2026), completed in 3.5 years with a GPA of 3.91/4.00. Focused on backend development, RESTful APIs, Google Cloud Platform, Docker containers, and Linux server administration."
+                    : "Lulusan S1 Informatika Universitas Ahmad Dahlan (2022–2026) yang menyelesaikan studi dalam 3,5 tahun dengan IPK 3,91/4,00. Berfokus pada pengembangan backend, RESTful API, Google Cloud Platform, Docker, serta administrasi server Linux."}
                 </p>
               </div>
 
@@ -74,7 +81,7 @@ export default function About() {
                   className="w-full px-6 py-3 rounded-xl font-semibold bg-stone-100 hover:bg-white transition-colors duration-200 flex items-center justify-center gap-2 text-zinc-950 text-sm cursor-pointer"
                 >
                   <Download className="w-4 h-4" />
-                  <span>Unduh Resume Lengkap (PDF)</span>
+                  <span>{lang === "en" ? "Download Full Resume (PDF)" : "Unduh Resume Lengkap (PDF)"}</span>
                 </a>
               </div>
             </div>
@@ -82,7 +89,7 @@ export default function About() {
             {/* Core Competencies Summary */}
             <div className="grid grid-cols-2 gap-3 text-xs">
               <div className="p-4 rounded-xl bg-[#12161c] border border-white/10 space-y-1">
-                <div className="text-zinc-400 font-medium">Infrastruktur &amp; Cloud</div>
+                <div className="text-zinc-400 font-medium">{lang === "en" ? "Infrastructure & Cloud" : "Infrastruktur & Cloud"}</div>
                 <div className="text-stone-100 font-semibold">Linux, Docker, GCP, Nginx</div>
               </div>
               <div className="p-4 rounded-xl bg-[#12161c] border border-white/10 space-y-1">
@@ -97,60 +104,69 @@ export default function About() {
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <h3 className="text-xl sm:text-2xl font-bold text-stone-100 tracking-tight flex items-center gap-2.5">
                 <Briefcase className="w-5 h-5 text-zinc-400" />
-                <span>Pengalaman &amp; Pendidikan</span>
+                <span>{lang === "en" ? "Experience & Education" : "Pengalaman & Pendidikan"}</span>
               </h3>
-              <span className="text-xs text-zinc-400 tabular-nums">2022 – Sekarang</span>
+              <span className="text-xs text-zinc-400 tabular-nums">
+                {lang === "en" ? "2022 – Present" : "2022 – Sekarang"}
+              </span>
             </div>
 
             <div className="relative pl-6 sm:pl-8 space-y-8">
               {/* Vertical Connector Line */}
               <div className="absolute left-[7px] sm:left-[9px] top-3 bottom-4 w-px bg-white/15 z-0" />
 
-              {experiences.map((exp, idx) => (
-                <div key={idx} className="relative z-10 space-y-3">
-                  {/* Minimalist Timeline Node */}
-                  <span className="absolute -left-6 sm:-left-8 top-2 w-3.5 h-3.5 rounded-full bg-stone-200 ring-4 ring-[#0a0c0f]" />
+              {experiences.map((exp, idx) => {
+                const role = lang === "en" && exp.roleEn ? exp.roleEn : exp.role;
+                const org = lang === "en" && exp.organizationEn ? exp.organizationEn : exp.organization;
+                const period = lang === "en" && exp.periodEn ? exp.periodEn : exp.period;
+                const items = lang === "en" && exp.descriptionEn ? exp.descriptionEn : exp.description;
 
-                  {/* Header Row */}
-                  <div className="space-y-1">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <h4 className="text-base sm:text-lg font-bold text-stone-100 tracking-tight">
-                        {exp.role}
-                      </h4>
-                      <span className="text-xs px-3 py-0.5 rounded-full bg-white/[0.06] border border-white/12 text-zinc-300 tabular-nums">
-                        {exp.period}
-                      </span>
-                    </div>
-                    <p className="text-sm text-zinc-300 font-medium">
-                      {exp.organization} <span className="text-zinc-500">· {exp.location}</span>
-                    </p>
-                  </div>
+                return (
+                  <div key={idx} className="relative z-10 space-y-3">
+                    {/* Minimalist Timeline Node */}
+                    <span className="absolute -left-6 sm:-left-8 top-2 w-3.5 h-3.5 rounded-full bg-stone-200 ring-4 ring-[#0a0c0f]" />
 
-                  {/* Timeline Card Body */}
-                  <div className="p-4 sm:p-5 rounded-2xl bg-[#12161c] border border-white/10 hover:border-white/25 transition-colors duration-200 space-y-3.5">
-                    <div className="space-y-2">
-                      {exp.description.map((item, dIdx) => (
-                        <div key={dIdx} className="flex items-start gap-2.5 text-sm text-zinc-300 leading-relaxed">
-                          <CheckCircle2 className="w-4 h-4 text-zinc-400 shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Clean Skill Pills */}
-                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/10">
-                      {exp.skills.map((skill, sIdx) => (
-                        <span
-                          key={sIdx}
-                          className="px-2.5 py-0.5 rounded-md bg-white/[0.05] border border-white/10 text-zinc-300 text-xs"
-                        >
-                          {skill}
+                    {/* Header Row */}
+                    <div className="space-y-1">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <h4 className="text-base sm:text-lg font-bold text-stone-100 tracking-tight">
+                          {role}
+                        </h4>
+                        <span className="text-xs px-3 py-0.5 rounded-full bg-white/[0.06] border border-white/12 text-zinc-300 tabular-nums">
+                          {period}
                         </span>
-                      ))}
+                      </div>
+                      <p className="text-sm text-zinc-300 font-medium">
+                        {org} <span className="text-zinc-500">· {exp.location}</span>
+                      </p>
+                    </div>
+
+                    {/* Timeline Card Body */}
+                    <div className="p-4 sm:p-5 rounded-2xl bg-[#12161c] border border-white/10 hover:border-white/25 transition-colors duration-200 space-y-3.5">
+                      <div className="space-y-2">
+                        {items.map((item, dIdx) => (
+                          <div key={dIdx} className="flex items-start gap-2.5 text-sm text-zinc-300 leading-relaxed">
+                            <CheckCircle2 className="w-4 h-4 text-zinc-400 shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Clean Skill Pills */}
+                      <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/10">
+                        {exp.skills.map((skill, sIdx) => (
+                          <span
+                            key={sIdx}
+                            className="px-2.5 py-0.5 rounded-md bg-white/[0.05] border border-white/10 text-zinc-300 text-xs"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

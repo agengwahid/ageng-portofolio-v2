@@ -4,8 +4,9 @@ import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import { Project } from "@/data/projects";
-import { X, ExternalLink, CheckCircle2, BarChart2 } from "lucide-react";
+import { X, ExternalLink, CheckCircle2 } from "lucide-react";
 import { GithubIcon } from "@/components/ui/BrandIcons";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 interface ProjectModalProps {
   project: Project | null;
@@ -13,6 +14,7 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
+  const { lang } = useLanguage();
   const isOpen = Boolean(project);
 
   useEffect(() => {
@@ -57,7 +59,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             <div className="space-y-1.5 min-w-0">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="px-2.5 py-0.5 rounded-md text-xs font-medium bg-white/10 text-stone-100 border border-white/10">
-                  {project.rankBadge}
+                  {lang === "en" && project.rankBadgeEn ? project.rankBadgeEn : project.rankBadge}
                 </span>
                 <span
                   className={`px-2.5 py-0.5 rounded-md text-xs font-semibold ${
@@ -66,17 +68,21 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                       : "bg-stone-100 text-zinc-950"
                   }`}
                 >
-                  {project.projectType === "team" ? "Proyek Tim" : "Proyek Mandiri"}
+                  {project.projectType === "team"
+                    ? lang === "en" ? "Team Project" : "Proyek Tim"
+                    : lang === "en" ? "Solo Project" : "Proyek Mandiri"}
                 </span>
                 <span className="text-xs text-zinc-400">
-                  {project.period}
+                  {lang === "en" && project.periodEn ? project.periodEn : project.period}
                 </span>
               </div>
 
               <h3 id="modal-title" className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                 {project.title}
               </h3>
-              <p className="text-xs sm:text-sm text-zinc-300 font-medium">{project.role}</p>
+              <p className="text-xs sm:text-sm text-zinc-300 font-medium">
+                {lang === "en" && project.roleEn ? project.roleEn : project.role}
+              </p>
             </div>
 
             <button
@@ -104,38 +110,20 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           {/* Full Overview */}
           <div className="space-y-2">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-              Deskripsi &amp; Arsitektur Sistem
+              {lang === "en" ? "Overview & Architecture" : "Deskripsi & Arsitektur Sistem"}
             </h4>
             <p className="text-sm text-zinc-200 leading-relaxed">
-              {project.fullOverview}
+              {lang === "en" && project.fullOverviewEn ? project.fullOverviewEn : project.fullOverview}
             </p>
           </div>
 
-          {/* Metrics if available */}
-          {project.metrics && project.metrics.length > 0 && (
-            <div className="space-y-2.5">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400 flex items-center gap-1.5">
-                <BarChart2 className="w-4 h-4" />
-                <span>Metrik Performa &amp; Hasil</span>
-              </h4>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {project.metrics.map((m, idx) => (
-                  <div key={idx} className="p-3.5 rounded-xl bg-white/[0.04] border border-white/10">
-                    <div className="text-xs text-zinc-400">{m.label}</div>
-                    <div className="text-base sm:text-lg font-bold text-white mt-0.5 tabular-nums">{m.value}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Key Architectural Highlights */}
+          {/* Key Highlights */}
           <div className="space-y-2.5">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-              Pencapaian Teknis Utama
+              {lang === "en" ? "Key Engineering Work" : "Kontribusi & Pencapaian Teknis"}
             </h4>
             <ul className="space-y-2 text-sm text-zinc-300">
-              {project.highlights.map((h, idx) => (
+              {(lang === "en" && project.highlightsEn ? project.highlightsEn : project.highlights).map((h, idx) => (
                 <li key={idx} className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-zinc-400 shrink-0 mt-0.5" />
                   <span>{h}</span>
@@ -147,7 +135,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           {/* Tech Stack Pills */}
           <div className="space-y-2.5">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-              Teknologi yang Digunakan
+              {lang === "en" ? "Technologies Used" : "Teknologi yang Digunakan"}
             </h4>
             <div className="flex flex-wrap gap-2">
               {project.tech.map((t, idx) => (
@@ -193,7 +181,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               onClick={onClose}
               className="px-5 py-2.5 rounded-xl text-xs font-semibold text-zinc-950 bg-stone-100 hover:bg-white transition cursor-pointer"
             >
-              Tutup Detail
+              {lang === "en" ? "Close" : "Tutup Detail"}
             </button>
           </div>
         </div>

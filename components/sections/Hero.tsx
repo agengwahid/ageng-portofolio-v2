@@ -4,8 +4,10 @@ import { useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export default function Hero() {
+  const { lang } = useLanguage();
   const containerRef = useRef<HTMLElement>(null);
 
   // Ensure scroll position resets to top on every reload when landing on Home
@@ -180,7 +182,9 @@ export default function Hero() {
                 Muhammad Ageng Zayem Wahid
               </p>
               <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] max-w-xl mx-auto">
-                Backend &amp; Web Developer · Alumni Bangkit Academy Cloud Computing 2024 · S1 Informatika UAD (IPK 3.91)
+                {lang === "en"
+                  ? "Backend & Web Developer · Bangkit Academy 2024 Cloud Computing Alumnus · B.S. Informatics UAD (GPA 3.91)"
+                  : "Backend & Web Developer · Alumni Bangkit Academy Cloud Computing 2024 · S1 Informatika UAD (IPK 3.91)"}
               </p>
             </div>
 
@@ -190,7 +194,7 @@ export default function Hero() {
                 href="#Portofolio"
                 className="px-6 py-2.5 rounded-full font-semibold bg-stone-100 hover:bg-white text-zinc-950 shadow-lg transition-[transform,background-color] duration-200 hover:scale-[1.02] active:scale-95 flex items-center gap-2 text-sm cursor-pointer"
               >
-                <span>Jelajahi Portofolio</span>
+                <span>{lang === "en" ? "Explore Portfolio" : "Jelajahi Portofolio"}</span>
                 <ArrowDown className="w-4 h-4" />
               </a>
 
@@ -201,7 +205,7 @@ export default function Hero() {
                 className="px-6 py-2.5 rounded-full font-medium bg-zinc-900/85 hover:bg-zinc-800 border border-white/20 text-stone-100 backdrop-blur-md transition-[transform,background-color] duration-200 hover:scale-[1.02] active:scale-95 flex items-center gap-2 text-sm cursor-pointer"
               >
                 <Download className="w-4 h-4 text-stone-300" />
-                <span>Unduh Resume (PDF)</span>
+                <span>{lang === "en" ? "Download Resume (PDF)" : "Unduh Resume (PDF)"}</span>
               </a>
             </div>
           </div>

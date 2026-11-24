@@ -3,15 +3,17 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Download, Menu, X, ArrowUpRight } from "lucide-react";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 const NAV_ITEMS = [
-  { name: "Home", url: "#Home" },
-  { name: "About", url: "#About" },
-  { name: "Portfolio", url: "#Portofolio" },
-  { name: "Contact", url: "#Contact" },
+  { name: "Home", nameId: "Beranda", url: "#Home" },
+  { name: "About", nameId: "Tentang", url: "#About" },
+  { name: "Portfolio", nameId: "Portofolio", url: "#Portofolio" },
+  { name: "Contact", nameId: "Kontak", url: "#Contact" },
 ];
 
 export default function Navbar() {
+  const { lang, setLang } = useLanguage();
   const [activeTab, setActiveTab] = useState("Home");
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -39,13 +41,14 @@ export default function Navbar() {
       <header className="fixed top-4 left-0 right-0 z-50 pointer-events-none flex justify-center px-4">
         <nav
           aria-label="Main Navigation"
-          className="pointer-events-auto flex items-center gap-1.5 sm:gap-2 py-1.5 px-2 sm:px-2.5 rounded-full relative bg-[#0a0c0f]/80 backdrop-blur-md border border-white/12 shadow-[0_8px_24px_rgba(0,0,0,0.4)] transition-all duration-300"
+          className="pointer-events-auto flex items-center gap-1 sm:gap-2 py-1.5 px-2 sm:px-2.5 rounded-full relative bg-[#0a0c0f]/80 backdrop-blur-md border border-white/12 shadow-[0_8px_24px_rgba(0,0,0,0.4)] transition-all duration-300"
         >
           {/* Nav Items */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-0.5 sm:gap-1">
             {NAV_ITEMS.map((item) => {
               const isActive = activeTab === item.name;
               const isHovered = hoveredTab === item.name;
+              const label = lang === "en" ? item.name : item.nameId;
 
               return (
                 <a
@@ -61,13 +64,12 @@ export default function Navbar() {
                   }}
                   onMouseEnter={() => setHoveredTab(item.name)}
                   onMouseLeave={() => setHoveredTab(null)}
-                  className={`relative cursor-pointer text-xs md:text-sm font-medium px-3.5 py-1.5 md:px-4.5 md:py-1.5 rounded-full transition-colors duration-200 select-none ${
+                  className={`relative cursor-pointer text-xs md:text-sm font-medium px-3 py-1.5 md:px-4 md:py-1.5 rounded-full transition-colors duration-200 select-none ${
                     isActive
                       ? "text-zinc-950 font-semibold"
                       : "text-zinc-300 hover:text-white"
                   }`}
                 >
-                  {/* Formal High-Contrast Active Pill (No Cobalt Blue Glow) */}
                   {isActive && (
                     <motion.div
                       layoutId="active-nav-pill"
@@ -76,7 +78,6 @@ export default function Navbar() {
                     />
                   )}
 
-                  {/* Hover background pill */}
                   <AnimatePresence>
                     {isHovered && !isActive && (
                       <motion.div
@@ -88,13 +89,43 @@ export default function Navbar() {
                     )}
                   </AnimatePresence>
 
-                  <span className="relative z-10">{item.name}</span>
+                  <span className="relative z-10">{label}</span>
                 </a>
               );
             })}
           </div>
 
-          <div className="hidden sm:block h-4 w-px bg-white/15 mx-0.5" />
+          <div className="h-4 w-px bg-white/15 mx-0.5" />
+
+          {/* Language Switcher (ID / EN) */}
+          <div
+            role="group"
+            aria-label="Language switcher"
+            className="flex items-center rounded-full bg-white/[0.06] border border-white/12 p-0.5 text-[11px] font-medium"
+          >
+            <button
+              type="button"
+              onClick={() => setLang("id")}
+              className={`px-2 py-0.5 rounded-full transition-colors cursor-pointer ${
+                lang === "id"
+                  ? "bg-stone-100 text-zinc-950 font-semibold"
+                  : "text-zinc-300 hover:text-white"
+              }`}
+            >
+              ID
+            </button>
+            <button
+              type="button"
+              onClick={() => setLang("en")}
+              className={`px-2 py-0.5 rounded-full transition-colors cursor-pointer ${
+                lang === "en"
+                  ? "bg-stone-100 text-zinc-950 font-semibold"
+                  : "text-zinc-300 hover:text-white"
+              }`}
+            >
+              EN
+            </button>
+          </div>
 
           {/* Quick Action: CV Download */}
           <a
@@ -103,7 +134,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium px-3.5 py-1.5 rounded-full text-stone-100 hover:text-zinc-950 bg-white/10 hover:bg-stone-100 border border-white/15 transition-colors duration-200"
           >
-            <span>Resume</span>
+            <span>{lang === "en" ? "Resume" : "CV"}</span>
             <Download className="w-3.5 h-3.5" />
           </a>
 
@@ -130,10 +161,11 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-2">
               <p className="text-xs font-medium uppercase tracking-wider text-zinc-400 px-2 mb-2">
-                Navigasi
+                {lang === "en" ? "Navigation" : "Navigasi"}
               </p>
               {NAV_ITEMS.map((item) => {
                 const isActive = activeTab === item.name;
+                const label = lang === "en" ? item.name : item.nameId;
                 return (
                   <a
                     key={item.name}
@@ -148,7 +180,7 @@ export default function Navbar() {
                         : "text-zinc-300 hover:text-white bg-white/5 border-white/10"
                     }`}
                   >
-                    <span>{item.name}</span>
+                    <span>{label}</span>
                     <ArrowUpRight className="w-4 h-4 opacity-50" />
                   </a>
                 );
@@ -164,7 +196,7 @@ export default function Navbar() {
                 className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-zinc-950 bg-stone-100 hover:bg-white transition"
               >
                 <Download className="w-4 h-4" />
-                <span>Unduh Resume (PDF)</span>
+                <span>{lang === "en" ? "Download Resume (PDF)" : "Unduh Resume (PDF)"}</span>
               </a>
             </div>
           </motion.div>
