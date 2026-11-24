@@ -33,7 +33,7 @@ export default function Footer() {
             <GithubIcon className="w-4 h-4" />
           </a>
           <a
-            href="https://linkedin.com/in/agengwahid"
+            href="https://linkedin.com/in/ageng14"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"
@@ -42,7 +42,7 @@ export default function Footer() {
             <LinkedinIcon className="w-4 h-4" />
           </a>
           <a
-            href="https://instagram.com/agengwahid"
+            href="https://instagram.com/__wahid14"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram profile"

@@ -17,7 +17,7 @@ export default function About() {
             Tentang &amp; Rekam Jejak
           </p>
           <h2 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-bold tracking-tight text-stone-100 max-w-4xl leading-[1.12]">
-            Arsitektur Sistem Tangguh, Infrastruktur Cloud, &amp; Rekayasa Backend
+            Rekayasa Backend, Aplikasi Web, &amp; Administrasi Infrastruktur Cloud
           </h2>
         </div>
 
@@ -28,7 +28,7 @@ export default function About() {
             <div className="relative rounded-2xl overflow-hidden bg-[#12161c] border border-white/10 p-4">
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-zinc-950">
                 <Image
-                  src="/images/ageng-graduation.jpg"
+                  src="/images/ageng-about.jpg"
                   alt="Muhammad Ageng Zayem Wahid"
                   fill
                   priority
@@ -42,7 +42,7 @@ export default function About() {
                 <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
                   <span className="px-3 py-1 rounded-full bg-[#0a0c0f]/85 backdrop-blur-sm border border-white/15 text-stone-100 text-xs font-medium flex items-center gap-1.5">
                     <GraduationCap className="w-3.5 h-3.5 text-stone-300" />
-                    <span>IPK 3.91 · Cumlaude</span>
+                    <span>IPK 3.91 / 4.00 · 3.5 Tahun</span>
                   </span>
                   <span className="px-3 py-1 rounded-full bg-stone-100 text-zinc-950 text-xs font-semibold">
                     Bangkit 2024
@@ -57,7 +57,7 @@ export default function About() {
                   <span className="text-zinc-400 font-medium">S.Kom</span>
                 </div>
                 <p className="text-sm text-zinc-300 leading-relaxed">
-                  Lulusan Sarjana Informatika Universitas Ahmad Dahlan dengan predikat Cumlaude (Fast-Track 3.5 Tahun). Berfokus pada rekayasa backend, perancangan RESTful API berskala, container microservices, dan administrasi server cloud Linux.
+                  Lulusan S1 Informatika Universitas Ahmad Dahlan (2022–2026) yang menyelesaikan studi dalam 3,5 tahun dengan IPK 3,91/4,00. Berfokus pada pengembangan backend, RESTful API, Google Cloud Platform, Docker, serta administrasi server Linux.
                 </p>
               </div>
 
@@ -94,7 +94,7 @@ export default function About() {
                 <Briefcase className="w-5 h-5 text-zinc-400" />
                 <span>Pengalaman &amp; Pendidikan</span>
               </h3>
-              <span className="text-xs text-zinc-400 tabular-nums">2021 – Sekarang</span>
+              <span className="text-xs text-zinc-400 tabular-nums">2022 – Sekarang</span>
             </div>
 
             <div className="relative pl-6 sm:pl-8 space-y-8">

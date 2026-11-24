@@ -13,14 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Ageng Zayem Wahid | Backend Engineer & Cloud Native Practitioner",
+  title: "Muhammad Ageng Zayem Wahid | Backend & Web Developer",
   description:
-    "Official developer portfolio of Muhammad Ageng Zayem Wahid. S1 Informatika UAD (IPK 3.91, 3.5 Tahun Fast-Track), Bangkit Academy 2024 Google Cloud Graduate. Specializing in high-throughput REST APIs, normalized relational databases, and containerized cloud deployments.",
+    "Official portfolio of Muhammad Ageng Zayem Wahid. S1 Informatika Universitas Ahmad Dahlan (2022–2026, IPK 3.91/4.00, 3.5 tahun) and Bangkit Academy 2024 Cloud Computing graduate.",
   keywords: [
     "Muhammad Ageng Zayem Wahid",
     "Ageng Wahid",
-    "Backend Engineer",
-    "Cloud Engineer",
+    "Backend Developer",
+    "Web Developer",
     "Google Cloud Platform",
     "Node.js",
     "Laravel",
@@ -34,16 +34,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: "https://porto-ageng.vercel.app",
-    title: "Muhammad Ageng Zayem Wahid | Backend Engineer & Cloud Native Practitioner",
+    title: "Muhammad Ageng Zayem Wahid | Backend & Web Developer",
     description:
-      "Portofolio resmi Muhammad Ageng Zayem Wahid — Backend & Cloud Engineer. Lulusan UAD IPK 3.91 (Fast-Track 3.5 Tahun) dan Alumnus Bangkit Academy 2024 Google Cloud Cohort.",
+      "Portofolio resmi Muhammad Ageng Zayem Wahid — Backend & Web Developer. Lulusan S1 Informatika UAD (2022–2026, IPK 3.91/4.00) dan Alumnus Bangkit Academy 2024 Cloud Computing.",
     siteName: "Ageng Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Ageng Zayem Wahid | Backend & Cloud Engineer",
+    title: "Muhammad Ageng Zayem Wahid | Backend & Web Developer",
     description:
-      "Backend Engineer & Cloud Native Practitioner. UAD Informatics (GPA 3.91) · Bangkit 2024 Google Cloud.",
+      "Backend & Web Developer · S1 Informatika UAD (2022–2026, IPK 3.91) · Bangkit 2024 Cloud Computing.",
   },
   robots: {
     index: true,

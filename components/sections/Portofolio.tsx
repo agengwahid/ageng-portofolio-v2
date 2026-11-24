@@ -85,10 +85,10 @@ export default function Portofolio() {
             Portofolio &amp; Kredensial
           </p>
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-950">
-            Karya Rekayasa &amp; Sertifikasi
+            Proyek &amp; Sertifikasi
           </h2>
           <p className="text-zinc-600 text-sm sm:text-base max-w-2xl mx-auto">
-            Eksplorasi proyek riil, bukti kompetensi resmi Google Cloud, serta arsitektur sistem yang telah dibangun.
+            Kumpulan proyek kolaborasi tim maupun proyek mandiri, daftar sertifikasi kompetensi, serta teknologi yang digunakan.
           </p>
         </div>
 
@@ -438,10 +438,10 @@ export default function Portofolio() {
                     <div className="w-10 h-10 rounded-xl bg-zinc-100 border border-zinc-200 text-zinc-900 flex items-center justify-center">
                       <GraduationCap className="w-5 h-5" />
                     </div>
-                    <div className="text-xs font-medium text-zinc-500">Akademik · S1 Informatika</div>
-                    <h4 className="text-base font-bold text-zinc-950">Sarjana Komputer Cumlaude</h4>
+                    <div className="text-xs font-medium text-zinc-500">Akademik · 2022 – 2026</div>
+                    <h4 className="text-base font-bold text-zinc-950">Sarjana Informatika (S.Kom)</h4>
                     <p className="text-sm text-zinc-600 leading-relaxed">
-                      Lulusan tepat waktu fast-track 3,5 tahun dari Universitas Ahmad Dahlan dengan Indeks Prestasi Kumulatif 3,91 dari skala 4,00.
+                      Lulus dalam waktu 3,5 tahun dari Universitas Ahmad Dahlan dengan Indeks Prestasi Kumulatif 3,91 dari skala 4,00.
                     </p>
                   </div>
 
@@ -449,10 +449,10 @@ export default function Portofolio() {
                     <div className="w-10 h-10 rounded-xl bg-zinc-100 border border-zinc-200 text-zinc-900 flex items-center justify-center">
                       <Cloud className="w-5 h-5" />
                     </div>
-                    <div className="text-xs font-medium text-zinc-500">Google &amp; Kemendikbudristek</div>
-                    <h4 className="text-base font-bold text-zinc-950">Bangkit Academy 2024 Distinction</h4>
+                    <div className="text-xs font-medium text-zinc-500">MSIB Kemendikbudristek · 2024</div>
+                    <h4 className="text-base font-bold text-zinc-950">Bangkit Academy Cloud Computing</h4>
                     <p className="text-sm text-zinc-600 leading-relaxed">
-                      Lulusan jalur Google Cloud Computing dengan predikat terbaik dan berhasil merilis proyek capstone DermaScan ke Google Cloud Run.
+                      Lulus program studi independen Bangkit Academy jalur Cloud Computing dengan proyek capstone DermaScan menggunakan Node.js dan GCP.
                     </p>
                   </div>
 
@@ -460,10 +460,10 @@ export default function Portofolio() {
                     <div className="w-10 h-10 rounded-xl bg-zinc-100 border border-zinc-200 text-zinc-900 flex items-center justify-center">
                       <Server className="w-5 h-5" />
                     </div>
-                    <div className="text-xs font-medium text-zinc-500">Pengajaran &amp; Laboratorium</div>
-                    <h4 className="text-base font-bold text-zinc-950">2 Tahun Asisten Praktikum</h4>
+                    <div className="text-xs font-medium text-zinc-500">Laboratorium &amp; Organisasi · 2023 – 2025</div>
+                    <h4 className="text-base font-bold text-zinc-950">Asisten Praktikum &amp; HMIF UAD</h4>
                     <p className="text-sm text-zinc-600 leading-relaxed">
-                      Membimbing lebih dari 200 mahasiswa selama empat semester pada mata kuliah Pemrograman Dasar, Logika Informatika, dan Sistem Operasi.
+                      Asisten praktikum mata kuliah Dasar Pemrograman, Algoritma Pemrograman, Logika Informatika, dan Sistem Operasi serta Staf Departemen Iptek HMIF (2023–2024).
                     </p>
                   </div>
                 </div>

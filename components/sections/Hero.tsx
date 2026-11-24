@@ -180,7 +180,7 @@ export default function Hero() {
                 Muhammad Ageng Zayem Wahid
               </p>
               <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] max-w-xl mx-auto">
-                Backend Engineer &amp; Cloud Native Practitioner · Bangkit Academy 2024 Google Cloud Graduate · S1 Informatika UAD (IPK 3.91)
+                Backend &amp; Web Developer · Alumni Bangkit Academy Cloud Computing 2024 · S1 Informatika UAD (IPK 3.91)
               </p>
             </div>
 

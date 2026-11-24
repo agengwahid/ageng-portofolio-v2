@@ -62,7 +62,7 @@ export default function Contact() {
               <div className="flex items-center gap-4">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden border border-zinc-200">
                   <Image
-                    src="/images/ageng-graduation.jpg"
+                    src="/images/ageng-about.jpg"
                     alt="Muhammad Ageng Zayem Wahid"
                     fill
                     className="object-cover object-top"
@@ -74,10 +74,10 @@ export default function Contact() {
                     Muhammad Ageng Zayem Wahid
                   </h3>
                   <p className="text-xs text-zinc-700 font-medium">
-                    Backend &amp; Cloud Native Practitioner
+                    Backend &amp; Web Developer
                   </p>
                   <p className="text-xs text-zinc-500 mt-0.5">
-                    S.Kom · Universitas Ahmad Dahlan
+                    S.Kom · Universitas Ahmad Dahlan (2022–2026)
                   </p>
                 </div>
               </div>
@@ -134,7 +134,7 @@ export default function Contact() {
               </span>
 
               <a
-                href="https://linkedin.com/in/agengwahid"
+                href="https://linkedin.com/in/ageng14"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-4 rounded-2xl bg-white soft-card-shadow border border-zinc-200/80 hover:border-zinc-400 transition group cursor-pointer"
@@ -148,7 +148,7 @@ export default function Contact() {
                       LinkedIn
                     </h4>
                     <p className="text-xs text-zinc-500">
-                      linkedin.com/in/agengwahid
+                      linkedin.com/in/ageng14
                     </p>
                   </div>
                 </div>
@@ -178,7 +178,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="https://instagram.com/agengwahid"
+                href="https://instagram.com/__wahid14"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-4 rounded-2xl bg-white soft-card-shadow border border-zinc-200/80 hover:border-zinc-400 transition group cursor-pointer"
@@ -192,7 +192,7 @@ export default function Contact() {
                       Instagram
                     </h4>
                     <p className="text-xs text-zinc-500">
-                      @agengwahid
+                      @__wahid14
                     </p>
                   </div>
                 </div>
