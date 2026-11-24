@@ -66,7 +66,7 @@ export default function RootLayout({
         <link rel="preload" href="/images/sky.webp" as="image" type="image/webp" />
         <link rel="preload" href="/images/ageng-hero.png" as="image" type="image/png" />
       </head>
-      <body className="min-h-full flex flex-col font-sans bg-[#05070e] text-slate-100">
+      <body className="min-h-full flex flex-col font-sans bg-[#0a0c0f] text-stone-100">
         {children}
       </body>
     </html>

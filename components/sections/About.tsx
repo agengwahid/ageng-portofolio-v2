@@ -1,84 +1,72 @@
 "use client";
 
 import Image from "next/image";
-import { Download, Award, GraduationCap, Terminal, CheckCircle2 } from "lucide-react";
+import { Download, GraduationCap, Briefcase, CheckCircle2 } from "lucide-react";
 import { experiences } from "@/data/experience";
 
 export default function About() {
   return (
     <section
       id="About"
-      className="relative z-10 w-full bg-[#030712] text-white px-4 sm:px-6 lg:px-12 py-20 md:py-28"
+      className="relative z-10 w-full bg-[#0a0c0f] text-stone-100 px-4 sm:px-6 lg:px-12 py-20 md:py-28"
     >
-      {/* Top subtle fade from Hero */}
-      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#030712] to-transparent pointer-events-none" />
-
       <div className="max-w-7xl mx-auto space-y-16">
-        {/* Section Header (Matches Eka Wahyu exact typography scale) */}
-        <div className="space-y-4">
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#2563eb] uppercase tracking-widest font-semibold">
-            <span>//</span>
-            <span>TENTANG SAYA</span>
-          </div>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl leading-tight">
-            Arsitektur Sistem Tangguh, Cloud Otomatis, & Rekayasa Backend Berkinerja Tinggi
+        {/* Section Header */}
+        <div className="space-y-3 border-b border-white/10 pb-8">
+          <p className="text-sm font-medium text-zinc-400">
+            Tentang &amp; Rekam Jejak
+          </p>
+          <h2 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-bold tracking-tight text-stone-100 max-w-4xl leading-[1.12]">
+            Arsitektur Sistem Tangguh, Infrastruktur Cloud, &amp; Rekayasa Backend
           </h2>
         </div>
 
         {/* Two Column Grid: Profile & Timeline */}
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Portrait Card & Bio (5 Cols) */}
-          <div className="lg:col-span-5 space-y-8">
-            {/* Real Graduation Portrait Card with Floating Badges */}
-            <div className="relative rounded-3xl overflow-hidden bg-slate-900/60 border border-white/10 p-4 soft-card-shadow">
-              <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-black/40">
+          <div className="lg:col-span-5 space-y-6">
+            <div className="relative rounded-2xl overflow-hidden bg-[#12161c] border border-white/10 p-4">
+              <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-zinc-950">
                 <Image
                   src="/images/ageng-graduation.jpg"
                   alt="Muhammad Ageng Zayem Wahid"
                   fill
                   priority
-                  className="object-cover object-top hover:scale-102 transition-transform duration-500"
+                  className="object-cover object-top"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
 
-                {/* Bottom dark vignette */}
-                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent" />
+                {/* Bottom neutral scrim for portrait captions */}
+                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0a0c0f]/90 via-[#0a0c0f]/45 to-transparent" />
 
-                {/* Floating Badge 1: Cumlaude */}
-                <div className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/20 text-zinc-100 font-mono text-[11px] font-bold shadow-lg flex items-center gap-1.5">
-                  <Award className="w-3.5 h-3.5 text-[#2563eb]" />
-                  <span>IPK 3.91 (Cumlaude)</span>
-                </div>
-
-                {/* Floating Badge 2: Fast-Track */}
-                <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/20 text-white font-mono text-[11px] font-semibold shadow-lg flex items-center gap-1.5">
-                  <GraduationCap className="w-3.5 h-3.5 text-blue-400" />
-                  <span>Fast-Track 3.5 Tahun</span>
-                </div>
-
-                {/* Floating Badge 3: Bangkit Top Graduate */}
-                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-full bg-[#2563eb] backdrop-blur-md border border-white/20 text-white font-mono text-[11px] font-bold shadow-lg flex items-center gap-1">
-                  <span>Bangkit 2024</span>
+                <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
+                  <span className="px-3 py-1 rounded-full bg-[#0a0c0f]/85 backdrop-blur-sm border border-white/15 text-stone-100 text-xs font-medium flex items-center gap-1.5">
+                    <GraduationCap className="w-3.5 h-3.5 text-stone-300" />
+                    <span>IPK 3.91 · Cumlaude</span>
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-stone-100 text-zinc-950 text-xs font-semibold">
+                    Bangkit 2024
+                  </span>
                 </div>
               </div>
 
-              {/* Quick Bio Info */}
-              <div className="mt-5 space-y-3 px-1">
-                <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
-                  <span className="text-white font-bold">Muhammad Ageng Zayem Wahid</span>
-                  <span className="text-[#2563eb]">S.Kom</span>
+              {/* Bio Info */}
+              <div className="mt-5 space-y-2.5 px-1">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-white font-semibold">Muhammad Ageng Zayem Wahid</span>
+                  <span className="text-zinc-400 font-medium">S.Kom</span>
                 </div>
-                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-sans">
-                  Lulusan Sarjana Informatika Universitas Ahmad Dahlan dengan predikat Cumlaude. Mengkhususkan diri pada rekayasa backend, perancangan RESTful API berskala, deployment container microservices, dan orkestrasi cloud Google Cloud Platform.
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  Lulusan Sarjana Informatika Universitas Ahmad Dahlan dengan predikat Cumlaude (Fast-Track 3.5 Tahun). Berfokus pada rekayasa backend, perancangan RESTful API berskala, container microservices, dan administrasi server cloud Linux.
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-white/10">
                 <a
                   href="/cv.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full px-6 py-3 rounded-xl font-semibold bg-[#2563eb] hover:bg-[#1d4ed8] transition-[transform,background-color] duration-200 hover:scale-[1.02] active:scale-98 flex items-center justify-center gap-2 text-white text-sm shadow-md shadow-[#2563eb]/30 cursor-pointer"
+                  className="w-full px-6 py-3 rounded-xl font-semibold bg-stone-100 hover:bg-white transition-colors duration-200 flex items-center justify-center gap-2 text-zinc-950 text-sm cursor-pointer"
                 >
                   <Download className="w-4 h-4" />
                   <span>Unduh Resume Lengkap (PDF)</span>
@@ -86,90 +74,82 @@ export default function About() {
               </div>
             </div>
 
-            {/* Core Competencies Quick Summary */}
-            <div className="grid grid-cols-2 gap-3 font-mono text-xs">
-              <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1">
-                <div className="text-zinc-400 text-[11px]">SYSADMIN & CLOUD</div>
-                <div className="text-white font-semibold">Linux, Docker, GCP, Nginx</div>
+            {/* Core Competencies Summary */}
+            <div className="grid grid-cols-2 gap-3 text-xs">
+              <div className="p-4 rounded-xl bg-[#12161c] border border-white/10 space-y-1">
+                <div className="text-zinc-400 font-medium">Infrastruktur &amp; Cloud</div>
+                <div className="text-stone-100 font-semibold">Linux, Docker, GCP, Nginx</div>
               </div>
-              <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1">
-                <div className="text-zinc-400 text-[11px]">BACKEND & CACHING</div>
-                <div className="text-white font-semibold">Laravel, Node.js, Redis, MySQL</div>
+              <div className="p-4 rounded-xl bg-[#12161c] border border-white/10 space-y-1">
+                <div className="text-zinc-400 font-medium">Backend &amp; Caching</div>
+                <div className="text-stone-100 font-semibold">Laravel, Node.js, Redis, MySQL</div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Experience & Education Timeline (7 Cols - Matches Eka Wahyu exact layout) */}
+          {/* Right Column: Experience & Education Timeline (7 Cols) */}
           <div className="lg:col-span-7 space-y-8">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2.5">
-                <Terminal className="w-5 h-5 text-[#2563eb]" />
-                <span>Pengalaman & Jejak Rekam</span>
+              <h3 className="text-xl sm:text-2xl font-bold text-stone-100 tracking-tight flex items-center gap-2.5">
+                <Briefcase className="w-5 h-5 text-zinc-400" />
+                <span>Pengalaman &amp; Pendidikan</span>
               </h3>
-              <span className="text-xs font-mono text-zinc-400">2021 – Sekarang</span>
+              <span className="text-xs text-zinc-400 tabular-nums">2021 – Sekarang</span>
             </div>
 
             <div className="relative pl-6 sm:pl-8 space-y-8">
-              {/* Vertical Connector Line (Matches Eka Wahyu exact coordinate & width) */}
-              <div className="absolute left-[17px] top-6 bottom-4 w-[2px] bg-white/15 z-0" />
+              {/* Vertical Connector Line */}
+              <div className="absolute left-[7px] sm:left-[9px] top-3 bottom-4 w-px bg-white/15 z-0" />
 
               {experiences.map((exp, idx) => (
                 <div key={idx} className="relative z-10 space-y-3">
+                  {/* Minimalist Timeline Node */}
+                  <span className="absolute -left-6 sm:-left-8 top-2 w-3.5 h-3.5 rounded-full bg-stone-200 ring-4 ring-[#0a0c0f]" />
+
                   {/* Header Row */}
-                  <div className="flex items-start gap-3.5">
-                    {/* Left Icon Pill on Connector Line (Uniform Developer Blue, No Rainbow Slop) */}
-                    <div className="w-10 h-10 rounded-xl border border-[#2563eb]/30 bg-[#2563eb]/10 text-[#3b82f6] flex items-center justify-center flex-shrink-0 font-mono font-bold text-xs shadow-md">
-                      {String(idx + 1).padStart(2, "0")}
+                  <div className="space-y-1">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <h4 className="text-base sm:text-lg font-bold text-stone-100 tracking-tight">
+                        {exp.role}
+                      </h4>
+                      <span className="text-xs px-3 py-0.5 rounded-full bg-white/[0.06] border border-white/12 text-zinc-300 tabular-nums">
+                        {exp.period}
+                      </span>
                     </div>
+                    <p className="text-sm text-zinc-300 font-medium">
+                      {exp.organization} <span className="text-zinc-500">· {exp.location}</span>
+                    </p>
+                  </div>
 
-                      <div className="flex-1 space-y-1">
-                        <div className="flex flex-wrap items-center justify-between gap-2">
-                          <h4 className="text-base sm:text-lg font-bold text-white tracking-tight">
-                            {exp.role}
-                          </h4>
-                          <span className="text-xs px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-zinc-300 font-mono">
-                            {exp.period}
-                          </span>
+                  {/* Timeline Card Body */}
+                  <div className="p-4 sm:p-5 rounded-2xl bg-[#12161c] border border-white/10 hover:border-white/25 transition-colors duration-200 space-y-3.5">
+                    <div className="space-y-2">
+                      {exp.description.map((item, dIdx) => (
+                        <div key={dIdx} className="flex items-start gap-2.5 text-sm text-zinc-300 leading-relaxed">
+                          <CheckCircle2 className="w-4 h-4 text-zinc-400 shrink-0 mt-0.5" />
+                          <span>{item}</span>
                         </div>
-                        <p className="text-xs font-mono text-[#2563eb] font-medium">
-                          {exp.organization}
-                        </p>
-                      </div>
+                      ))}
                     </div>
 
-                    {/* Timeline Card Body */}
-                    <div className="ml-13.5 p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-[#2563eb]/50 transition-colors duration-200 space-y-3">
-                      {/* Bullet Highlights */}
-                      <div className="space-y-1.5 pt-1">
-                        {exp.description.map((item, dIdx) => (
-                          <div key={dIdx} className="flex items-start gap-2 text-xs sm:text-sm text-zinc-300 leading-relaxed font-sans">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-[#2563eb] shrink-0 mt-1" />
-                            <span>{item}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Skill Pills */}
-                      <div className="flex flex-wrap gap-1.5 pt-2 border-t border-white/10">
-                        {exp.skills.map((skill, sIdx) => (
-                          <span
-                            key={sIdx}
-                            className="px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-zinc-300 text-[11px] font-mono"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
+                    {/* Clean Skill Pills */}
+                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/10">
+                      {exp.skills.map((skill, sIdx) => (
+                        <span
+                          key={sIdx}
+                          className="px-2.5 py-0.5 rounded-md bg-white/[0.05] border border-white/10 text-zinc-300 text-xs"
+                        >
+                          {skill}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                ))}
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
-
-      {/* Bottom Gradient Transition to Light Portofolio Section */}
-      <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#fafafa] via-[#030712]/80 to-transparent pointer-events-none" />
     </section>
   );
 }

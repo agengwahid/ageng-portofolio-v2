@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUp, Heart } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import { GithubIcon, LinkedinIcon, InstagramIcon } from "@/components/ui/BrandIcons";
 
 export default function Footer() {
@@ -9,15 +9,15 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative z-10 w-full bg-[#030712] text-zinc-400 py-12 px-4 sm:px-6 lg:px-12 border-t border-white/10">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-mono">
+    <footer className="relative z-10 w-full bg-[#0a0c0f] text-zinc-400 py-12 px-4 sm:px-6 lg:px-12 border-t border-white/10">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs">
         {/* Left: Branding & Copyright */}
         <div className="text-center md:text-left space-y-1">
-          <p className="text-white font-bold text-sm tracking-wide">
+          <p className="text-stone-100 font-semibold text-sm tracking-tight">
             Muhammad Ageng Zayem Wahid, S.Kom
           </p>
           <p className="text-zinc-500">
-            © 2026 Ageng Wahid. Dibuat dengan presisi arsitektur Next.js & Tailwind CSS.
+            © 2026 Ageng Wahid. Sistem dan portofolio rekayasa perangkat lunak.
           </p>
         </div>
 
@@ -56,10 +56,10 @@ export default function Footer() {
         <button
           type="button"
           onClick={scrollToTop}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-zinc-300 hover:text-white transition shadow-sm cursor-pointer"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/12 text-zinc-200 hover:text-white transition cursor-pointer"
         >
           <span>Kembali ke Atas</span>
-          <ArrowUp className="w-3.5 h-3.5 text-[#2563eb]" />
+          <ArrowUp className="w-3.5 h-3.5 text-stone-200" />
         </button>
       </div>
     </footer>

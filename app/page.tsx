@@ -1,7 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import WelcomeScreen from "@/components/layout/WelcomeScreen";
 import Navbar from "@/components/layout/Navbar";
 import AmbientBackground from "@/components/layout/AmbientBackground";
 import Hero from "@/components/sections/Hero";
@@ -11,20 +9,8 @@ import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
-  const [welcomeComplete, setWelcomeComplete] = useState(true);
-
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.location.search.includes("skip")) {
-      setWelcomeComplete(true);
-    }
-  }, []);
-
   return (
-    <div className="min-h-screen bg-[#030712] text-zinc-100 flex flex-col selection:bg-[#2563eb]/30 selection:text-white relative overflow-x-clip font-sans">
-      {/* Intro Welcome Screen */}
-      {!welcomeComplete && (
-        <WelcomeScreen onComplete={() => setWelcomeComplete(true)} />
-      )}
+    <div className="min-h-screen bg-[#0a0c0f] text-zinc-100 flex flex-col selection:bg-stone-200 selection:text-zinc-950 relative overflow-x-clip font-sans">
 
       {/* Ambient Gradient Glow Background */}
       <AmbientBackground />
