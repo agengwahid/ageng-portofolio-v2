@@ -45,8 +45,8 @@ export default function About() {
                 <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent" />
 
                 {/* Floating Badge 1: Cumlaude */}
-                <div className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-amber-400/30 text-amber-300 font-mono text-[11px] font-bold shadow-lg flex items-center gap-1.5">
-                  <Award className="w-3.5 h-3.5 text-amber-400" />
+                <div className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/20 text-zinc-100 font-mono text-[11px] font-bold shadow-lg flex items-center gap-1.5">
+                  <Award className="w-3.5 h-3.5 text-[#2563eb]" />
                   <span>IPK 3.91 (Cumlaude)</span>
                 </div>
 
@@ -57,7 +57,7 @@ export default function About() {
                 </div>
 
                 {/* Floating Badge 3: Bangkit Top Graduate */}
-                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-full bg-[#2563eb]/90 backdrop-blur-md border border-white/20 text-white font-mono text-[11px] font-bold shadow-lg flex items-center gap-1">
+                <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-full bg-[#2563eb] backdrop-blur-md border border-white/20 text-white font-mono text-[11px] font-bold shadow-lg flex items-center gap-1">
                   <span>Bangkit 2024</span>
                 </div>
               </div>
@@ -113,33 +113,14 @@ export default function About() {
               {/* Vertical Connector Line (Matches Eka Wahyu exact coordinate & width) */}
               <div className="absolute left-[17px] top-6 bottom-4 w-[2px] bg-white/15 z-0" />
 
-              {experiences.map((exp, idx) => {
-                // Color badges matching Eka Wahyu's distinct icon boxes
-                const getBoxStyle = (index: number) => {
-                  switch (index % 4) {
-                    case 0:
-                      return "bg-blue-500/15 border-blue-500/30 text-blue-400";
-                    case 1:
-                      return "bg-purple-500/15 border-purple-500/30 text-purple-400";
-                    case 2:
-                      return "bg-amber-500/15 border-amber-500/30 text-amber-400";
-                    default:
-                      return "bg-sky-500/15 border-sky-500/30 text-sky-400";
-                  }
-                };
-
-                return (
-                  <div key={idx} className="relative z-10 space-y-3">
-                    {/* Header Row */}
-                    <div className="flex items-start gap-3.5">
-                      {/* Left Icon Pill on Connector Line */}
-                      <div
-                        className={`w-10 h-10 rounded-xl border flex items-center justify-center flex-shrink-0 font-mono font-bold text-xs shadow-md ${getBoxStyle(
-                          idx
-                        )}`}
-                      >
-                        {String(idx + 1).padStart(2, "0")}
-                      </div>
+              {experiences.map((exp, idx) => (
+                <div key={idx} className="relative z-10 space-y-3">
+                  {/* Header Row */}
+                  <div className="flex items-start gap-3.5">
+                    {/* Left Icon Pill on Connector Line (Uniform Developer Blue, No Rainbow Slop) */}
+                    <div className="w-10 h-10 rounded-xl border border-[#2563eb]/30 bg-[#2563eb]/10 text-[#3b82f6] flex items-center justify-center flex-shrink-0 font-mono font-bold text-xs shadow-md">
+                      {String(idx + 1).padStart(2, "0")}
+                    </div>
 
                       <div className="flex-1 space-y-1">
                         <div className="flex flex-wrap items-center justify-between gap-2">
@@ -181,8 +162,7 @@ export default function About() {
                       </div>
                     </div>
                   </div>
-                );
-              })}
+                ))}
             </div>
           </div>
         </div>

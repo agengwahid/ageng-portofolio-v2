@@ -71,19 +71,19 @@ export default function Hero() {
           />
         </motion.div>
 
-        {/* LAYER 2: Distant Snowy Mountain Peaks (Single authentic mountain, zero ghosting) */}
+        {/* LAYER 2: Distant Snowy Mountain Peaks (Single authentic mountain anchored to bottom-0) */}
         <motion.div
           style={{
             y: mountainY,
             scale: mountainScale,
             transformOrigin: "center bottom",
           }}
-          className="absolute inset-x-0 bottom-[14%] sm:bottom-[12%] h-[60%] sm:h-[70%] will-change-transform z-[10] pointer-events-none"
+          className="absolute inset-x-0 bottom-0 h-[75%] sm:h-[82%] md:h-[88%] will-change-transform z-[10] pointer-events-none"
         >
           <img
             src="/img20.svg"
             alt="Snowy Mountain Peaks"
-            className="w-full h-full object-cover object-[center_50%] select-none pointer-events-none"
+            className="w-full h-full object-cover object-[center_bottom] select-none pointer-events-none"
           />
         </motion.div>
 
@@ -95,19 +95,10 @@ export default function Hero() {
             y: titleY,
             transformOrigin: "center center",
           }}
-          className="absolute inset-x-0 top-[7%] sm:top-[8%] md:top-[9%] flex flex-col items-center justify-start z-[18] px-4 pointer-events-none"
+          className="absolute inset-x-0 top-[9%] sm:top-[10%] md:top-[12%] flex flex-col items-center justify-start z-[18] px-4 pointer-events-none"
         >
-          <div className="w-full max-w-5xl mx-auto text-center flex flex-col items-center space-y-2">
-            {/* Status Beacon */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/15 text-xs font-mono text-zinc-200 shadow-xl shadow-black/40 mb-1">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span className="tracking-wide">OPEN TO BACKEND & CLOUD OPPORTUNITIES</span>
-            </div>
-
-            {/* Display Title (Identical bold layout to Eka Wahyu) */}
+          <div className="w-full max-w-5xl mx-auto text-center flex flex-col items-center">
+            {/* Display Title (Bold layout identical to Eka Wahyu, no hero badges) */}
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tight text-white uppercase leading-[1.02] drop-shadow-[0_6px_28px_rgba(0,0,0,0.95)] select-none">
               <span className="block">WELCOME TO MY</span>
               <span className="block bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent mt-0.5">
@@ -124,7 +115,7 @@ export default function Hero() {
             scale: ridgeScale,
             transformOrigin: "center bottom",
           }}
-          className="absolute inset-x-0 bottom-0 h-[38%] sm:h-[44%] md:h-[48%] will-change-transform z-[20] pointer-events-none"
+          className="absolute inset-x-0 bottom-0 h-[44%] sm:h-[50%] md:h-[54%] will-change-transform z-[20] pointer-events-none"
         >
           <div className="relative w-full h-full">
             <Image
@@ -135,6 +126,8 @@ export default function Hero() {
               className="object-cover object-[center_top]"
             />
           </div>
+          {/* Solid base to seal any valley gaps */}
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-[#030712] pointer-events-none" />
           <div className="absolute inset-x-0 top-full h-[50vh] bg-[#030712] pointer-events-none" />
         </motion.div>
 
@@ -156,7 +149,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* LAYER 3b: Subtitle & Action Buttons (Clean typography and prominent distinction badge) */}
+        {/* LAYER 3b: Subtitle & Action Buttons (Clean typography, NO badges in Hero) */}
         <motion.div
           style={{
             opacity: titleOpacity,
@@ -164,15 +157,9 @@ export default function Hero() {
             y: titleY,
             transformOrigin: "center center",
           }}
-          className="absolute inset-x-0 top-[65%] sm:top-[63%] md:top-[62%] flex flex-col items-center justify-start z-[32] px-4 pointer-events-auto"
+          className="absolute inset-x-0 bottom-6 sm:bottom-10 md:bottom-12 flex flex-col items-center justify-end z-[32] px-4 pointer-events-auto"
         >
-          <div className="w-full max-w-2xl mx-auto text-center flex flex-col items-center space-y-2.5">
-            {/* Distinction Badge Pill (Elegantly positioned above name) */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950/90 backdrop-blur-md border border-amber-400/40 text-amber-300 font-mono text-[11px] sm:text-xs shadow-xl shadow-black/50">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
-              <span className="font-semibold tracking-wide">S.Kom · IPK 3.91 (Cumlaude Fast-Track 3.5 Tahun)</span>
-            </div>
-
+          <div className="w-full max-w-2xl mx-auto text-center flex flex-col items-center space-y-3">
             {/* Clean Typography */}
             <div className="space-y-1 text-center">
               <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
@@ -184,7 +171,7 @@ export default function Hero() {
             </div>
 
             {/* Action Buttons (Clean authentic developer blue, no purple slop) */}
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-3.5 z-40">
+            <div className="pt-1 flex flex-wrap items-center justify-center gap-3.5 z-40">
               <a
                 href="#Portofolio"
                 className="px-6 py-3 rounded-xl font-semibold bg-[#2563eb] hover:bg-[#1d4ed8] text-white shadow-lg shadow-[#2563eb]/30 hover:shadow-[#2563eb]/50 transition-[transform,background-color] duration-200 hover:scale-[1.03] active:scale-95 flex items-center gap-2 text-sm cursor-pointer"
@@ -226,8 +213,8 @@ export default function Hero() {
           />
         </motion.div>
 
-        {/* Bottom Fade Transition into About */}
-        <div className="parallax__fade absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#030712] via-[#030712]/80 to-transparent pointer-events-none z-[45]" />
+        {/* Bottom Fade Transition into About (Placed cleanly at z-[15] behind Ageng and text) */}
+        <div className="parallax__fade absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#030712] to-transparent pointer-events-none z-[15]" />
       </div>
     </section>
   );

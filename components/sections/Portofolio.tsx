@@ -206,13 +206,13 @@ export default function Portofolio() {
                             </span>
                           </div>
 
-                          {/* Top Right Project Type Badge (Tim vs Mandiri) */}
+                          {/* Top Right Project Type Badge (Tim vs Mandiri - Disciplined Slate vs Blue) */}
                           <div className="absolute top-3 right-3 z-10">
                             <span
                               className={`px-2.5 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider shadow-sm ${
                                 project.projectType === "team"
-                                  ? "bg-indigo-600 text-white"
-                                  : "bg-emerald-600 text-white"
+                                  ? "bg-slate-900/90 text-zinc-200 border border-slate-700/80 backdrop-blur-sm"
+                                  : "bg-[#2563eb] text-white"
                               }`}
                             >
                               {project.projectType === "team" ? "👥 TIM" : "👤 MANDIRI"}
@@ -433,10 +433,10 @@ export default function Portofolio() {
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                   <div className="p-5 rounded-2xl bg-white soft-card-shadow border border-zinc-200/80 space-y-2.5">
-                    <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-600 flex items-center justify-center font-bold">
+                    <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-[#2563eb] flex items-center justify-center font-bold">
                       <GraduationCap className="w-5 h-5" />
                     </div>
-                    <div className="text-xs font-mono text-amber-600 font-semibold">AKADEMIK · S1 INFORMATIKA</div>
+                    <div className="text-xs font-mono text-[#2563eb] font-semibold">AKADEMIK · S1 INFORMATIKA</div>
                     <h4 className="text-base font-bold text-zinc-900">Sarjana Komputer Cumlaude</h4>
                     <p className="text-xs text-zinc-600 leading-relaxed font-sans">
                       Lulusan tercepat fast-track 3.5 tahun dari Universitas Ahmad Dahlan dengan Indeks Prestasi Kumulatif 3.91 dari skala 4.00.
@@ -455,10 +455,10 @@ export default function Portofolio() {
                   </div>
 
                   <div className="p-5 rounded-2xl bg-white soft-card-shadow border border-zinc-200/80 space-y-2.5">
-                    <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-600 flex items-center justify-center font-bold">
+                    <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-[#2563eb] flex items-center justify-center font-bold">
                       <Server className="w-5 h-5" />
                     </div>
-                    <div className="text-xs font-mono text-purple-600 font-semibold">LEADERSHIP & PEDAGOGI</div>
+                    <div className="text-xs font-mono text-[#2563eb] font-semibold">LEADERSHIP & PEDAGOGI</div>
                     <h4 className="text-base font-bold text-zinc-900">2 Tahun Teaching Assistant</h4>
                     <p className="text-xs text-zinc-600 leading-relaxed font-sans">
                       Membimbing lebih dari 200 mahasiswa dalam 4 semester berturut-turut pada praktikum Pemrograman Dasar & Logika Informatika.
