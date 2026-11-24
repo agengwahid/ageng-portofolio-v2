@@ -159,29 +159,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/agengwahid/sistem-nilai-smkn1-lebong",
   },
   {
-    id: "sjp-hauling",
-    title: "Sistem Pencatatan Hauling & Logistik SJP",
-    codename: "HAULING_OPS",
-    category: "backend",
-    projectType: "team",
-    rankBadge: "Tim · Operations",
-    period: "2026 · Tim PT SJP",
-    role: "Backend & Systems Developer (Tim)",
-    featured: false,
-    description:
-      "Sistem pencatatan operasional pengangkutan armada dump truck dan rekap data penimbangan muatan antar pos operasional perusahaan.",
-    fullOverview:
-      "Sistem operasional yang dikerjakan dalam tim untuk mendata transaksi penimbangan muatan, pencatatan surat jalan, serta rekapitulasi ritase harian armada agar pelaporan operasional lebih rapi.",
-    highlights: [
-      "Mengembangkan modul pencatatan data timbangan dan surat jalan armada berbasis Laravel & MySQL",
-      "Menyusun relasi database serta API sinkronisasi data operasional",
-      "Membantu pemeliharaan sistem serta konfigurasi server Linux",
-    ],
-    image: "/projects/kost.svg",
-    tech: ["Laravel", "PHP", "MySQL", "REST API", "Linux Server", "Git"],
-    githubUrl: "https://github.com/agengwahid",
-  },
-  {
     id: "kost-panjie",
     title: "Kost Panjie Management & Profile Website",
     codename: "PROPERTY_WEB",

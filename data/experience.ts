@@ -16,7 +16,7 @@ export const experiences: ExperienceItem[] = [
     location: "Bengkulu, Indonesia · Di lokasi",
     type: "Internship",
     description: [
-      "Mengembangkan dan memelihara sistem informasi operasional internal perusahaan bersama tim, termasuk General Affairs & Information System (GAIS) dan modul operasional hauling.",
+      "Mengembangkan dan memelihara sistem informasi operasional internal perusahaan bersama tim, termasuk General Affairs & Information System (GAIS).",
       "Membangun website company profile perusahaan (Compro) serta fitur manajemen data menggunakan PHP, Laravel, dan database relasional MySQL.",
       "Mengelola integrasi backend, caching Redis, version control Git, serta membantu konfigurasi deployment di server Linux menggunakan Docker dan Nginx.",
     ],
