@@ -92,24 +92,24 @@ export default function Hero() {
             y: titleY,
             transformOrigin: "center center",
           }}
-          className="absolute inset-x-0 top-[14%] sm:top-[20%] md:top-[21%] flex flex-col items-center justify-start z-[33] px-4 pointer-events-none"
+          className="absolute inset-x-0 top-[13%] sm:top-[14%] md:top-[14%] flex flex-col items-center justify-start z-[33] px-4 pointer-events-none"
         >
           <div className="w-full max-w-xl mx-auto text-center">
-            <h1 className="text-2xl sm:text-4xl md:text-[2.85rem] font-extrabold tracking-tight text-stone-100 uppercase leading-[1.08] drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)] select-none">
+            <h1 className="text-2xl sm:text-4xl md:text-[2.75rem] font-extrabold tracking-tight text-stone-100 uppercase leading-[1.06] drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)] select-none">
               <span className="block">WELCOME TO MY</span>
-              <span className="block text-stone-300 mt-1">PORTFOLIO</span>
+              <span className="block text-stone-300 mt-0.5">PORTFOLIO</span>
             </h1>
           </div>
         </motion.div>
 
-        {/* LAYER 4: Ground Mountain Ridge */}
+        {/* LAYER 4: Ground Mountain Ridge (Lowered horizon so snowy peak frames shoulders cleanly) */}
         <motion.div
           style={{
             y: ridgeY,
             scale: ridgeScale,
             transformOrigin: "center bottom",
           }}
-          className="absolute inset-x-0 bottom-[-14%] h-[115%] will-change-transform z-[20] pointer-events-none"
+          className="absolute inset-x-0 bottom-[-16%] sm:bottom-[-24%] h-[115%] will-change-transform z-[20] pointer-events-none"
         >
           <div className="relative w-full h-full">
             <Image
@@ -118,26 +118,26 @@ export default function Hero() {
               fill
               priority
               unoptimized
-              className="object-cover object-[center_75%] sm:object-bottom"
+              className="object-cover object-[center_78%] sm:object-bottom"
             />
           </div>
           <div className="absolute inset-x-0 top-full h-[60vh] bg-[#0a0c0f] pointer-events-none" />
         </motion.div>
 
-        {/* LAYER 4b: Ageng's Real Transparent Cutout anchored on ground ridge */}
+        {/* LAYER 4b: Ageng's Real Transparent Cutout (Viewport-proportional prominent Hero scale) */}
         <motion.div
           style={{
             y: ridgeY,
             scale: ridgeScale,
             transformOrigin: "center bottom",
           }}
-          className="absolute bottom-[17%] sm:bottom-[4%] left-1/2 -translate-x-1/2 z-[25] pointer-events-none"
+          className="absolute bottom-[20%] sm:bottom-[2%] md:bottom-[2%] left-1/2 -translate-x-1/2 z-[25] pointer-events-none"
         >
           <div className="relative drop-shadow-[0_18px_38px_rgba(0,0,0,0.9)]">
             <img
               src="/images/ageng-hero.png"
               alt="Muhammad Ageng Zayem Wahid"
-              className="w-[125px] sm:w-[160px] md:w-[180px] lg:w-[200px] h-auto object-contain object-bottom"
+              className="h-[46vh] sm:h-[58vh] md:h-[62vh] lg:h-[65vh] w-auto max-w-none object-contain object-bottom"
             />
           </div>
         </motion.div>
@@ -162,7 +162,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Subtle bottom scrim for high text contrast over dark ground/gown */}
-        <div className="absolute inset-x-0 bottom-0 h-[34%] bg-gradient-to-t from-[#0a0c0f] via-[#0a0c0f]/80 to-transparent pointer-events-none z-[32]" />
+        <div className="absolute inset-x-0 bottom-0 h-[32%] bg-gradient-to-t from-[#0a0c0f] via-[#0a0c0f]/80 to-transparent pointer-events-none z-[32]" />
 
         {/* LAYER 3b: Formal Identity & Action Buttons (Clear of top canopy and lower robe/sash) */}
         <motion.div
@@ -172,7 +172,7 @@ export default function Hero() {
             y: titleY,
             transformOrigin: "center center",
           }}
-          className="absolute inset-x-0 bottom-5 sm:bottom-[8%] md:bottom-[9%] flex flex-col items-center justify-end z-[36] px-4 pointer-events-auto"
+          className="absolute inset-x-0 bottom-5 sm:bottom-[5%] md:bottom-[6%] flex flex-col items-center justify-end z-[36] px-4 pointer-events-auto"
         >
           <div className="w-full max-w-2xl mx-auto text-center flex flex-col items-center space-y-3">
             <div className="space-y-1.5 text-center">
