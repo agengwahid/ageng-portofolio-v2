@@ -36,6 +36,10 @@ export default function Portofolio() {
   const filteredProjects =
     projectCategory === "all"
       ? projects
+      : projectCategory === "team"
+      ? projects.filter((p) => p.projectType === "team")
+      : projectCategory === "solo"
+      ? projects.filter((p) => p.projectType === "solo")
       : projects.filter((p) => p.category === projectCategory);
 
   const filteredCerts =
@@ -127,10 +131,12 @@ export default function Portofolio() {
               transition={{ duration: 0.3 }}
               className="space-y-8"
             >
-              {/* Category Filter Pills */}
+              {/* Category Filter Pills (Including Team vs Solo filters) */}
               <div className="flex flex-wrap items-center justify-center gap-2">
                 {[
                   { key: "all", label: "Semua Proyek" },
+                  { key: "team", label: "👥 Proyek Tim" },
+                  { key: "solo", label: "👤 Proyek Mandiri" },
                   { key: "backend", label: "Backend & Cloud" },
                   { key: "fullstack", label: "Full-Stack Web" },
                   { key: "tools", label: "Tools & Utilitas" },
@@ -197,6 +203,19 @@ export default function Portofolio() {
                           <div className="absolute top-3 left-3 z-10">
                             <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider bg-[#2563eb] text-white shadow-sm">
                               {project.rankBadge}
+                            </span>
+                          </div>
+
+                          {/* Top Right Project Type Badge (Tim vs Mandiri) */}
+                          <div className="absolute top-3 right-3 z-10">
+                            <span
+                              className={`px-2.5 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider shadow-sm ${
+                                project.projectType === "team"
+                                  ? "bg-indigo-600 text-white"
+                                  : "bg-emerald-600 text-white"
+                              }`}
+                            >
+                              {project.projectType === "team" ? "👥 TIM" : "👤 MANDIRI"}
                             </span>
                           </div>
 

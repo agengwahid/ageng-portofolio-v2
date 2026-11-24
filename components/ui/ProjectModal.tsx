@@ -58,6 +58,15 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             <span className="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold uppercase tracking-wider bg-[#2563eb] text-white">
               {project.rankBadge}
             </span>
+            <span
+              className={`px-2.5 py-1 rounded-md text-[11px] font-mono font-bold tracking-wider ${
+                project.projectType === "team"
+                  ? "bg-indigo-600/90 text-white"
+                  : "bg-emerald-600/90 text-white"
+              }`}
+            >
+              {project.projectType === "team" ? "👥 PROYEK TIM" : "👤 PROYEK MANDIRI"}
+            </span>
             <span className="text-xs font-mono text-zinc-400">
               {project.period}
             </span>

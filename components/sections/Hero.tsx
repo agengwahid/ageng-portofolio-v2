@@ -19,22 +19,22 @@ export default function Hero() {
   }, []);
 
   // Track scroll progress through the 225vh section (identical to Eka Wahyu)
+  // Note: Using "0vh start" safely disables Framer Motion's experimental WAAPI ViewTimeline
+  // acceleration which suffers from a progress: 1 calculation bug on page load in Chromium/Brave.
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"],
+    offset: ["0vh start", "end end"],
   });
 
   // LAYER 5: Dahan di Pinggir (Forest Canopy - hutan.webp)
-  // "kalau di scrol kebuka atau bergerak seperti tanahnya":
   // Branches open outward (scale 1x -> 2.3x) framing the screen continuously throughout Home,
   // moving in tandem with parallax, and only fading out at the transition into About (0.75 -> 0.95).
-  // This guarantees the branches NEVER vanish prematurely on reload or scroll!
   const canopyScale = useTransform(scrollYProgress, [0, 0.75], [1, 2.3]);
   const canopyY = useTransform(scrollYProgress, [0, 0.75], ["0%", "-14%"]);
   const canopyOpacity = useTransform(scrollYProgress, [0, 0.75, 0.95], [1, 1, 0]);
 
   // LAYER 3: Title & Hero Content (High z-index so it stays 100% visible and crisp)
-  const titleOpacity = useTransform(scrollYProgress, [0, 0.72, 0.9], [1, 1, 0]);
+  const titleOpacity = useTransform(scrollYProgress, [0, 0.75, 0.95], [1, 1, 0]);
   const titleScale = useTransform(scrollYProgress, [0, 0.25], [1, 1.03]);
   const titleY = useTransform(scrollYProgress, [0, 0.85], [0, -110]);
 
@@ -145,7 +145,7 @@ export default function Hero() {
             scale: ridgeScale,
             transformOrigin: "center bottom",
           }}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 z-[25] pointer-events-none flex flex-col items-center"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 z-[25] pointer-events-none"
         >
           <div className="relative drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)]">
             <img
@@ -154,15 +154,9 @@ export default function Hero() {
               className="w-[170px] sm:w-[200px] md:w-[230px] lg:w-[260px] h-auto object-contain object-bottom"
             />
           </div>
-
-          {/* Floating Distinction Badge beside Ageng */}
-          <div className="mt-[-14px] px-3.5 py-1.5 rounded-full bg-slate-950/90 backdrop-blur-md border border-white/20 text-white font-mono text-[11px] sm:text-xs shadow-2xl flex items-center gap-1.5 z-10">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>S.Kom · IPK 3.91 (Cumlaude Fast-Track)</span>
-          </div>
         </motion.div>
 
-        {/* LAYER 3b: Subtitle & Action Buttons (Lowered down to avoid blocking face & sash, clean anti-slop styling) */}
+        {/* LAYER 3b: Subtitle & Action Buttons (Clean typography and prominent distinction badge) */}
         <motion.div
           style={{
             opacity: titleOpacity,
@@ -170,10 +164,16 @@ export default function Hero() {
             y: titleY,
             transformOrigin: "center center",
           }}
-          className="absolute inset-x-0 top-[66%] sm:top-[64%] md:top-[63%] flex flex-col items-center justify-start z-[32] px-4 pointer-events-auto"
+          className="absolute inset-x-0 top-[65%] sm:top-[63%] md:top-[62%] flex flex-col items-center justify-start z-[32] px-4 pointer-events-auto"
         >
-          <div className="w-full max-w-2xl mx-auto text-center flex flex-col items-center space-y-2">
-            {/* Clean Typography without bulky dark card, preserving full view of toga & sash */}
+          <div className="w-full max-w-2xl mx-auto text-center flex flex-col items-center space-y-2.5">
+            {/* Distinction Badge Pill (Elegantly positioned above name) */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950/90 backdrop-blur-md border border-amber-400/40 text-amber-300 font-mono text-[11px] sm:text-xs shadow-xl shadow-black/50">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
+              <span className="font-semibold tracking-wide">S.Kom · IPK 3.91 (Cumlaude Fast-Track 3.5 Tahun)</span>
+            </div>
+
+            {/* Clean Typography */}
             <div className="space-y-1 text-center">
               <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-wide drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
                 Muhammad Ageng Zayem Wahid

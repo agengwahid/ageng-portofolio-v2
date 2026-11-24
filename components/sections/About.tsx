@@ -89,12 +89,12 @@ export default function About() {
             {/* Core Competencies Quick Summary */}
             <div className="grid grid-cols-2 gap-3 font-mono text-xs">
               <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1">
-                <div className="text-zinc-400 text-[11px]">CLOUD STACK</div>
-                <div className="text-white font-semibold">GCP, Docker, CI/CD</div>
+                <div className="text-zinc-400 text-[11px]">SYSADMIN & CLOUD</div>
+                <div className="text-white font-semibold">Linux, Docker, GCP, Nginx</div>
               </div>
               <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1">
-                <div className="text-zinc-400 text-[11px]">BACKEND CORE</div>
-                <div className="text-white font-semibold">Go, Node.js, Express</div>
+                <div className="text-zinc-400 text-[11px]">BACKEND & CACHING</div>
+                <div className="text-white font-semibold">Laravel, Node.js, Redis, MySQL</div>
               </div>
             </div>
           </div>
