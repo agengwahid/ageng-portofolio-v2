@@ -62,17 +62,6 @@ export default function Portofolio() {
     }
   };
 
-  const getTierLabel = (level: "Advanced" | "Proficient" | "Familiar") => {
-    switch (level) {
-      case "Advanced":
-        return "Production";
-      case "Proficient":
-        return "Proficient";
-      case "Familiar":
-        return "Working";
-    }
-  };
-
   return (
     <section
       id="Portofolio"
@@ -497,25 +486,14 @@ export default function Portofolio() {
                         </span>
                       </div>
 
-                      <div className="grid sm:grid-cols-2 gap-2.5">
+                      <div className="flex flex-wrap gap-2">
                         {category.skills.map((skill, sIdx) => (
-                          <div
+                          <span
                             key={sIdx}
-                            className="flex items-center justify-between gap-2 px-3 py-2.5 rounded-xl bg-zinc-50 border border-zinc-200/70"
+                            className="px-3.5 py-2 rounded-xl bg-zinc-50 border border-zinc-200/80 text-xs sm:text-sm font-medium text-zinc-800"
                           >
-                            <span className="text-xs font-semibold text-zinc-900 truncate">
-                              {skill.name}
-                            </span>
-                            <span
-                              className={`shrink-0 px-2 py-0.5 rounded-md text-[11px] font-medium ${
-                                skill.level === "Advanced"
-                                  ? "bg-zinc-900 text-white"
-                                  : "bg-zinc-200/80 text-zinc-700"
-                              }`}
-                            >
-                              {getTierLabel(skill.level)}
-                            </span>
-                          </div>
+                            {skill}
+                          </span>
                         ))}
                       </div>
                     </div>
