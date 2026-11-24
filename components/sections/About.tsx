@@ -81,8 +81,8 @@ export default function About() {
                 <div className="text-stone-100 font-semibold">Linux, Docker, GCP, Nginx</div>
               </div>
               <div className="p-4 rounded-xl bg-[#12161c] border border-white/10 space-y-1">
-                <div className="text-zinc-400 font-medium">Backend &amp; Caching</div>
-                <div className="text-stone-100 font-semibold">Laravel, Node.js, Redis, MySQL</div>
+                <div className="text-zinc-400 font-medium">Backend &amp; Database</div>
+                <div className="text-stone-100 font-semibold">Laravel, PostgreSQL, Node.js, Redis</div>
               </div>
             </div>
           </div>

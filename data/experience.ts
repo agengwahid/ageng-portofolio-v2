@@ -16,11 +16,11 @@ export const experiences: ExperienceItem[] = [
     location: "Bengkulu, Indonesia · Di lokasi",
     type: "Internship",
     description: [
-      "Mengembangkan dan memelihara sistem informasi operasional internal perusahaan bersama tim, termasuk General Affairs & Information System (GAIS).",
-      "Membangun website company profile perusahaan (Compro) serta fitur manajemen data menggunakan PHP, Laravel, dan database relasional MySQL.",
-      "Mengelola integrasi backend, caching Redis, version control Git, serta membantu konfigurasi deployment di server Linux menggunakan Docker dan Nginx.",
+      "Mengembangkan dan memelihara sistem informasi operasional internal bersama tim, termasuk General Affairs & Information System (GAIS) berbasis Laravel, PostgreSQL, dan Docker.",
+      "Mengelola website company profile perusahaan (Compro) menggunakan WordPress custom theme berbasis Docker serta menyiapkan pengembangan migrasi ke Laravel.",
+      "Menangani konfigurasi container Docker, caching Redis, version control Git, serta administrasi server Linux dan Nginx.",
     ],
-    skills: ["Software Engineering", "Laravel", "PHP", "MySQL", "Docker", "Redis", "Linux Server", "Git"],
+    skills: ["Laravel", "PostgreSQL", "Docker", "WordPress", "Redis", "Linux Server", "Nginx", "Git"],
   },
   {
     period: "Jul 2026 – Sep 2026",
@@ -82,6 +82,6 @@ export const experiences: ExperienceItem[] = [
       "Menyelesaikan studi Sarjana Informatika dalam 3,5 tahun dengan Indeks Prestasi Kumulatif (IPK) 3,91 / 4,00.",
       "Berfokus pada pengembangan aplikasi web, rekayasa backend, basis data relasional maupun NoSQL, dan komputasi awan.",
     ],
-    skills: ["Backend Development", "Web Development", "MySQL", "Cloud Computing", "Git"],
+    skills: ["Backend Development", "Web Development", "PostgreSQL", "MySQL", "Cloud Computing", "Git"],
   },
 ];

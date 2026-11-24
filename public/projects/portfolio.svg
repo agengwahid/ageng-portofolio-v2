@@ -1,20 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
-  <defs>
-    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#122236"/>
-      <stop offset="100%" stop-color="#0b1120"/>
-    </linearGradient>
-  </defs>
-  <rect width="800" height="500" fill="url(#g4)"/>
-  <rect x="230" y="120" width="340" height="220" rx="10" fill="none" stroke="#22d3ee" stroke-width="4"/>
-  <rect x="230" y="120" width="340" height="34" rx="10" fill="#22d3ee" opacity="0.25"/>
-  <circle cx="250" cy="137" r="5" fill="#22d3ee"/>
-  <circle cx="266" cy="137" r="5" fill="#22d3ee" opacity="0.6"/>
-  <circle cx="282" cy="137" r="5" fill="#22d3ee" opacity="0.3"/>
-  <line x1="255" y1="190" x2="420" y2="190" stroke="#22d3ee" stroke-width="6" stroke-linecap="round"/>
-  <line x1="255" y1="220" x2="380" y2="220" stroke="#22d3ee" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
-  <rect x="255" y="250" width="90" height="60" rx="6" fill="#22d3ee" opacity="0.25"/>
-  <rect x="355" y="250" width="90" height="60" rx="6" fill="#22d3ee" opacity="0.25"/>
-  <rect x="455" y="250" width="90" height="60" rx="6" fill="#22d3ee" opacity="0.25"/>
-  <text x="400" y="440" text-anchor="middle" fill="#67e8f9" font-family="Arial, sans-serif" font-size="28" font-weight="bold">Personal Portfolio</text>
+  <rect width="800" height="500" fill="#0d1015"/>
+  <rect x="230" y="105" width="340" height="215" rx="12" fill="#141920" stroke="#71717a" stroke-width="2"/>
+  <rect x="230" y="105" width="340" height="32" rx="12" fill="#1c222b"/>
+  <circle cx="252" cy="121" r="4.5" fill="#a1a1aa"/>
+  <circle cx="267" cy="121" r="4.5" fill="#71717a"/>
+  <circle cx="282" cy="121" r="4.5" fill="#52525b"/>
+  <text x="258" y="176" fill="#f4f4f5" font-family="monospace" font-size="18" font-weight="bold">$ ./arch-base &amp;&amp; ./ubuntu-base</text>
+  <line x1="258" y1="205" x2="430" y2="205" stroke="#71717a" stroke-width="4" stroke-linecap="round"/>
+  <line x1="258" y1="228" x2="480" y2="228" stroke="#52525b" stroke-width="4" stroke-linecap="round"/>
+  <line x1="258" y1="251" x2="390" y2="251" stroke="#3f3f46" stroke-width="4" stroke-linecap="round"/>
+  <text x="400" y="395" text-anchor="middle" fill="#f4f4f5" font-family="system-ui, sans-serif" font-size="26" font-weight="bold">Base Linux · Setup Scripts</text>
+  <text x="400" y="428" text-anchor="middle" fill="#a1a1aa" font-family="monospace" font-size="14">Bash Automation · Arch Linux &amp; Ubuntu</text>
 </svg>

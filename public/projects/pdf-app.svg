@@ -1,41 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
-  <defs>
-    <linearGradient id="bgPdf" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1f0a10"/>
-      <stop offset="100%" stop-color="#090306"/>
-    </linearGradient>
-    <linearGradient id="pdfGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#ef4444"/>
-      <stop offset="100%" stop-color="#b91c1c"/>
-    </linearGradient>
-  </defs>
-  <rect width="800" height="500" fill="url(#bgPdf)"/>
-
-  <!-- Central PDF Card -->
-  <rect x="250" y="90" width="300" height="250" rx="20" fill="#180c11" stroke="#ef4444" stroke-width="2.5"/>
-
-  <!-- Document Shape -->
-  <g transform="translate(330, 120)">
-    <path d="M0 0 L100 0 L140 40 L140 180 L0 180 Z" fill="#2d131b" stroke="#ef4444" stroke-width="2"/>
-    <path d="M100 0 L100 40 L140 40 Z" fill="#ef4444"/>
-    <text x="70" y="115" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="32" font-weight="900" letter-spacing="2">PDF</text>
-    
-    <!-- Compression arrows indicator -->
-    <path d="M40 145 L70 145 M60 138 L70 145 L60 152" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M100 145 L70 145 M80 138 L70 145 L80 152" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect width="800" height="500" fill="#0d1015"/>
+  <rect x="260" y="88" width="280" height="245" rx="16" fill="#141920" stroke="#3f3f46" stroke-width="2"/>
+  <g transform="translate(335, 122)">
+    <path d="M0 0 L92 0 L130 38 L130 172 L0 172 Z" fill="#1c222b" stroke="#a1a1aa" stroke-width="2"/>
+    <path d="M92 0 L92 38 L130 38 Z" fill="#a1a1aa"/>
+    <text x="65" y="106" text-anchor="middle" fill="#f4f4f5" font-family="system-ui, sans-serif" font-size="30" font-weight="bold" letter-spacing="2">PDF</text>
+    <rect x="30" y="128" width="70" height="6" rx="3" fill="#71717a"/>
+    <rect x="42" y="142" width="46" height="6" rx="3" fill="#52525b"/>
   </g>
-
-  <!-- Floating Pills -->
-  <g transform="translate(160, 245)">
-    <rect width="130" height="34" rx="17" fill="#180c11" stroke="#22c55e" stroke-width="1.5"/>
-    <text x="65" y="22" text-anchor="middle" fill="#86efac" font-family="monospace" font-size="11" font-weight="bold">100% OFFLINE</text>
-  </g>
-  <g transform="translate(510, 245)">
-    <rect width="135" height="34" rx="17" fill="#180c11" stroke="#38bdf8" stroke-width="1.5"/>
-    <text x="67" y="22" text-anchor="middle" fill="#7dd3fc" font-family="monospace" font-size="11" font-weight="bold">WASM POWERED</text>
-  </g>
-
-  <!-- Title Bottom -->
-  <text x="400" y="405" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="28" font-weight="bold">Kompres PDF &amp; Document Utility</text>
-  <text x="400" y="438" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="14">Solo Web Tool · Client-Side WASM &amp; Zero-Upload Privacy</text>
+  <text x="400" y="395" text-anchor="middle" fill="#f4f4f5" font-family="system-ui, sans-serif" font-size="26" font-weight="bold">PDF Studio · Local Utility Suite</text>
+  <text x="400" y="428" text-anchor="middle" fill="#a1a1aa" font-family="monospace" font-size="14">Laravel 13 · PostgreSQL · Vue 3 · Ghostscript</text>
 </svg>
