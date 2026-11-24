@@ -8,9 +8,14 @@ export default function About() {
   return (
     <section
       id="About"
-      className="relative z-10 w-full bg-[#0a0c0f] text-stone-100 px-4 sm:px-6 lg:px-12 py-20 md:py-28"
+      className="relative z-10 w-full bg-gradient-to-b from-[#0a0c0f] via-[#1a1e25] to-[#272b33] text-stone-100 px-4 sm:px-6 lg:px-12 pt-20 pb-32 md:pt-28 md:pb-36 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto space-y-16">
+      {/* Subtle monochrome slate light wash */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(255,255,255,0.06)_0%,_transparent_55%)] pointer-events-none"
+      />
+      <div className="relative z-10 max-w-7xl mx-auto space-y-16">
         {/* Section Header */}
         <div className="space-y-3 border-b border-white/10 pb-8">
           <p className="text-sm font-medium text-zinc-400">
@@ -150,6 +155,12 @@ export default function About() {
           </div>
         </div>
       </div>
+
+      {/* Smooth Grey Transition into Portfolio */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#e4e4e7] via-[#3f444e]/45 to-transparent pointer-events-none"
+      />
     </section>
   );
 }

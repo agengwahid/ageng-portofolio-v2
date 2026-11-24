@@ -65,9 +65,14 @@ export default function Portofolio() {
   return (
     <section
       id="Portofolio"
-      className="relative z-10 w-full bg-[#f7f7f5] text-zinc-900 px-4 sm:px-6 lg:px-12 py-20 md:py-28"
+      className="relative z-10 w-full bg-gradient-to-b from-[#e4e4e7] via-[#f1f1f3] to-[#dcdce0] text-zinc-900 px-4 sm:px-6 lg:px-12 py-20 md:py-28 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto space-y-12">
+      {/* Subtle silver-white architectural radial depth */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.75)_0%,_transparent_65%)] pointer-events-none"
+      />
+      <div className="relative z-10 max-w-7xl mx-auto space-y-12">
         {/* Section Header */}
         <div className="text-center space-y-3">
           <p className="text-sm font-medium text-zinc-500">

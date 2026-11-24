@@ -37,9 +37,14 @@ export default function Contact() {
   return (
     <section
       id="Contact"
-      className="relative z-10 w-full bg-[#f7f7f5] text-zinc-900 px-4 sm:px-6 lg:px-12 py-20 md:py-28 border-t border-zinc-200/80"
+      className="relative z-10 w-full bg-gradient-to-b from-[#dcdce0] via-[#e4e4e7] to-[#d4d4d8] text-zinc-900 px-4 sm:px-6 lg:px-12 py-20 md:py-28 border-t border-zinc-300/80 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto space-y-12">
+      {/* Subtle top tonal highlight */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.55)_0%,_transparent_60%)] pointer-events-none"
+      />
+      <div className="relative z-10 max-w-7xl mx-auto space-y-12">
         {/* Section Header */}
         <div className="text-center space-y-3">
           <p className="text-sm font-medium text-zinc-500">
