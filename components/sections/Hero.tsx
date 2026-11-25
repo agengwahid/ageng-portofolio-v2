@@ -5,9 +5,11 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { useResumeModal } from "@/components/ui/ResumeModal";
 
 export default function Hero() {
   const { lang } = useLanguage();
+  const { openResumeModal } = useResumeModal();
   const containerRef = useRef<HTMLElement>(null);
 
   // Ensure scroll position resets to top on every reload when landing on Home
@@ -198,15 +200,14 @@ export default function Hero() {
                 <ArrowDown className="w-4 h-4" />
               </a>
 
-              <a
-                href="/cv.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={openResumeModal}
                 className="px-6 py-2.5 rounded-full font-medium bg-zinc-900/85 hover:bg-zinc-800 border border-white/20 text-stone-100 backdrop-blur-md transition-[transform,background-color] duration-200 hover:scale-[1.02] active:scale-95 flex items-center gap-2 text-sm cursor-pointer"
               >
                 <Download className="w-4 h-4 text-stone-300" />
                 <span>{lang === "en" ? "Download Resume (PDF)" : "Unduh Resume (PDF)"}</span>
-              </a>
+              </button>
             </div>
           </div>
         </motion.div>

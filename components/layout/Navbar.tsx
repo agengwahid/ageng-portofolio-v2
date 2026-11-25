@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Download, Menu, X, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { useResumeModal } from "@/components/ui/ResumeModal";
 
 const NAV_ITEMS = [
   { name: "Home", nameId: "Beranda", url: "#Home" },
@@ -14,6 +15,7 @@ const NAV_ITEMS = [
 
 export default function Navbar() {
   const { lang, setLang } = useLanguage();
+  const { openResumeModal } = useResumeModal();
   const [activeTab, setActiveTab] = useState("Home");
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -128,15 +130,14 @@ export default function Navbar() {
           </div>
 
           {/* Quick Action: CV Download */}
-          <a
-            href="/cv.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium px-3.5 py-1.5 rounded-full text-stone-100 hover:text-zinc-950 bg-white/10 hover:bg-stone-100 border border-white/15 transition-colors duration-200"
+          <button
+            type="button"
+            onClick={openResumeModal}
+            className="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium px-3.5 py-1.5 rounded-full text-stone-100 hover:text-zinc-950 bg-white/10 hover:bg-stone-100 border border-white/15 transition-colors duration-200 cursor-pointer"
           >
             <span>{lang === "en" ? "Resume" : "CV"}</span>
             <Download className="w-3.5 h-3.5" />
-          </a>
+          </button>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -188,16 +189,17 @@ export default function Navbar() {
             </div>
 
             <div className="pt-4 border-t border-white/10">
-              <a
-                href="/cv.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-zinc-950 bg-stone-100 hover:bg-white transition"
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  openResumeModal();
+                }}
+                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-zinc-950 bg-stone-100 hover:bg-white transition cursor-pointer"
               >
                 <Download className="w-4 h-4" />
                 <span>{lang === "en" ? "Download Resume (PDF)" : "Unduh Resume (PDF)"}</span>
-              </a>
+              </button>
             </div>
           </motion.div>
         )}

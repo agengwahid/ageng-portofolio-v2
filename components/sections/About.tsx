@@ -4,9 +4,11 @@ import Image from "next/image";
 import { Download, GraduationCap, Briefcase, CheckCircle2 } from "lucide-react";
 import { experiences } from "@/data/experience";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { useResumeModal } from "@/components/ui/ResumeModal";
 
 export default function About() {
   const { lang } = useLanguage();
+  const { openResumeModal } = useResumeModal();
 
   return (
     <section
@@ -74,15 +76,14 @@ export default function About() {
               </div>
 
               <div className="mt-6 pt-4 border-t border-white/10">
-                <a
-                  href="/cv.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={openResumeModal}
                   className="w-full px-6 py-3 rounded-xl font-semibold bg-stone-100 hover:bg-white transition-colors duration-200 flex items-center justify-center gap-2 text-zinc-950 text-sm cursor-pointer"
                 >
                   <Download className="w-4 h-4" />
                   <span>{lang === "en" ? "Download Full Resume (PDF)" : "Unduh Resume Lengkap (PDF)"}</span>
-                </a>
+                </button>
               </div>
             </div>
 
